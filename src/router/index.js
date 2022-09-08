@@ -18,7 +18,19 @@ const routes = [
 
         ]
     },
-
+    {
+        path: '/index',
+        name: 'Index',
+        component: () => import('@/views/index/Index.vue')
+    }, {
+        path: '/sort',
+        name: 'Sort',
+        component: () => import('@/views/sort/Sort.vue')
+    }, {
+        path: '/mine',
+        name: 'Mine',
+        component: () => import('@/views/mine/Mine.vue')
+    },
 
 
 ]
