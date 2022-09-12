@@ -38,3 +38,7 @@ img {
     border: none;
     vertical-align: middle;
 }
+/*主题色*/
+:root{
+    --theme-color:#00995a;
+}

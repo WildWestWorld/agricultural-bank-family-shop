@@ -14,6 +14,9 @@ const routes = [
             path: '/index',
             name: 'Index',
             component: () => import('@/views/index/Index.vue'),
+            meta:{
+                title:'首页'
+            }
         },
 
         ]
@@ -21,15 +24,24 @@ const routes = [
     {
         path: '/index',
         name: 'Index',
-        component: () => import('@/views/index/Index.vue')
+        component: () => import('@/views/index/Index.vue'),
+        meta:{
+            title:'首页'
+        }
     }, {
         path: '/sort',
         name: 'Sort',
-        component: () => import('@/views/sort/Sort.vue')
+        component: () => import('@/views/sort/Sort.vue'),
+        meta:{
+            title:'类别'
+        }
     }, {
         path: '/mine',
         name: 'Mine',
-        component: () => import('@/views/mine/Mine.vue')
+        component: () => import('@/views/mine/Mine.vue'),
+        meta:{
+            title:'我的'
+        }
     },
 
 
@@ -41,6 +53,12 @@ const router = new VueRouter({
     routes
 })
 
+//路由守卫
+router.beforeEach((to,from,next)=>{
+    console.log(to)
+    document.title = to.meta.title
+    next()
+})
 
 // // 在刷新页面的时候重置当前路由
 // activeRouter()

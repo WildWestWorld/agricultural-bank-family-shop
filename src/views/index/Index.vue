@@ -3,10 +3,10 @@
     <div class="page-wrapper">
       <div class="header">
         <van-search
-          v-model="searchWord"
-          shape="round"
-          background="#00995a"
-          placeholder="请输入搜索关键词"
+            v-model="searchWord"
+            shape="round"
+            background="#00995a"
+            placeholder="请输入搜索关键词"
         />
       </div>
       <div class="content">
@@ -14,53 +14,88 @@
         <div class="swiper-container">
           <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
             <van-swipe-item>
-              <img src="@/assets/img/swiper-item-img.png" />
+              <img src="@/assets/img/swiper-item-img.png"/>
             </van-swipe-item>
             <van-swipe-item>
-              <img src="@/assets/img/swiper-item-img.png" />
+              <img src="@/assets/img/swiper-item-img.png"/>
             </van-swipe-item>
             <van-swipe-item>
-              <img src="@/assets/img/swiper-item-img.png" />
+              <img src="@/assets/img/swiper-item-img.png"/>
             </van-swipe-item>
             <van-swipe-item>
-              <img src="@/assets/img/swiper-item-img.png" />
+              <img src="@/assets/img/swiper-item-img.png"/>
             </van-swipe-item>
           </van-swipe>
         </div>
         <!--活动按钮-->
         <div class="activity-button-container">
           <div class="activity-button-wrapper">
-            <div class="installment-application-container">1</div>
-            <div class="recommend-gift-container">1</div>
-            <div class="total-activity-container">1</div>
-            <div class="store-in-container">1</div>
+            <div class="installment-application-container">
+              <div class="installment-application-img-container">
+                <div class="installment-application-img"></div>
+              </div>
+              <div class="installment-application-text-container">
+                分期申请
+              </div>
+            </div>
+            <div class="recommend-gift-container">
+              <div class="recommend-gift-img-container">
+                <div class="recommend-gift-img"></div>
+              </div>
+              <div class="recommend-gift-text-container">
+                推荐有礼
+              </div>
+            </div>
+            <div class="total-activity-container">
+              <div class="total-activity-img-container">
+                <div class="total-activity-img"></div>
+              </div>
+              <div class="total-activity-text-container">
+                活动集锦
+              </div>
+            </div>
+            <div class="store-in-container">
+              <div class="store-in-img-container">
+                <div class="store-in-img"></div>
+              </div>
+              <div class="store-in-text-container">
+                商户入驻
+              </div>
+            </div>
           </div>
         </div>
         <!--活动图片-->
         <div class="activity-img-container">
           <div class="activity-img-wrapper">
-            <img class="activity-img" src="@/assets/img/activity-img.png" />
+            <img class="activity-img" src="@/assets/img/activity-img.png"/>
           </div>
         </div>
         <!-- 选择装修的类型select -->
         <div class="decoration-type-container">
           <van-tabs
-            v-model="tabActiveNum"
-            swipeable
-            :border="true"
-            color="#00995a"
-            title-active-color="#00995a"
-            title-inactive-color="#000000"
+              v-model="tabActiveNum"
+              swipeable
+              :border="true"
+              color="#00995a"
+              title-active-color="#00995a"
+              title-inactive-color="#000000"
           >
             <van-tab title="家装公司" title-style="van-tabs-title">
               <div class="company-container">
+
                 <div class="company-item-container">
                   <div class="company-item">
+<!--                    <div class="item-top-empty-container">-->
+<!--                      1-->
+<!--                    </div>-->
+                    <div class="empty-top-padding-container">
+
+                    </div>
                     <div class="top-container">
                       <div class="left-img-container">
                         <img
-                          class="left-shop-img"
-                          src="http://p3.music.126.net/wGbO39sAMI9lroiLYXJsDQ==/109951167760004737.jpg?param=400y400"
+                            class="left-shop-img"
+                            src="http://p3.music.126.net/wGbO39sAMI9lroiLYXJsDQ==/109951167760004737.jpg?param=400y400"
                         />
                       </div>
                       <div class="right-info-container">
@@ -110,93 +145,7 @@
                         <div class="left-discount-text-container">
                           <div class="left-discount-text">已优惠2</div>
                           <div class="left-quest-icon"></div>
-                        </div>
-                      </div>
-                      <div class="right-gift-recommend-info-container">
-                        <div class="right-recommend-container">
-                          <div class="cute-img-container">
-                            <div class="cute-img"></div>
-                          </div>
-                          <div class="recommend-words-container">
-                            “ 张家港市杨舍镇塘市美心木门经营部 ”
-                          </div>
-                        </div>
-
-                        <div class="right-gift-container">
-                          <div class="gift-img-container">
-                            <div class="gift-img">礼</div>
-                          </div>
-                          <div class="gift-text-container">精美礼品一份</div>
-                        </div>
-
-                        <div class="right-group-gift-container">
-                          <div class="group-gift-img-container">
-                            <div class="group-gift-img">团</div>
-                          </div>
-                          <div class="group-gift-text-container">
-                            精美礼品一份
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="company-item-container">
-                  <div class="company-item">
-                    <div class="top-container">
-                      <div class="left-img-container">
-                        <img
-                          class="left-shop-img"
-                          src="http://p3.music.126.net/wGbO39sAMI9lroiLYXJsDQ==/109951167760004737.jpg?param=400y400"
-                        />
-                      </div>
-                      <div class="right-info-container">
-                        <div class="name-text-container">
-                          张家港市杨舍镇塘市美心木门经营部
-                        </div>
-                        <div class="commend-info-container">
-                          <div class="star-img-text-container">
-                            <div class="star-img-container">
-                              <div class="star-img">
-                                <!-- <img  src="@/assets/img/star.png" /> -->
-                              </div>
-                              <div class="star-img">
-                                <!-- <img  src="@/assets/img/star.png" /> -->
-                              </div>
-                              <div class="star-img">
-                                <!-- <img  src="@/assets/img/star.png" /> -->
-                              </div>
-                              <div class="star-img">
-                                <!-- <img  src="@/assets/img/star.png" /> -->
-                              </div>
-                              <div class="star-img">
-                                <!-- <img  src="@/assets/img/star.png" /> -->
-                              </div>
-                            </div>
-                            <div class="stat-text">5.0</div>
-                          </div>
-                          <div class="commend-num-container">1241条</div>
-                          <div class="consumpution-num-container">
-                            ￥14141/人
-                          </div>
-                        </div>
-                        <div class="address-info-container">
-                          <div class="address">张家港市杨舍镇南二环路1号</div>
-                          <div class="distant">13.4km</div>
-                        </div>
-                        <div class="benefit-info-container">
-                          <div class="benefit">200个精选案例</div>
-                          <div class="benefit">200名设计师</div>
-                          <div class="benefit">免息分期</div>
-                          <div class="benefit">实景展厅</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="bottom-container">
-                      <div class="left-discount-container">
-                        <div class="left-discount-text-container">
-                          <div class="left-discount-text">已优惠2</div>
-                          <div class="left-quest-icon"></div>
+                          <div class="left-quest-decoration"></div>
                         </div>
                       </div>
                       <div class="right-gift-recommend-info-container">
@@ -269,28 +218,40 @@ export default {
   width: 100vw;
 
   background-color: rgba(grey, 0.1);
+
+  //不加的话 iphone5会多出来一块
+  overflow-x: hidden;
+
+
   .page-wrapper {
     // height: 100vh;
     width: 100vw;
     position: relative;
     display: flex;
     flex-direction: column;
+
+    margin-bottom: calc(120 / 75)+rem;
+
     // 头部
     .header {
       height: 1.84rem;
       width: 100vw;
       background-color: #00995a;
+
       .van-search {
         height: 100%;
         width: 100vw;
         background-color: #00995a;
       }
     }
+
     // 内容
     .content {
       position: relative;
       flex: 1;
       width: 100vw;
+
+      //margin-bottom: calc(120 / 75)+rem;
       //轮播图
       .swiper-container {
         position: relative;
@@ -301,6 +262,7 @@ export default {
           position: relative;
           height: 4.4rem;
           width: 100vw !important;
+
           img {
             position: relative;
             height: 4.4rem;
@@ -308,6 +270,7 @@ export default {
           }
         }
       }
+
       //活动按钮
       .activity-button-container {
         position: relative;
@@ -317,6 +280,7 @@ export default {
         height: 2.84rem;
         width: 100vw;
         margin-top: 0.267rem;
+
         .activity-button-wrapper {
           position: relative;
           height: 2.84rem;
@@ -328,6 +292,7 @@ export default {
 
           display: flex;
           flex-direction: row;
+
           .installment-application-container {
             position: relative;
             display: flex;
@@ -336,7 +301,29 @@ export default {
             justify-content: center;
             align-items: center;
             width: 100%;
+            .installment-application-img-container{
+              width: 1.213rem;
+              height: 1.213rem;
+
+              background-color: orange;
+              border-radius: 50%;
+              .installment-application-img{
+                width: 100%;
+                height: 100%;
+                background-image: url('@/assets/img/installmentApplication.png');
+                background-repeat: no-repeat;
+                background-size: 100%;
+              }
+
+            }
+            .installment-application-text-container{
+              margin-top: 0.28rem;
+              font-size: 0.373rem;
+              font-weight: 400;
+              color: #000000;
+            }
           }
+
           .recommend-gift-container {
             position: relative;
             display: flex;
@@ -345,7 +332,26 @@ export default {
             justify-content: center;
             align-items: center;
             width: 100%;
+            .recommend-gift-img-container{
+              width: 1.213rem;
+              height: 1.213rem;
+              .recommend-gift-img{
+                width: 100%;
+                height: 100%;
+                background-image: url('@/assets/img/recommendGift.png');
+                background-repeat: no-repeat;
+                background-size: 100%;
+              }
+
+            }
+            .recommend-gift-text-container{
+              margin-top: 0.28rem;
+              font-size: 0.373rem;
+              font-weight: 400;
+              color: #000000;
+            }
           }
+
           .total-activity-container {
             position: relative;
             display: flex;
@@ -354,7 +360,28 @@ export default {
             justify-content: center;
             align-items: center;
             width: 100%;
+            .total-activity-img-container{
+              width: 1.213rem;
+              height: 1.213rem;
+              background-color: #65c3c7;
+              border-radius: 50%;
+              .total-activity-img{
+                width: 100%;
+                height: 100%;
+                background-image: url('@/assets/img/totalActivity.png');
+                background-repeat: no-repeat;
+                background-size: 100%;
+              }
+
+            }
+            .total-activity-text-container{
+              margin-top: 0.28rem;
+              font-size: 0.373rem;
+              font-weight: 400;
+              color: #000000;
+            }
           }
+
           .store-in-container {
             position: relative;
             display: flex;
@@ -364,9 +391,28 @@ export default {
             align-items: center;
 
             width: 100%;
+            .store-in-img-container{
+              width: 1.213rem;
+              height: 1.213rem;
+              .store-in-img{
+                width: 100%;
+                height: 100%;
+                background-image: url('@/assets/img/storeIn.png');
+                background-repeat: no-repeat;
+                background-size: 100%;
+              }
+
+            }
+            .store-in-text-container{
+              margin-top: 0.28rem;
+              font-size: 0.373rem;
+              font-weight: 400;
+              color: #000000;
+            }
           }
         }
       }
+
       //活动图片
       .activity-img-container {
         position: relative;
@@ -376,9 +422,11 @@ export default {
         height: 3.44rem;
         width: 100vw;
         margin-top: 0.267rem;
+
         .activity-img-wrapper {
           height: 3.44rem;
           width: 9.32rem;
+
           .activity-img {
             height: 100%;
             width: 100%;
@@ -386,49 +434,94 @@ export default {
           }
         }
       }
+
       //装修的类型
       .decoration-type-container {
+        width: calc(100vw - 0.67rem);
+        background-color: white;
+        border-radius: 0.6rem;
+        margin:  0 auto;
+        //修改tabList的总长度并居中
+        ::v-deep .van-tabs__nav{
+          position: relative;
+          width: calc(100vw - 0.67rem);
+          //height: calc(44.5 / 75)+rem;
+
+          margin: 0 auto;
+          border-radius: 0.6rem;
+
+          background-color: white;
+
+          //display: flex;
+          //flex-direction: row;
+          //justify-content: center;
+
+        }
+
         // 修改tab字体大小
         ::v-deep .van-tab {
           font-size: 0.4267rem !important;
+          //width: calc(100vw - 0.67rem);
+          //background-color: red;
         }
-        // 修改内容与tab的距离
-        ::v-deep .van-tabs__content {
+
+        // 修改tab-nav 的高度
+        ::v-deep .van-tabs--line .van-tabs__wrap {
           //   margin-top: 0.74rem;
+          //height: calc(44.5 / 75)+rem;
         }
+
+        //修改tab-nav 滑块的处于的高度
+        ::v-deep .van-tabs__line{
+          bottom: 0.6rem;
+        }
+
         // 家装公司
         .company-container {
           position: relative;
-          height: 100vh;
-          width: 100vw;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          height: fit-content;
+          //width: 100vw;
+
           .company-item-container {
             position: relative;
-            height: 4.91rem;
-            width: 100vw;
+            height: calc(368.2 / 75)+rem;
+            width: calc(100vw - 0.67rem);
+
             .company-item {
               position: relative;
               height: 100%;
               width: 100%;
               display: flex;
               flex-direction: column;
-              margin-top: 0.74rem;
+              //margin-top: 0.74rem;
+
+              background-color: white;
+              border-radius: 0 0 0.6rem 0.6rem;
 
               &::before {
                 content: '';
                 position: relative;
-                width: 90vw;
+                width: 80vw;
                 height: 1px;
                 background-color: rgba($color: grey, $alpha: 0.1);
-                top: -0.4547rem;
+                //top: -0.4547rem;
                 margin: 0 auto;
+              }
+              .empty-top-padding-container{
+                height: calc(34.1 / 75)+rem;
               }
               .top-container {
                 position: relative;
-                height: 2.655rem;
+                height: calc(157 / 75)+rem;
                 width: 100%;
                 display: flex;
                 flex-direction: row;
                 max-width: 100%;
+
                 .left-img-container {
                   position: relative;
                   width: 2.584rem;
@@ -438,13 +531,16 @@ export default {
                   flex-direction: row;
                   justify-content: flex-end;
                   align-items: flex-start;
+
                   .left-shop-img {
                     width: 2rem;
                     height: 2rem;
                     border-radius: 0.2rem;
                   }
                 }
+
                 .right-info-container {
+                  box-sizing: border-box;
                   position: relative;
                   display: flex;
                   flex-direction: column;
@@ -453,7 +549,8 @@ export default {
                   padding-left: 0.2547rem;
                   font-size: 10px;
                   width: 100%;
-                  max-width: 100%;
+                  max-width: calc(511 / 75)+rem;
+
                   .name-text-container {
                     position: relative;
                     font-size: 0.3467rem;
@@ -463,6 +560,7 @@ export default {
                     font-weight: bold;
                     color: #000000;
                   }
+
                   .commend-info-container {
                     position: relative;
 
@@ -474,6 +572,7 @@ export default {
                     font-family: SourceHanSansCN;
                     font-weight: 400;
                     color: #000000;
+
                     .star-img-text-container {
                       position: relative;
                       display: flex;
@@ -504,12 +603,14 @@ export default {
                           background-size: 100%;
                         }
                       }
+
                       .stat-text {
                         color: #ff6133;
                         font-size: 0.267rem;
                         line-height: 0.4rem;
                       }
                     }
+
                     .commend-num-container {
                       position: relative;
                       margin-right: 0.08rem;
@@ -524,6 +625,7 @@ export default {
 
                       max-width: 2rem;
                     }
+
                     .consumpution-num-container {
                       position: relative;
                       margin-right: 0.12rem;
@@ -544,7 +646,7 @@ export default {
                     position: relative;
                     display: flex;
                     justify-content: space-between;
-                    margin-right: 0.6rem;
+                    margin-right: calc(19 / 75)+rem;
 
                     .address {
                       font-size: 0.267rem;
@@ -556,6 +658,7 @@ export default {
                       overflow: hidden;
                       max-width: 5rem;
                     }
+
                     .distant {
                       font-size: 0.267rem;
                       font-family: SourceHanSansCN;
@@ -567,6 +670,7 @@ export default {
                       max-width: 1.8rem;
                     }
                   }
+
                   .benefit-info-container {
                     position: relative;
                     width: 95%;
@@ -585,7 +689,9 @@ export default {
                   }
                 }
               }
+
               .bottom-container {
+                box-sizing: border-box;
                 position: relative;
                 height: 1.984rem;
                 width: 100%;
@@ -593,6 +699,7 @@ export default {
 
                 display: flex;
                 flex-direction: row;
+
                 .left-discount-container {
                   position: relative;
                   width: 2.584rem;
@@ -606,6 +713,7 @@ export default {
                   color: #ff6133;
 
                   font-size: 0.24rem;
+
                   .left-discount-text-container {
                     position: relative;
                     display: flex;
@@ -632,12 +740,14 @@ export default {
                       border-bottom: 12px solid transparent;
                       z-index: 11;
                     }
+
                     .left-discount-text {
                       text-overflow: ellipsis;
                       white-space: nowrap;
                       overflow: hidden;
                       margin-right: 0.053rem;
                     }
+
                     .left-quest-icon {
                       position: relative;
                       text-align: center;
@@ -654,25 +764,44 @@ export default {
                         color: #ff6133;
                       }
                     }
+                    .left-quest-decoration{
+                      width: 0px;
+                      height: 0px;
+                      border-left: 0px solid #ffecea;;
+                      border-right: 0px solid transparent;
+                      border-top: 20px solid transparent;
+                      border-bottom: 20px solid transparent;
+
+                      border-left-width: calc(9 / 75)+rem;
+                      border-top-width: calc(14.5 / 75)+rem;
+                      border-bottom-width: calc(14.5 / 75)+rem;
+
+                      background-color: white;
+                    }
                   }
                 }
+
                 .right-gift-recommend-info-container {
+                  box-sizing: border-box;
                   position: relative;
                   display: flex;
                   flex-direction: column;
                   justify-content: space-between;
-                  padding-left: 0.2547rem;
+                  margin-left: 0.2547rem;
                   font-size: 10px;
-                  width: 100%;
-                  max-width: 100%;
-                  padding-top: 0.36rem;
+                  width: calc(530 / 75)+rem;
+                  max-width: calc(530 / 75)+rem;
+
+                  margin-top: 0.36rem;
+
                   .right-recommend-container {
                     position: relative;
                     width: 100%;
-
+                    max-width: 100%;
                     display: flex;
                     flex-direction: row;
                     align-items: center;
+
                     .cute-img-container {
                       // height: 0.307rem;
                       // width: 0.28rem;
@@ -682,6 +811,7 @@ export default {
                       flex-direction: row;
                       justify-content: center;
                       align-items: center;
+
                       .cute-img {
                         height: 0.307rem;
                         width: 0.28rem;
@@ -690,13 +820,20 @@ export default {
                         background-size: 100%;
                       }
                     }
+
                     .recommend-words-container {
                       font-size: 0.267rem;
                       font-weight: bold;
                       color: #000000;
                       margin-left: 0.0933rem;
+
+                      text-overflow: ellipsis;
+                      white-space: nowrap;
+                      overflow: hidden;
+                      max-width: calc( 450 / 75 )+rem;
                     }
                   }
+
                   .right-gift-container {
                     position: relative;
                     width: 100%;
@@ -705,6 +842,7 @@ export default {
                     flex-direction: row;
                     align-items: center;
                     justify-content: flex-start;
+
                     .gift-img-container {
                       position: relative;
                       display: flex;
@@ -717,6 +855,7 @@ export default {
                       background-color: #fbf0eb;
 
                       font-weight: bold;
+
                       .gift-img {
                         position: relative;
                         display: flex;
@@ -731,6 +870,7 @@ export default {
                         // -webkit-transform: scale(0.95);
                       }
                     }
+
                     .gift-text-container {
                       font-size: 0.267rem;
                       font-weight: bold;
@@ -747,6 +887,7 @@ export default {
                     flex-direction: row;
                     align-items: center;
                     justify-content: flex-start;
+
                     .group-gift-img-container {
                       position: relative;
                       display: flex;
@@ -759,6 +900,7 @@ export default {
                       background-color: #ffecea;
 
                       font-weight: bold;
+
                       .group-gift-img {
                         position: relative;
                         display: flex;
@@ -773,6 +915,7 @@ export default {
                         // -webkit-transform: scale(0.95);
                       }
                     }
+
                     .group-gift-text-container {
                       font-size: 0.267rem;
                       font-weight: bold;
