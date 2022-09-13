@@ -269,6 +269,8 @@
                 </div>
               </div>
             </div>
+
+            <tabListContentCard></tabListContentCard>
           </div>
           <div slot="item1">建筑商户</div>
           <div slot="item2">家居软装</div>
@@ -280,11 +282,12 @@
 
 <script>
 import tabList from '@/components/index/tab-list/tabList.vue';
-
+import tabListContentCard from '@/components/index/tab-list/tabListContentCard.vue';
 export default {
   name: 'Index',
   components: {
     tabList,
+    tabListContentCard,
   },
   props: {
     msg: String,

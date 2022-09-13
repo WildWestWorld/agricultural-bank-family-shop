@@ -1,50 +1,78 @@
 <template>
-  <div class="tab-bar-item-container" @click="navigateToLink" >
+  <div class="tab-bar-item-container" @click="navigateToLink">
     <div class="icon-container">
-      <div :class="`icon-img ${info.name}`" :style="{backgroundImage:'url('+info.icon+')'}"></div>
+      <div
+        :class="`icon-img ${info.name}`"
+        :style="{ backgroundImage: activeBackGroundImage }"
+      ></div>
       <!--      <slot name="icon"></slot>-->
       <!--      <img src="@/assets/img/tabbar-index.png">-->
     </div>
-    <div class="title-container" :style="{color: activeColor}">{{ info.title }}</div>
-
+    <div class="title-container" :style="{ color: activeColor }">
+      {{ info.title }}
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "tabBarItem",
+  name: 'tabBarItem',
   props: {
     info: {
       type: Object,
       value: () => {
-        null
-      }
-    }
+        null;
+      },
+    },
+    forIndex: {
+      type: Number,
+      value: null,
+    },
+    activeIndex: {
+      type: Number,
+      value: 0,
+    },
   },
   computed: {
-      activeColor(){
-        let currentPath =this.$route.path
-        let navPath=this.$props.info.path
-        return currentPath === navPath ? "#00995a":'black';
-      }
+    activeColor() {
+      //   let currentPath = this.$route.path;
+      //   let navPath = this.$props.info.path;
+      //   return currentPath === navPath ? '#00995a' : 'black';
+
+      let forIndex = this.$props.forIndex;
+      let activeIndex = this.$props.activeIndex;
+      return forIndex === activeIndex ? '#00995a' : 'black';
+    },
+    activeBackGroundImage() {
+      //   let currentPath = this.$route.path;
+      //   let navPath = this.$props.info.path;
+      //   return currentPath === navPath
+      //     ? `url(${this.$props.info.activeIcon})`
+      //     : `url(${this.$props.info.icon})`;
+      let forIndex = this.$props.forIndex;
+      let activeIndex = this.$props.activeIndex;
+      return forIndex === activeIndex
+        ? `url(${this.$props.info.activeIcon})`
+        : `url(${this.$props.info.icon})`;
+    },
   },
   data() {
-    return {}
+    return {};
   },
-  methods:{
-    navigateToLink(){
+  methods: {
+    navigateToLink() {
       // this.$router.push('/home')
       // console.log(this.$router)
-      let currentPath =this.$route.path
-      let navPath=this.$props.info.path
+      let currentPath = this.$route.path;
+      let navPath = this.$props.info.path;
 
-      if(currentPath !== navPath){
-        this.$router.replace(navPath)
+      if (currentPath !== navPath) {
+        this.$router.replace(navPath);
         // console.log(currentPath,navPath)
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -60,39 +88,47 @@ export default {
 
   .icon-container {
     position: relative;
-    height: calc(52/75)+rem;
-    width: calc(52/75)+rem;
+    height: calc(52 / 75) + rem;
+    width: calc(52 / 75) + rem;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    .icon-img{
+    .icon-img {
       //width: 100%;
       //height: 100%;
-      height: calc(52/75)+rem;
-      width: calc(52/75)+rem;
+      height: calc(52 / 75) + rem;
+      width: calc(52 / 75) + rem;
 
-      background-image: url("@/assets/img/tabbar-index.png") ;
+      background-image: url('@/assets/img/tabbar-index.png');
       background-repeat: no-repeat;
       background-size: 100%;
     }
-    .index{
-      height: calc(46/75)+rem;
-      width: calc(52/75)+rem;
+    .index {
+      //   height: calc(46 / 75) + rem;
+      //   width: calc(52 / 75) + rem;
+      height: 100%;
+      width: 100%;
     }
-    .sort{
-      height: calc(41/75)+rem;
-      width: calc(41/75)+rem;
+    .sort {
+      //   height: calc(41 / 75) + rem;
+      //   width: calc(41 / 75) + rem;
+
+      height: 100%;
+      width: 100%;
     }
-    .mine{
-      height: calc(39/75)+rem;
-      width: calc(35/75)+rem;
+    .mine {
+      //   height: calc(39 / 75) + rem;
+      //   width: calc(35 / 75) + rem;
+
+      height: 100%;
+      width: 100%;
     }
   }
 
   .title-container {
-    margin-top: calc(3.5 / 37.5)+rem;
-    font-size: calc(11 / 37.5)+rem;
+    margin-top: calc(3.5 / 37.5) + rem;
+    font-size: calc(11 / 37.5) + rem;
   }
 }
 </style>

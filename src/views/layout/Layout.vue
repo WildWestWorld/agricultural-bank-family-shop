@@ -1,5 +1,7 @@
 <template>
-  <router-view></router-view>
+  <div class="page">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
@@ -28,5 +30,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.page {
+  box-sizing: border-box;
+  position: relative;
+  height: fit-content;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(grey, 0.1);
 
+  //不加的话 iphone5会多出来一块
+  overflow-x: hidden;
+}
 </style>

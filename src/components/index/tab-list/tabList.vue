@@ -14,6 +14,7 @@
                 ? 'tab-list-header-item-text-container active'
                 : 'tab-list-header-item-text-container '
             "
+            :id="'tab-list-header-item' + index"
           >
             {{ item.name }}
           </div>
@@ -135,6 +136,12 @@ export default {
 
       display: flex;
       flex-direction: row;
+      //   &:last-child {
+      //     background-color: #00995a;
+      //   }
+      #tab-list-header-item2 {
+        border-right-width: 0px;
+      }
       .tab-list-header-slider {
         content: '';
         position: absolute;
@@ -156,6 +163,10 @@ export default {
         align-items: center;
         .tab-list-header-item-text-container {
           font-size: calc(32 / 75) + rem;
+
+          width: 100%;
+          text-align: center;
+          border-right: 1px solid #d1d2d1;
         }
         .active {
           color: #00995a;

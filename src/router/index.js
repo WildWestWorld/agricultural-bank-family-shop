@@ -14,8 +14,15 @@ const routes = [
             path: '/index',
             name: 'Index',
             component: () => import('@/views/index/Index.vue'),
-            meta:{
-                title:'首页'
+            meta: {
+                title: '首页'
+            }
+        }, {
+            path: '/companyDetail',
+            name: 'companyDetail',
+            component: () => import('@/views/company/companyDetail.vue'),
+            meta: {
+                title: '公司详情'
             }
         },
 
@@ -25,22 +32,22 @@ const routes = [
         path: '/index',
         name: 'Index',
         component: () => import('@/views/index/Index.vue'),
-        meta:{
-            title:'首页'
+        meta: {
+            title: '首页'
         }
     }, {
         path: '/sort',
         name: 'Sort',
         component: () => import('@/views/sort/Sort.vue'),
-        meta:{
-            title:'类别'
+        meta: {
+            title: '类别'
         }
     }, {
         path: '/mine',
         name: 'Mine',
         component: () => import('@/views/mine/Mine.vue'),
-        meta:{
-            title:'我的'
+        meta: {
+            title: '我的'
         }
     },
 
@@ -54,7 +61,7 @@ const router = new VueRouter({
 })
 
 //路由守卫
-router.beforeEach((to,from,next)=>{
+router.beforeEach((to, from, next) => {
     console.log(to)
     document.title = to.meta.title
     next()
