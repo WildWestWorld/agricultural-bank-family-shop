@@ -3,27 +3,40 @@
     <div class="page-wrapper">
       <div class="header">
         <van-search
-            v-model="searchWord"
-            shape="round"
-            background="#00995a"
-            placeholder="请输入搜索关键词"
-        />
+          v-model="searchWord"
+          shape="round"
+          background="#00995a"
+          placeholder="请输入搜索关键词"
+        >
+          <template #left>
+            <div class="search-left-container">
+              <div class="search-left-img-container">
+                <div class="search-left-img"></div>
+              </div>
+
+              <div class="search-left-text-container">
+                <div class="search-left-text">杭州</div>
+                <div class="search-left-arrow"></div>
+              </div>
+            </div>
+          </template>
+        </van-search>
       </div>
       <div class="content">
         <!-- 轮播图 -->
         <div class="swiper-container">
           <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
             <van-swipe-item>
-              <img src="@/assets/img/swiper-item-img.png"/>
+              <img src="@/assets/img/swiper-item-img.png" />
             </van-swipe-item>
             <van-swipe-item>
-              <img src="@/assets/img/swiper-item-img.png"/>
+              <img src="@/assets/img/swiper-item-img.png" />
             </van-swipe-item>
             <van-swipe-item>
-              <img src="@/assets/img/swiper-item-img.png"/>
+              <img src="@/assets/img/swiper-item-img.png" />
             </van-swipe-item>
             <van-swipe-item>
-              <img src="@/assets/img/swiper-item-img.png"/>
+              <img src="@/assets/img/swiper-item-img.png" />
             </van-swipe-item>
           </van-swipe>
         </div>
@@ -34,68 +47,145 @@
               <div class="installment-application-img-container">
                 <div class="installment-application-img"></div>
               </div>
-              <div class="installment-application-text-container">
-                分期申请
-              </div>
+              <div class="installment-application-text-container">分期申请</div>
             </div>
             <div class="recommend-gift-container">
               <div class="recommend-gift-img-container">
                 <div class="recommend-gift-img"></div>
               </div>
-              <div class="recommend-gift-text-container">
-                推荐有礼
-              </div>
+              <div class="recommend-gift-text-container">推荐有礼</div>
             </div>
             <div class="total-activity-container">
               <div class="total-activity-img-container">
                 <div class="total-activity-img"></div>
               </div>
-              <div class="total-activity-text-container">
-                活动集锦
-              </div>
+              <div class="total-activity-text-container">活动集锦</div>
             </div>
             <div class="store-in-container">
               <div class="store-in-img-container">
                 <div class="store-in-img"></div>
               </div>
-              <div class="store-in-text-container">
-                商户入驻
-              </div>
+              <div class="store-in-text-container">商户入驻</div>
             </div>
           </div>
         </div>
         <!--活动图片-->
         <div class="activity-img-container">
           <div class="activity-img-wrapper">
-            <img class="activity-img" src="@/assets/img/activity-img.png"/>
+            <img class="activity-img" src="@/assets/img/activity-img.png" />
           </div>
         </div>
         <!-- 选择装修的类型select -->
-        <div class="decoration-type-container">
+        <!-- <div class="decoration-type-container">
           <van-tabs
-              v-model="tabActiveNum"
-              swipeable
-              :border="true"
-              color="#00995a"
-              title-active-color="#00995a"
-              title-inactive-color="#000000"
+            v-model="tabActiveNum"
+            swipeable
+            :border="true"
+            color="#00995a"
+            title-active-color="#00995a"
+            title-inactive-color="#000000"
           >
             <van-tab title="家装公司" title-style="van-tabs-title">
               <div class="company-container">
-
                 <div class="company-item-container">
                   <div class="company-item">
-<!--                    <div class="item-top-empty-container">-->
-<!--                      1-->
-<!--                    </div>-->
-                    <div class="empty-top-padding-container">
-
-                    </div>
+                    <div class="empty-top-padding-container"></div>
                     <div class="top-container">
                       <div class="left-img-container">
                         <img
-                            class="left-shop-img"
-                            src="http://p3.music.126.net/wGbO39sAMI9lroiLYXJsDQ==/109951167760004737.jpg?param=400y400"
+                          class="left-shop-img"
+                          src="http://p3.music.126.net/wGbO39sAMI9lroiLYXJsDQ==/109951167760004737.jpg?param=400y400"
+                        />
+                      </div>
+                      <div class="right-info-container">
+                        <div class="name-text-container">
+                          张家港市杨舍镇塘市美心木门经营部
+                        </div>
+                        <div class="commend-info-container">
+                          <div class="star-img-text-container">
+                            <div class="star-img-container">
+                              <div class="star-img"></div>
+                              <div class="star-img"></div>
+                              <div class="star-img"></div>
+                              <div class="star-img"></div>
+                              <div class="star-img"></div>
+                            </div>
+                            <div class="stat-text">5.0</div>
+                          </div>
+                          <div class="commend-num-container">1241条</div>
+                          <div class="consumpution-num-container">
+                            ￥14141/人
+                          </div>
+                        </div>
+                        <div class="address-info-container">
+                          <div class="address">张家港市杨舍镇南二环路1号</div>
+                          <div class="distant">13.4km</div>
+                        </div>
+                        <div class="benefit-info-container">
+                          <div class="benefit">200个精选案例</div>
+                          <div class="benefit">200名设计师</div>
+                          <div class="benefit">免息分期</div>
+                          <div class="benefit">实景展厅</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bottom-container">
+                      <div class="left-discount-container">
+                        <div class="left-discount-text-container">
+                          <div class="left-discount-text">已优惠2</div>
+                          <div class="left-quest-icon"></div>
+                          <div class="left-quest-decoration"></div>
+                        </div>
+                      </div>
+                      <div class="right-gift-recommend-info-container">
+                        <div class="right-recommend-container">
+                          <div class="cute-img-container">
+                            <div class="cute-img"></div>
+                          </div>
+                          <div class="recommend-words-container">
+                            “ 张家港市杨舍镇塘市美心木门经营部 ”
+                          </div>
+                        </div>
+
+                        <div class="right-gift-container">
+                          <div class="gift-img-container">
+                            <div class="gift-img">礼</div>
+                          </div>
+                          <div class="gift-text-container">精美礼品一份</div>
+                        </div>
+
+                        <div class="right-group-gift-container">
+                          <div class="group-gift-img-container">
+                            <div class="group-gift-img">团</div>
+                          </div>
+                          <div class="group-gift-text-container">
+                            精美礼品一份
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </van-tab>
+            <van-tab title="建筑商户">内容 2</van-tab>
+            <van-tab title="家居软装">内容 3</van-tab>
+          </van-tabs>
+        </div> -->
+
+        <!-- 新选择装修的类型select -->
+        <tabList>
+          <div slot="item0">
+            <div class="decoration-type-container">
+              <div class="company-container">
+                <div class="company-item-container">
+                  <div class="company-item">
+                    <div class="empty-top-padding-container"></div>
+                    <div class="top-container">
+                      <div class="left-img-container">
+                        <img
+                          class="left-shop-img"
+                          src="http://p3.music.126.net/wGbO39sAMI9lroiLYXJsDQ==/109951167760004737.jpg?param=400y400"
                         />
                       </div>
                       <div class="right-info-container">
@@ -178,19 +268,24 @@
                   </div>
                 </div>
               </div>
-            </van-tab>
-            <van-tab title="建筑商户">内容 2</van-tab>
-            <van-tab title="家居软装">内容 3</van-tab>
-          </van-tabs>
-        </div>
+            </div>
+          </div>
+          <div slot="item1">建筑商户</div>
+          <div slot="item2">家居软装</div>
+        </tabList>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import tabList from '@/components/index/tab-list/tabList.vue';
+
 export default {
   name: 'Index',
+  components: {
+    tabList,
+  },
   props: {
     msg: String,
   },
@@ -222,7 +317,6 @@ export default {
   //不加的话 iphone5会多出来一块
   overflow-x: hidden;
 
-
   .page-wrapper {
     // height: 100vh;
     width: 100vw;
@@ -230,18 +324,90 @@ export default {
     display: flex;
     flex-direction: column;
 
-    margin-bottom: calc(120 / 75)+rem;
+    margin-bottom: calc(120 / 75) + rem;
 
     // 头部
     .header {
-      height: 1.84rem;
+      height: calc(118 / 75) + rem;
       width: 100vw;
       background-color: #00995a;
-
+      // vant search 修改专区
       .van-search {
+        position: relative;
+        box-sizing: border-box;
         height: 100%;
         width: 100vw;
         background-color: #00995a;
+        padding: 0 calc(27 / 75) + rem 0 0;
+        .van-search__content {
+          height: calc(56 / 75) + rem;
+        }
+      }
+
+      .search-left-container {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: calc(176 / 75) + rem;
+        .search-left-img-container {
+          position: relative;
+          width: calc(53 / 75) + rem;
+          height: calc(53 / 75) + rem;
+          .search-left-img {
+            height: 100%;
+            background-image: url('@/assets/img/positon-img.png');
+            background-repeat: no-repeat;
+            background-size: 100%;
+          }
+        }
+        .search-left-text-container {
+          position: relative;
+          //   width: calc(76.5 / 75) + rem;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          font-size: calc(26 / 75) + rem;
+
+          color: white;
+          //   font-weight: bold;
+          .search-left-text {
+            height: fit-content;
+            margin-right: calc(10.5 / 75) + rem;
+          }
+          .search-left-arrow {
+            height: 0;
+            width: 0;
+            border: 1px solid black;
+            border-top-color: white;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+
+            border-top-width: calc(12 / 75) + rem;
+            border-right-width: calc(8.5 / 75) + rem;
+            border-bottom-width: 0px;
+            border-left-width: calc(8.5 / 75) + rem;
+          }
+          //   &::after {
+          //     content: '';
+
+          //     height: 0;
+          //     width: 0;
+          //     border: 1px solid black;
+          //     border-top-color: #000000;
+          //     border-right-color: transparent;
+          //     border-bottom-color: transparent;
+          //     border-left-color: transparent;
+
+          //     border-top-width: 20px;
+          //     border-right-width: 20px;
+          //     border-bottom-width: 20px;
+          //     border-left-width: 20px;
+          //   }
+        }
       }
     }
 
@@ -301,22 +467,21 @@ export default {
             justify-content: center;
             align-items: center;
             width: 100%;
-            .installment-application-img-container{
+            .installment-application-img-container {
               width: 1.213rem;
               height: 1.213rem;
 
               background-color: orange;
               border-radius: 50%;
-              .installment-application-img{
+              .installment-application-img {
                 width: 100%;
                 height: 100%;
                 background-image: url('@/assets/img/installmentApplication.png');
                 background-repeat: no-repeat;
                 background-size: 100%;
               }
-
             }
-            .installment-application-text-container{
+            .installment-application-text-container {
               margin-top: 0.28rem;
               font-size: 0.373rem;
               font-weight: 400;
@@ -332,19 +497,18 @@ export default {
             justify-content: center;
             align-items: center;
             width: 100%;
-            .recommend-gift-img-container{
+            .recommend-gift-img-container {
               width: 1.213rem;
               height: 1.213rem;
-              .recommend-gift-img{
+              .recommend-gift-img {
                 width: 100%;
                 height: 100%;
                 background-image: url('@/assets/img/recommendGift.png');
                 background-repeat: no-repeat;
                 background-size: 100%;
               }
-
             }
-            .recommend-gift-text-container{
+            .recommend-gift-text-container {
               margin-top: 0.28rem;
               font-size: 0.373rem;
               font-weight: 400;
@@ -360,21 +524,20 @@ export default {
             justify-content: center;
             align-items: center;
             width: 100%;
-            .total-activity-img-container{
+            .total-activity-img-container {
               width: 1.213rem;
               height: 1.213rem;
               background-color: #65c3c7;
               border-radius: 50%;
-              .total-activity-img{
+              .total-activity-img {
                 width: 100%;
                 height: 100%;
                 background-image: url('@/assets/img/totalActivity.png');
                 background-repeat: no-repeat;
                 background-size: 100%;
               }
-
             }
-            .total-activity-text-container{
+            .total-activity-text-container {
               margin-top: 0.28rem;
               font-size: 0.373rem;
               font-weight: 400;
@@ -391,19 +554,18 @@ export default {
             align-items: center;
 
             width: 100%;
-            .store-in-img-container{
+            .store-in-img-container {
               width: 1.213rem;
               height: 1.213rem;
-              .store-in-img{
+              .store-in-img {
                 width: 100%;
                 height: 100%;
                 background-image: url('@/assets/img/storeIn.png');
                 background-repeat: no-repeat;
                 background-size: 100%;
               }
-
             }
-            .store-in-text-container{
+            .store-in-text-container {
               margin-top: 0.28rem;
               font-size: 0.373rem;
               font-weight: 400;
@@ -440,9 +602,9 @@ export default {
         width: calc(100vw - 0.67rem);
         background-color: white;
         border-radius: 0.6rem;
-        margin:  0 auto;
+        margin: 0 auto;
         //修改tabList的总长度并居中
-        ::v-deep .van-tabs__nav{
+        ::v-deep .van-tabs__nav {
           position: relative;
           width: calc(100vw - 0.67rem);
           //height: calc(44.5 / 75)+rem;
@@ -455,7 +617,6 @@ export default {
           //display: flex;
           //flex-direction: row;
           //justify-content: center;
-
         }
 
         // 修改tab字体大小
@@ -472,7 +633,7 @@ export default {
         }
 
         //修改tab-nav 滑块的处于的高度
-        ::v-deep .van-tabs__line{
+        ::v-deep .van-tabs__line {
           bottom: 0.6rem;
         }
 
@@ -488,7 +649,7 @@ export default {
 
           .company-item-container {
             position: relative;
-            height: calc(368.2 / 75)+rem;
+            height: calc(368.2 / 75) + rem;
             width: calc(100vw - 0.67rem);
 
             .company-item {
@@ -511,12 +672,12 @@ export default {
                 //top: -0.4547rem;
                 margin: 0 auto;
               }
-              .empty-top-padding-container{
-                height: calc(34.1 / 75)+rem;
+              .empty-top-padding-container {
+                height: calc(34.1 / 75) + rem;
               }
               .top-container {
                 position: relative;
-                height: calc(157 / 75)+rem;
+                height: calc(157 / 75) + rem;
                 width: 100%;
                 display: flex;
                 flex-direction: row;
@@ -549,7 +710,7 @@ export default {
                   padding-left: 0.2547rem;
                   font-size: 10px;
                   width: 100%;
-                  max-width: calc(511 / 75)+rem;
+                  max-width: calc(511 / 75) + rem;
 
                   .name-text-container {
                     position: relative;
@@ -646,7 +807,7 @@ export default {
                     position: relative;
                     display: flex;
                     justify-content: space-between;
-                    margin-right: calc(19 / 75)+rem;
+                    margin-right: calc(19 / 75) + rem;
 
                     .address {
                       font-size: 0.267rem;
@@ -685,6 +846,10 @@ export default {
                       text-align: center;
                       font-size: 0.24rem;
                       font-weight: bold;
+                      //   -webkit-transform: scale(0.95);
+
+                      //   border: calc(1 / 75) + rem solid #f7f4f6;
+                      background-color: #f7f4f6;
                     }
                   }
                 }
@@ -764,17 +929,17 @@ export default {
                         color: #ff6133;
                       }
                     }
-                    .left-quest-decoration{
+                    .left-quest-decoration {
                       width: 0px;
                       height: 0px;
-                      border-left: 0px solid #ffecea;;
+                      border-left: 0px solid #ffecea;
                       border-right: 0px solid transparent;
                       border-top: 20px solid transparent;
                       border-bottom: 20px solid transparent;
 
-                      border-left-width: calc(9 / 75)+rem;
-                      border-top-width: calc(14.5 / 75)+rem;
-                      border-bottom-width: calc(14.5 / 75)+rem;
+                      border-left-width: calc(9 / 75) + rem;
+                      border-top-width: calc(14.5 / 75) + rem;
+                      border-bottom-width: calc(14.5 / 75) + rem;
 
                       background-color: white;
                     }
@@ -789,8 +954,8 @@ export default {
                   justify-content: space-between;
                   margin-left: 0.2547rem;
                   font-size: 10px;
-                  width: calc(530 / 75)+rem;
-                  max-width: calc(530 / 75)+rem;
+                  width: calc(530 / 75) + rem;
+                  max-width: calc(530 / 75) + rem;
 
                   margin-top: 0.36rem;
 
@@ -830,7 +995,7 @@ export default {
                       text-overflow: ellipsis;
                       white-space: nowrap;
                       overflow: hidden;
-                      max-width: calc( 450 / 75 )+rem;
+                      max-width: calc(450 / 75) + rem;
                     }
                   }
 
