@@ -53,11 +53,29 @@ export default {
       ],
     };
   },
+  created () {
+    const topath = this.$route.path
+    if (topath === '/') {
+      // 页面刷新
+      this.activeTabBarIndex = Number(localStorage.getItem('activeTabBarIndex')) || 0;
+    } else {
+      this.setActive(topath)
+    }
+  },
   //  方法区
   methods: {
+    setActive (path) {
+      this.tabBarData.forEach((tab, i) => {
+        if (tab.path === path) {
+          this.activeTabBarIndex = i
+          return false
+        }
+      })
+    },
     //改变正在使用的变量activeTabItemIndex
     changeActiveTabBarIndex(index) {
       this.activeTabBarIndex = index;
+      localStorage.setItem('activeTabBarIndex', index)
       console.log(this.activeTabBarIndex);
     },
   },

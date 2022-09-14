@@ -49,6 +49,20 @@ const routes = [
         meta: {
             title: '我的'
         }
+    },{
+        path: '/usertellist',
+        name: 'usertellist',
+        component: () => import('@/views/mine/usertelList.vue'),
+        meta: {
+            title: '客户信息'
+        }
+    },{
+        path: '/collection',
+        name: 'collection',
+        component: () => import('@/views/mine/collection.vue'),
+        meta: {
+            title: '我的收藏'
+        }
     },
 
 
