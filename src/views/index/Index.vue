@@ -327,7 +327,7 @@ export default {
     display: flex;
     flex-direction: column;
 
-    margin-bottom: calc(120 / 75) + rem;
+    margin-bottom: calc(96.5 / 75) + rem;
 
     // 头部
     .header {
@@ -420,7 +420,7 @@ export default {
       flex: 1;
       width: 100vw;
 
-      //margin-bottom: calc(120 / 75)+rem;
+      margin-bottom: calc(23.5 / 75) + rem;
       //轮播图
       .swiper-container {
         position: relative;

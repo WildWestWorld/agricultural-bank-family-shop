@@ -219,7 +219,7 @@ export default {
             justify-content: space-between;
 
             padding-left: 0.2547rem;
-            font-size: 10px;
+            // font-size: 10px;
             width: 100%;
             max-width: calc(511 / 75) + rem;
 
