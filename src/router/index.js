@@ -24,6 +24,27 @@ const routes = [
             meta: {
                 title: '公司详情'
             }
+        }, {
+            path: '/companyProfile',
+            name: 'companyProfile',
+            component: () => import('@/views/company/companyProfile.vue'),
+            meta: {
+                title: '公司简介'
+            }
+        }, {
+            path: '/designerExample',
+            name: 'designerExample',
+            component: () => import('@/views/design/designerExample.vue'),
+            meta: {
+                title: '设计案例'
+            }
+        }, {
+            path: '/lastActivity',
+            name: 'lastActivity',
+            component: () => import('@/views/activity/lastActivity.vue'),
+            meta: {
+                title: '最近活动'
+            }
         },
 
         ]
