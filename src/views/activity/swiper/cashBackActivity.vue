@@ -3,21 +3,32 @@
     <div class="header">
       <!-- 导航栏 -->
       <!-- <div class="total-nav-container">
-            <div class="iphone-info-container"></div>
-    
-            <div class="nav-container">
-              <div class="nav-wrapper">
-                <div class="nav-img-container">
-                  <div class="nav-img"></div>
+              <div class="iphone-info-container"></div>
+      
+              <div class="nav-container">
+                <div class="nav-wrapper">
+                  <div class="nav-img-container">
+                    <div class="nav-img"></div>
+                  </div>
+                  <div class="nav-text-container">公司简介</div>
                 </div>
-                <div class="nav-text-container">公司简介</div>
               </div>
-            </div>
-          </div> -->
-      <JKNavigator title="！分期活动蓝湖无原型图！"></JKNavigator>
+            </div> -->
+      <JKNavigator title="我要领券"></JKNavigator>
     </div>
     <div class="content">
-      <div class="company-profile-bcg-container"></div>
+      <div class="cash-back-bcg-container">
+        <div class="cash-back-bcg"></div>
+      </div>
+      <div class="collect-ticket-info-container">
+        <div class="collect-ticket-text-container">
+          <div class="collect-ticket-text">刷家装卡</div>
+          <div class="collect-ticket-text">享满千返百权益</div>
+        </div>
+        <div class="collect-ticket-button-container">
+          <div class="collect-ticket-button-text-container">立即领取</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -147,19 +158,68 @@ export default {
     // background-image: url('@/assets/img/company-profile.png');
     // background-repeat: no-repeat;
     // background-size: 100% 100%;
-    .company-profile-bcg-container {
-      position: absolute;
+    .cash-back-bcg-container {
+      position: relative;
       box-sizing: border-box;
       left: 0;
       top: 0;
       width: 100%;
-      height: 100%;
+      height: calc(809 / 75) + rem;
+      .cash-back-bcg {
+        position: relative;
+        width: 100%;
+        height: 100%;
 
-      background-image: url('@/assets/img/design-example.png');
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
+        background-image: url('@/assets/img/cash-back-bcg.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+    .collect-ticket-info-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-      padding-bottom: calc(96.5 / 75) + rem;
+      top: calc(-1 / 75) + rem;
+
+      height: calc(397 / 75) + rem;
+      width: 100%;
+      background-color: #fd9346;
+      .collect-ticket-text-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        color: #ffffff;
+        font-size: calc(54 / 75) + rem;
+        font-family: 'HYLingXinJ';
+        .collect-ticket-text {
+          text-align: center;
+          height: 100%;
+        }
+      }
+      .collect-ticket-button-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: calc(58 / 75) + rem;
+        width: calc(234 / 75) + rem;
+        background: #ffffff;
+        // box-shadow: 0px 5px 20px 0px rgba(221, 114, 36, 0.7);
+        border-radius: calc(29 / 75) + rem;
+
+        margin-top: calc(64 / 75) + rem;
+        .collect-ticket-button-text-container {
+          font-size: calc(32 / 75) + rem;
+          font-family: SourceHanSansCN;
+          font-weight: 400;
+          color: #fd9346;
+
+          text-align: center;
+        }
+      }
     }
   }
 }

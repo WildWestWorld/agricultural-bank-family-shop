@@ -14,7 +14,7 @@
               </div>
             </div>
           </div> -->
-      <JKNavigator title="设计案例"></JKNavigator>
+      <JKNavigator title="最近活动"></JKNavigator>
     </div>
     <div class="content">
       <div class="company-profile-bcg-container"></div>

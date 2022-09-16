@@ -1,6 +1,6 @@
 <template>
   <!-- 导航栏 -->
-  <div class="total-nav-container">
+  <div class="total-nav-container" :style="'background-color:' + color">
     <div class="iphone-info-container"></div>
 
     <div class="nav-container">
@@ -23,6 +23,10 @@ export default {
     title: {
       type: String,
       value: '',
+    },
+    color: {
+      type: String,
+      value: 'white',
     },
   },
   //变量区
@@ -55,6 +59,9 @@ export default {
   position: relative;
   display: flex;
   flex-direction: column;
+  z-index: 999;
+
+  background-color: white;
   //   justify-content: center;
   // height: calc(44 / 75) + rem;
 

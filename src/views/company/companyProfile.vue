@@ -138,6 +138,7 @@ export default {
   .content {
     position: relative;
     display: flex;
+    // flex: 1;
     flex-direction: column;
     height: calc(1206 / 75) + rem;
     width: 100vw;

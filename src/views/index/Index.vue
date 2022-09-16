@@ -26,13 +26,16 @@
         <!-- 轮播图 -->
         <div class="swiper-container">
           <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
-            <van-swipe-item>
+            <van-swipe-item @click="navToPage('installmentActivity')">
               <img src="@/assets/img/swiper-installment-activity.jpg" />
             </van-swipe-item>
-            <van-swipe-item>
+            <van-swipe-item @click="navToPage('scanCodeActivity')">
+              <img src="@/assets/img/swiper-scan-code-activity.png" />
+            </van-swipe-item>
+            <van-swipe-item @click="navToPage('cashBackActivity')">
               <img src="@/assets/img/swiper-cash-back.jpg" />
             </van-swipe-item>
-            <van-swipe-item>
+            <van-swipe-item @click="navToPage('socialActivity')">
               <img src="@/assets/img/swiper-social-activity.jpg" />
             </van-swipe-item>
             <van-swipe-item>
@@ -303,6 +306,14 @@ export default {
   //生命周期区
   mounted() {
     console.log(this.$store);
+  },
+  methods: {
+    JKTest() {
+      console.log('测试');
+    },
+    navToPage(path) {
+      this.$router.push('/' + path);
+    },
   },
 };
 </script>

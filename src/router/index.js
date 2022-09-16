@@ -45,7 +45,36 @@ const routes = [
             meta: {
                 title: '最近活动'
             }
+        }, {
+            path: '/installmentActivity',
+            name: 'installmentActivity',
+            component: () => import('@/views/activity/swiper/installmentActivity.vue'),
+            meta: {
+                title: '分期活动'
+            }
+        }, {
+            path: '/cashBackActivity',
+            name: 'cashBackActivity',
+            component: () => import('@/views/activity/swiper/cashBackActivity.vue'),
+            meta: {
+                title: '千返百活动'
+            }
+        }, {
+            path: '/scanCodeActivity',
+            name: 'scanCodeActivity',
+            component: () => import('@/views/activity/swiper/scanCodeActivity.vue'),
+            meta: {
+                title: '社群福利'
+            }
+        }, {
+            path: '/socialActivity',
+            name: 'socialActivity',
+            component: () => import('@/views/activity/swiper/socialActivity.vue'),
+            meta: {
+                title: '家装社区活动'
+            }
         },
+
 
         ]
     },
