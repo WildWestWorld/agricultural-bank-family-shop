@@ -65,14 +65,12 @@ export default {
       tabListPosition: 0,
       tabListHeaderData: [
         {
-          name: '家装公司',
+          name: '优惠券',
         },
         {
-          name: '建筑商户',
+          name: '商城优惠券',
         },
-        {
-          name: '家居软装',
-        },
+
       ],
     };
   },
@@ -122,7 +120,8 @@ export default {
   flex-direction: column;
   .tab-list-wrapper {
     position: relative;
-    width: calc(100vw - 0.67rem);
+    /* width: calc(100vw - 0.67rem); */
+    width: 100%;
     height: fit-content;
     margin: 0 auto;
 
@@ -131,14 +130,16 @@ export default {
 
     background-color: white;
 
-    border-radius: 0.6rem;
+    /* border-radius: 0.6rem; */
     .tab-list-header-container {
       position: relative;
-      height: calc(81 / 75) + rem;
+      height: calc(91 / 75) + rem;
 
       display: flex;
       flex-direction: row;
 
+      border-bottom: 1px solid #DDDDDD;
+      border-bottom-width: calc(1 /75)+rem;
       //   &:last-child {
       //     background-color: #00995a;
       //   }
@@ -148,11 +149,11 @@ export default {
       .tab-list-header-slider {
         content: '';
         position: absolute;
-        background-color: #00995a;
+        background-color: #EC7842;
         width: calc(88 / 75) + rem;
-        height: calc(6 / 75) + rem;
+        height: calc(5 / 75) + rem;
         z-index: 1;
-        /* top: calc(64.6 / 75) + rem; */
+        /* top: calc(86 / 75) + rem; */
         bottom: 0;
         // transform: translateX(calc(117) + px) translateX(-50%);
         transition-duration: 0.3s;
@@ -169,10 +170,10 @@ export default {
 
           width: 100%;
           text-align: center;
-          border-right: 1px solid #d1d2d1;
+          /* border-right: 1px solid #d1d2d1; */
         }
         .active {
-          color: #00995a;
+          color: #EC7842;
         }
       }
     }
@@ -193,7 +194,6 @@ export default {
           height: 100%;
           .tab-list-content {
             position: relative;
-            flex-direction: column;
             height: 100%;
           }
         }

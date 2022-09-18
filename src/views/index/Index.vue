@@ -38,7 +38,7 @@
             <van-swipe-item @click="navToPage('socialActivity')">
               <img src="@/assets/img/swiper-social-activity.jpg" />
             </van-swipe-item>
-            <van-swipe-item>
+            <van-swipe-item @click="navToPage('shopAreaActivity')">
               <img src="@/assets/img/swiper-shopping-area-activity.jpg" />
             </van-swipe-item>
           </van-swipe>
@@ -64,7 +64,7 @@
               </div>
               <div class="total-activity-text-container">活动集锦</div>
             </div>
-            <div class="store-in-container">
+            <div class="store-in-container"  @click="navToPage('ticketCenter')">
               <div class="store-in-img-container">
                 <div class="store-in-img"></div>
               </div>

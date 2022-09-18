@@ -27,51 +27,65 @@ const routes = [
         }, {
             path: '/companyProfile',
             name: 'companyProfile',
-            component: () => import('@/views/company/companyProfile.vue'),
+            component: () => import('@/views/activity/company-detail-activity/companyProfile.vue'),
             meta: {
                 title: '公司简介'
             }
         }, {
             path: '/designerExample',
             name: 'designerExample',
-            component: () => import('@/views/design/designerExample.vue'),
+            component: () => import('@/views/activity/company-detail-activity/designerExample.vue'),
             meta: {
                 title: '设计案例'
             }
         }, {
             path: '/lastActivity',
             name: 'lastActivity',
-            component: () => import('@/views/activity/lastActivity.vue'),
+            component: () => import('@/views/activity/company-detail-activity/lastActivity.vue'),
             meta: {
                 title: '最近活动'
             }
         }, {
             path: '/installmentActivity',
             name: 'installmentActivity',
-            component: () => import('@/views/activity/swiper/installmentActivity.vue'),
+            component: () => import('@/views/activity/index-swiper/installmentActivity.vue'),
             meta: {
                 title: '分期活动'
             }
         }, {
             path: '/cashBackActivity',
             name: 'cashBackActivity',
-            component: () => import('@/views/activity/swiper/cashBackActivity.vue'),
+            component: () => import('@/views/activity/index-swiper/cashBackActivity.vue'),
             meta: {
                 title: '千返百活动'
             }
         }, {
             path: '/scanCodeActivity',
             name: 'scanCodeActivity',
-            component: () => import('@/views/activity/swiper/scanCodeActivity.vue'),
+            component: () => import('@/views/activity/index-swiper/scanCodeActivity.vue'),
             meta: {
                 title: '社群福利'
             }
         }, {
             path: '/socialActivity',
             name: 'socialActivity',
-            component: () => import('@/views/activity/swiper/socialActivity.vue'),
+            component: () => import('@/views/activity/index-swiper/socialActivity.vue'),
             meta: {
                 title: '家装社区活动'
+            }
+        },{
+            path: '/shopAreaActivity',
+            name: 'shopAreaActivity',
+            component: () => import('@/views/activity/index-swiper/shopAreaActivity.vue'),
+            meta: {
+                title: '家装商圈活动'
+            }
+        },{
+            path: '/ticketCenter',
+            name: 'ticketCenter',
+            component: () => import('@/views/ticket/ticketCenter.vue'),
+            meta: {
+                title: '领券中心'
             }
         },
 
