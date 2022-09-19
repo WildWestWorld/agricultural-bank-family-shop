@@ -3,21 +3,37 @@
     <div class="header">
       <!-- 导航栏 -->
       <!-- <div class="total-nav-container">
-            <div class="iphone-info-container"></div>
-    
-            <div class="nav-container">
-              <div class="nav-wrapper">
-                <div class="nav-img-container">
-                  <div class="nav-img"></div>
+              <div class="iphone-info-container"></div>
+      
+              <div class="nav-container">
+                <div class="nav-wrapper">
+                  <div class="nav-img-container">
+                    <div class="nav-img"></div>
+                  </div>
+                  <div class="nav-text-container">公司简介</div>
                 </div>
-                <div class="nav-text-container">公司简介</div>
               </div>
-            </div>
-          </div> -->
-      <JKNavigator title="最近活动"></JKNavigator>
+            </div> -->
+      <JKNavigator title="我要咨询"></JKNavigator>
     </div>
     <div class="content">
-      <div class="company-profile-bcg-container"></div>
+      <div class="consult-container">
+        <div class="consult-button-container">
+          <div
+            class="company-profile-button-container"
+            @click="navToPage('companyProfile')"
+          >
+            <div class="company-profile-text">公司简介</div>
+          </div>
+
+          <div
+            class="selct-designer-button-container"
+            @click="navToPage('designerExample')"
+          >
+            <div class="selct-designer-text">钦点设计师</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -26,7 +42,7 @@
 import JKNavigator from '@/components/common/jk-navigator/JKNavigator.vue';
 
 export default {
-  name: 'companyProfile',
+  name: 'wantConsulit',
   components: {
     JKNavigator,
   },
@@ -43,6 +59,9 @@ export default {
   methods: {
     JKTest() {
       console.log('测试一下');
+    },
+    navToPage(path) {
+      this.$router.push('/' + path);
     },
   },
 };
@@ -147,19 +166,76 @@ export default {
     // background-image: url('@/assets/img/company-profile.png');
     // background-repeat: no-repeat;
     // background-size: 100% 100%;
-    .company-profile-bcg-container {
+    .consult-container {
       position: relative;
-      box-sizing: border-box;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
+      display: flex;
+      flex-direction: row;
+      height: calc(1207.05 / 75) + rem;
+      width: 100vw;
 
-      background-image: url('@/assets/img/last-activity-bgc.png');
+      background-image: url(@/assets/img/want-consult-img.png);
       background-repeat: no-repeat;
       background-size: 100% 100%;
+      .consult-button-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: calc(462.9 / 75) + rem;
+        width: 100%;
+        .company-profile-button-container {
+          position: relative;
+          display: flex;
 
-      padding-bottom: calc(96.5 / 75) + rem;
+          justify-content: center;
+          align-items: center;
+
+          height: calc(77.3 / 75) + rem;
+          width: calc(477.7 / 75) + rem;
+
+          margin-top: calc(217.6 / 75) + rem;
+
+          background: linear-gradient(0deg, #ff6d00, #ed6700);
+          border: 4px solid #ffffff;
+          border-width: calc(4 / 75) + rem;
+          box-shadow: 0px calc(12 / 75) + rem calc(29 / 75) + rem 0px #000000;
+
+          border-radius: calc(40 / 75) + rem;
+          .company-profile-text {
+            font-size: calc(48 / 75) + rem;
+            font-family: HappyZcool-2016;
+            font-weight: 400;
+            color: #ffffff;
+            text-shadow: 0px calc(5 / 75) + rem calc(5 / 75) + rem #000000;
+          }
+        }
+        .selct-designer-button-container {
+          position: relative;
+          display: flex;
+
+          justify-content: center;
+          align-items: center;
+
+          height: calc(77.3 / 75) + rem;
+          width: calc(477.7 / 75) + rem;
+
+          margin-top: calc(90.7 / 75) + rem;
+
+          background: linear-gradient(0deg, #ff6d00, #ed6700);
+          border: 4px solid #ffffff;
+          border-width: calc(4 / 75) + rem;
+          box-shadow: 0px calc(12 / 75) + rem calc(29 / 75) + rem 0px #000000;
+
+          border-radius: calc(40 / 75) + rem;
+          .selct-designer-text {
+            font-size: calc(48 / 75) + rem;
+            font-family: HappyZcool-2016;
+            font-weight: 400;
+            color: #ffffff;
+            text-shadow: 0px calc(5 / 75) + rem calc(5 / 75) + rem #000000;
+          }
+        }
+      }
     }
   }
 }

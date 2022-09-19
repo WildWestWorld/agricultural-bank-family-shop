@@ -22,9 +22,10 @@
         <div class="company-detail-card-wrapper">
           <!-- 轮播图 -->
           <div class="company-detail-card-swppier-container">
-            <div class="company-detail-card-img-container">
+            <JKSwiperV2 :imgList="imgList"></JKSwiperV2>
+            <!-- <div class="company-detail-card-img-container">
               <div class="company-detail-card-img"></div>
-            </div>
+            </div> -->
           </div>
           <!-- 公司的名字和详细的地址 -->
           <div class="company-detail-card-info-container">
@@ -147,17 +148,51 @@
           </div>
         </div>
       </div>
+      <!-- 工具栏 -->
+      <div class="tool-bar-container">
+        <div class="tool-bar-wrapper">
+          <div class="left-favor-container">
+            <div class="favor-img-text-container">
+              <div class="favor-img-container">
+                <div class="favor-img"></div>
+              </div>
+              <div class="favor-text-container">收藏</div>
+            </div>
+            <div
+              class="consult-img-text-container"
+              @click="navToPage('wantConsult')"
+            >
+              <div class="consult-img-container">
+                <div class="consult-img"></div>
+              </div>
+              <div class="consult-text-container">咨询</div>
+            </div>
+          </div>
+          <div class="right-order-container">
+            <div class="order-button-container">
+              <div class="order-button-text">立即预约</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import JKNavigator from '@/components/common/jk-navigator/JKNavigator.vue';
+import JKSwiperV2 from '@/components/common/jk-swiper/JKSwiperV2.vue';
 export default {
   name: 'companyProfile',
   //变量区
   data() {
-    return {};
+    return {
+      imgList: [
+        require('@/assets/img/company-swpier-img1.png'),
+        require('@/assets/img/company-swpier-img1.png'),
+        require('@/assets/img/company-swpier-img1.png'),
+      ],
+    };
   },
   //生命周期区
   mounted() {
@@ -173,7 +208,7 @@ export default {
       this.$router.push('/' + path);
     },
   },
-  components: { JKNavigator },
+  components: { JKNavigator, JKSwiperV2 },
 };
 </script>
 
@@ -833,6 +868,129 @@ export default {
               background-image: url('@/assets/img/example-info-arrow-img.png');
               background-repeat: no-repeat;
               background-size: 100% 100%;
+            }
+          }
+        }
+      }
+    }
+    //工具栏
+    .tool-bar-container {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      height: calc(113 / 75) + rem;
+      width: 100%;
+      background-color: white;
+      .tool-bar-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: calc(113 / 75) + rem;
+        width: 100%;
+        background-color: white;
+        border-top: 2px solid #b4b4b4;
+        border-top-width: calc(2 / 75) + rem;
+        .left-favor-container {
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          width: calc(379 / 75) + rem;
+          height: 100%;
+          .favor-img-text-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+
+            height: fit-content;
+            // width: calc(40 / 75) + rem;
+            width: fit-content;
+            margin-left: calc(97 / 75) + rem;
+            .favor-img-container {
+              position: relative;
+              display: flex;
+              flex-direction: column;
+
+              width: calc(40 / 75) + rem;
+              height: calc(40 / 75) + rem;
+              .favor-img {
+                height: 100%;
+                width: 100%;
+
+                background-image: url(@/assets/img/favour-img.png);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+              }
+            }
+            .favor-text-container {
+              margin-top: calc(13 / 75) + rem;
+              font-size: calc(20 / 75) + rem;
+              font-family: 'SourceHanSansCN';
+              font-weight: 400;
+              color: #000000;
+              white-space: nowrap;
+            }
+          }
+          .consult-img-text-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+
+            height: fit-content;
+            // width: calc(40 / 75) + rem;
+            width: fit-content;
+
+            margin-left: calc(137 / 75) + rem;
+
+            .consult-img-container {
+              position: relative;
+              display: flex;
+              flex-direction: column;
+
+              width: calc(40 / 75) + rem;
+              height: calc(40 / 75) + rem;
+              .consult-img {
+                height: 100%;
+                width: 100%;
+
+                background-image: url(@/assets/img/consult-img.png);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+              }
+            }
+            .consult-text-container {
+              margin-top: calc(13 / 75) + rem;
+
+              font-size: calc(20 / 75) + rem;
+              font-family: 'SourceHanSansCN';
+              font-weight: 400;
+              color: #000000;
+              white-space: nowrap;
+            }
+          }
+        }
+        .right-order-container {
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 100%;
+          width: calc(371 / 75) + rem;
+          .order-button-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc(345 / 75) + rem;
+            height: calc(78 / 75) + rem;
+            background: #fe6635;
+            border-radius: calc(39 / 75) + rem;
+            .order-button-text {
+              font-size: calc(30 / 75) + rem;
+              font-family: SourceHanSansCN;
+              font-weight: 400;
+              color: #ffffff;
             }
           }
         }

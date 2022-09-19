@@ -148,7 +148,7 @@ export default {
     // background-repeat: no-repeat;
     // background-size: 100% 100%;
     .company-profile-bcg-container {
-      position: absolute;
+      position: relative;
       box-sizing: border-box;
       left: 0;
       top: 0;

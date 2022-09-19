@@ -20,17 +20,17 @@ export default {
   props: {
     info: {
       type: Object,
-      value: () => {
+      default: () => {
         null;
       },
     },
     forIndex: {
       type: Number,
-      value: null,
+      default: null,
     },
     activeIndex: {
       type: Number,
-      value: 0,
+      default: 0,
     },
   },
   computed: {

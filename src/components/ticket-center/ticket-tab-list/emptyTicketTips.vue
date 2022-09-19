@@ -8,7 +8,9 @@
     </div>
     <div class="tips-button-container">
       <div class="tips-button-wrapper">
-        <div class="tips-button-text">猜你喜欢</div>
+        <div class="tips-button-text" @click="navToPage('guessFavorite')">
+          猜你喜欢
+        </div>
       </div>
     </div>
   </div>
@@ -16,13 +18,11 @@
 
 <script>
 export default {
-  name: "emptyTicketTips",
+  name: 'emptyTicketTips',
 
   //变量区
   data() {
-    return {
-
-    };
+    return {};
   },
   //生命周期区
   mounted() {
@@ -32,7 +32,10 @@ export default {
   //方法区
   methods: {
     JKTest() {
-      console.log("测试一下");
+      console.log('测试一下');
+    },
+    navToPage(path) {
+      this.$router.push('/' + path);
     },
   },
 };
@@ -63,7 +66,7 @@ export default {
         height: 100%;
         width: 100%;
 
-        background-image: url("@/assets/img/empty-ticket-img.png");
+        background-image: url('@/assets/img/empty-ticket-img.png');
         background-repeat: no-repeat;
         background-size: 100% 100%;
       }

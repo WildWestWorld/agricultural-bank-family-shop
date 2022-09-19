@@ -22,11 +22,11 @@ export default {
   props: {
     title: {
       type: String,
-      value: '',
+      default: '',
     },
     color: {
       type: String,
-      value: 'white',
+      default: 'white',
     },
   },
   //变量区

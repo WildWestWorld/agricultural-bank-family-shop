@@ -25,16 +25,16 @@
           </div>
           <!-- 周年庆信息 -->
           <div class="shop-anniversary-info-container">
-              <div class="shop-anniversary-info-wrapper">
-                  <div class="top-info-img-container">
-                      <div class="top-info-img"></div>
-                  </div>
-                  <div class="bottom-entroll-button-container">
-                      <div class="bottom-entroll-img-container">
-                          <div class="bottom-entroll-img"></div>
-                      </div>
-                  </div>
+            <div class="shop-anniversary-info-wrapper">
+              <div class="top-info-img-container">
+                <div class="top-info-img"></div>
               </div>
+              <div class="bottom-entroll-button-container">
+                <div class="bottom-entroll-img-container">
+                  <div class="bottom-entroll-img"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -43,10 +43,10 @@
 </template>
 
 <script>
-import JKNavigator from "@/components/common/jk-navigator/JKNavigator.vue";
+import JKNavigator from '@/components/common/jk-navigator/JKNavigator.vue';
 
 export default {
-  name: "companyProfile",
+  name: 'companyProfile',
   components: {
     JKNavigator,
   },
@@ -62,7 +62,7 @@ export default {
   //方法区
   methods: {
     JKTest() {
-      console.log("测试一下");
+      console.log('测试一下');
     },
   },
 };
@@ -132,7 +132,7 @@ export default {
             // margin-bottom: calc(27 / 75) + rem;
 
             .nav-img {
-              background-image: url("@/assets/img/nav-left-arrow.png");
+              background-image: url('@/assets/img/nav-left-arrow.png');
               background-repeat: no-repeat;
               background-size: 100% 100%;
               height: 100%;
@@ -146,7 +146,7 @@ export default {
 
             // margin-bottom: calc(27 / 75) + rem;
             font-size: calc(36 / 75) + rem;
-            font-family: "SourceHanSansCN-Medium";
+            font-family: 'SourceHanSansCN-Medium';
             font-weight: 500;
             // font-size: 18px !important;
           }
@@ -184,15 +184,14 @@ export default {
           position: relative;
           display: flex;
           align-items: center;
-          justify-content:center;
+          justify-content: center;
           height: calc(177 / 75) + rem;
           width: 100%;
 
-          .shop-anniversary-title{
-              
+          .shop-anniversary-title {
             height: fit-content;
             width: fit-content;
-            font-size: calc(84 /75)+rem;
+            font-size: calc(84 / 75) + rem;
             font-family: HappyZcool-2016;
             font-weight: 400;
             color: #ffffff;
@@ -205,53 +204,52 @@ export default {
         .shop-anniversary-info-container {
           position: relative;
           display: flex;
-          justify-content:center;
+          justify-content: center;
           height: calc(1155 / 75) + rem;
           /* height: 100%; */
           width: 100%;
-          .shop-anniversary-info-wrapper{
-              
+          .shop-anniversary-info-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: calc(635 / 75) + rem;
+            height: 100%;
+            background-color: white;
+            .top-info-img-container {
+              position: relative;
+              height: calc(1000 / 75) + rem;
+              margin-top: calc(39 / 75) + rem;
+              .top-info-img {
+                width: 100%;
+                height: 100%;
+
+                background-image: url('@/assets/img/shop-anniversary-info-img.png');
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+              }
+            }
+            .bottom-entroll-button-container {
               position: relative;
               display: flex;
-              flex-direction: column;
-              width: calc(635 / 75)+rem;
-              height: 100%;
-              background-color: white;
-              .top-info-img-container{
-                  position: relative;
-                  height: calc(1000 /75)+rem;
-                  margin-top: calc(39 /75)+rem;
-                  .top-info-img{
-                      width: 100%;
-                      height: 100%;
+              height: calc(155 / 75) + rem;
+              width: 100%;
+              justify-content: center;
+              .bottom-entroll-img-container {
+                position: relative;
+                width: calc(191 / 75) + rem;
+                height: calc(59 / 75) + rem;
 
-                      background-image: url("@/assets/img/shop-anniversary-info-img.png");
-                      background-repeat: no-repeat;
-                      background-size: 100% 100%;
-                  }
-              }
-              .bottom-entroll-button-container{
-                  position: relative;
-                  display: flex;
+                margin-top: calc(33 / 75) + rem;
+                .bottom-entroll-img {
                   height: 100%;
                   width: 100%;
-                  justify-content: center;
-                  .bottom-entroll-img-container{
-                      position: relative;
-                      width: calc(191 / 75)+rem;
-                      height: calc(59 / 75)+rem;
 
-                      margin-top: calc(33 / 75)+rem;
-                      .bottom-entroll-img{
-                          height: 100%;
-                          width: 100%;
-
-                          background-image: url("@/assets/img/entroll-img.png");
-                          background-repeat: no-repeat;
-                          background-size: 100% 100%; 
-                      }
-                  }
+                  background-image: url('@/assets/img/entroll-img.png');
+                  background-repeat: no-repeat;
+                  background-size: 100% 100%;
+                }
               }
+            }
           }
         }
       }

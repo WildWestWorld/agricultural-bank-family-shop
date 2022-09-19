@@ -73,19 +73,40 @@ const routes = [
             meta: {
                 title: '家装社区活动'
             }
-        },{
+        }, {
             path: '/shopAreaActivity',
             name: 'shopAreaActivity',
             component: () => import('@/views/activity/index-swiper/shopAreaActivity.vue'),
             meta: {
                 title: '家装商圈活动'
             }
-        },{
+        }, {
             path: '/ticketCenter',
             name: 'ticketCenter',
             component: () => import('@/views/ticket/ticketCenter.vue'),
             meta: {
                 title: '领券中心'
+            }
+        }, {
+            path: '/guessFavorite',
+            name: 'guessFavorite',
+            component: () => import('@/views/favorite/guessFavorite.vue'),
+            meta: {
+                title: '猜你喜欢'
+            }
+        }, {
+            path: '/collectTicket',
+            name: 'collectTicket',
+            component: () => import('@/views/ticket/collectTicket.vue'),
+            meta: {
+                title: '领取奖券'
+            }
+        }, {
+            path: '/wantConsult',
+            name: 'wantConsult',
+            component: () => import('@/views/consult/wantConsult.vue'),
+            meta: {
+                title: '我要咨询'
             }
         },
 

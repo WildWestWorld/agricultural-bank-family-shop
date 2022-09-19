@@ -2,23 +2,10 @@
   <div class="page-wrapper">
     <div class="header">
       <!-- 导航栏 -->
-      <!-- <div class="total-nav-container">
-            <div class="iphone-info-container"></div>
-    
-            <div class="nav-container">
-              <div class="nav-wrapper">
-                <div class="nav-img-container">
-                  <div class="nav-img"></div>
-                </div>
-                <div class="nav-text-container">公司简介</div>
-              </div>
-            </div>
-          </div> -->
-      <JKNavigator title="最近活动"></JKNavigator>
+
+      <JKNavigator title="领取奖券"></JKNavigator>
     </div>
-    <div class="content">
-      <div class="company-profile-bcg-container"></div>
-    </div>
+    <div class="content">!蓝湖原型图 是一张图片，无法正常编写!</div>
   </div>
 </template>
 
@@ -26,7 +13,7 @@
 import JKNavigator from '@/components/common/jk-navigator/JKNavigator.vue';
 
 export default {
-  name: 'companyProfile',
+  name: 'collectTicket',
   components: {
     JKNavigator,
   },
@@ -147,20 +134,6 @@ export default {
     // background-image: url('@/assets/img/company-profile.png');
     // background-repeat: no-repeat;
     // background-size: 100% 100%;
-    .company-profile-bcg-container {
-      position: relative;
-      box-sizing: border-box;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-
-      background-image: url('@/assets/img/last-activity-bgc.png');
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-
-      padding-bottom: calc(96.5 / 75) + rem;
-    }
   }
 }
 </style>

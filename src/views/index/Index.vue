@@ -26,7 +26,7 @@
         <!-- 轮播图 -->
         <div class="swiper-container">
           <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
-            <van-swipe-item @click="navToPage('installmentActivity')">
+            <van-swipe-item @click="navToPage('socialActivity')">
               <img src="@/assets/img/swiper-installment-activity.jpg" />
             </van-swipe-item>
             <van-swipe-item @click="navToPage('scanCodeActivity')">
@@ -64,7 +64,7 @@
               </div>
               <div class="total-activity-text-container">活动集锦</div>
             </div>
-            <div class="store-in-container"  @click="navToPage('ticketCenter')">
+            <div class="store-in-container" @click="navToPage('ticketCenter')">
               <div class="store-in-img-container">
                 <div class="store-in-img"></div>
               </div>
@@ -179,99 +179,8 @@
         <!-- 新选择装修的类型select -->
         <tabList>
           <div slot="item0">
-            <div class="decoration-type-container">
-              <div class="company-container">
-                <div class="company-item-container">
-                  <div class="company-item">
-                    <div class="empty-top-padding-container"></div>
-                    <div class="top-container">
-                      <div class="left-img-container">
-                        <img
-                          class="left-shop-img"
-                          src="http://p3.music.126.net/wGbO39sAMI9lroiLYXJsDQ==/109951167760004737.jpg?param=400y400"
-                        />
-                      </div>
-                      <div class="right-info-container">
-                        <div class="name-text-container">
-                          张家港市杨舍镇塘市美心木门经营部
-                        </div>
-                        <div class="commend-info-container">
-                          <div class="star-img-text-container">
-                            <div class="star-img-container">
-                              <div class="star-img">
-                                <!-- <img  src="@/assets/img/star.png" /> -->
-                              </div>
-                              <div class="star-img">
-                                <!-- <img  src="@/assets/img/star.png" /> -->
-                              </div>
-                              <div class="star-img">
-                                <!-- <img  src="@/assets/img/star.png" /> -->
-                              </div>
-                              <div class="star-img">
-                                <!-- <img  src="@/assets/img/star.png" /> -->
-                              </div>
-                              <div class="star-img">
-                                <!-- <img  src="@/assets/img/star.png" /> -->
-                              </div>
-                            </div>
-                            <div class="stat-text">5.0</div>
-                          </div>
-                          <div class="commend-num-container">1241条</div>
-                          <div class="consumpution-num-container">
-                            ￥14141/人
-                          </div>
-                        </div>
-                        <div class="address-info-container">
-                          <div class="address">张家港市杨舍镇南二环路1号</div>
-                          <div class="distant">13.4km</div>
-                        </div>
-                        <div class="benefit-info-container">
-                          <div class="benefit">200个精选案例</div>
-                          <div class="benefit">200名设计师</div>
-                          <div class="benefit">免息分期</div>
-                          <div class="benefit">实景展厅</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="bottom-container">
-                      <div class="left-discount-container">
-                        <div class="left-discount-text-container">
-                          <div class="left-discount-text">已优惠2</div>
-                          <div class="left-quest-icon"></div>
-                          <div class="left-quest-decoration"></div>
-                        </div>
-                      </div>
-                      <div class="right-gift-recommend-info-container">
-                        <div class="right-recommend-container">
-                          <div class="cute-img-container">
-                            <div class="cute-img"></div>
-                          </div>
-                          <div class="recommend-words-container">
-                            “ 张家港市杨舍镇塘市美心木门经营部 ”
-                          </div>
-                        </div>
-
-                        <div class="right-gift-container">
-                          <div class="gift-img-container">
-                            <div class="gift-img">礼</div>
-                          </div>
-                          <div class="gift-text-container">精美礼品一份</div>
-                        </div>
-
-                        <div class="right-group-gift-container">
-                          <div class="group-gift-img-container">
-                            <div class="group-gift-img">团</div>
-                          </div>
-                          <div class="group-gift-text-container">
-                            精美礼品一份
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <tabListContentCard></tabListContentCard>
+            <tabListContentCard></tabListContentCard>
 
             <tabListContentCard></tabListContentCard>
           </div>
