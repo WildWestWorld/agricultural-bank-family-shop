@@ -120,12 +120,13 @@ export default {
         : this.currentIndex++;
     },
     setAutoPlayTimer() {
-      //   this.timer = setInterval(() => {
-      //     this.prev();
-      //   }, 1000);
+      this.timer = setInterval(() => {
+        this.prev();
+      }, 3000);
     },
     stopAutoPlayTimer() {
       clearInterval(this.timer);
+      this.timer = null;
     },
   },
 };
@@ -155,7 +156,7 @@ export default {
         width: 100%;
         height: 100%;
         //  只有Z轴向后移动了-300px
-        transform: translate3d(0%, 0%, -300px);
+        transform: translate3d(0%, 0%, calc(-300 / 75) + rem);
         // 设置动画的时间 ，选择的类型，以及动画速度的控制
         // ease-in-out：开始慢，但是匀加速到一个速度大概时间到1/3的时候就保持这个速度直到最后1/3时间再均匀减速。
         transition: all 0.6s ease-in-out;
@@ -174,13 +175,22 @@ export default {
       .prev {
         // 正的是往前
         // 671 是图片的宽度，移动这个是为了让后一张图片移出来 22.1 是两张照片的间距
-        transform: translate3d(calc((671 + 22.1) / 75) + rem, 0, -200px);
+        //-200 是Z轴的移动 z轴的大小差不多等于 z-index
+        transform: translate3d(
+          calc((671 + 22.1) / 75) + rem,
+          0,
+          calc(-200 / 75) + rem
+        );
         transform-origin: left;
         display: block;
       }
       .next {
         // 671 是图片的宽度，移动这个是为了让前一张图片移除来 22.1 是两张照片的间距
-        transform: translate3d(calc((-671 - 22.1) / 75) + rem, 0, -100px);
+        transform: translate3d(
+          calc((-671 - 22.1) / 75) + rem,
+          0,
+          calc(-100 / 75) + rem
+        );
         transform-origin: right;
         display: block;
       }
