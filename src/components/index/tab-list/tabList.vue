@@ -7,6 +7,7 @@
           ref="tabList"
           v-for="(item, index) in tabListHeaderData"
           @click="changeActiveTabItemIndex(index)"
+          :key="index"
         >
           <div
             :class="
@@ -39,6 +40,7 @@
                 ? 'tab-list-content-item active'
                 : 'tab-list-content-item '
             "
+          :key="index"
           >
             <div class="tab-list-content">
               <slot :name="'item' + index"></slot>
@@ -136,6 +138,7 @@ export default {
 
       display: flex;
       flex-direction: row;
+
       //   &:last-child {
       //     background-color: #00995a;
       //   }
@@ -149,8 +152,8 @@ export default {
         width: calc(88 / 75) + rem;
         height: calc(6 / 75) + rem;
         z-index: 1;
-        top: calc(64.6 / 75) + rem;
-
+        /* top: calc(64.6 / 75) + rem; */
+        bottom: 0;
         // transform: translateX(calc(117) + px) translateX(-50%);
         transition-duration: 0.3s;
       }

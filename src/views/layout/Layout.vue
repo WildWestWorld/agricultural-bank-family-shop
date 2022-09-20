@@ -40,5 +40,7 @@ export default {
 
   //不加的话 iphone5会多出来一块
   overflow-x: hidden;
+
+  
 }
 </style>
