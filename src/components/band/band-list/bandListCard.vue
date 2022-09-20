@@ -25,75 +25,14 @@
               <div class="name-text-container">
                 张家港市杨舍镇塘市美心木门经营部
               </div>
-              <div class="commend-info-container">
-                <div class="star-img-text-container">
-                  <div class="star-img-container">
-                    <div class="star-img">
-                      <!-- <img  src="@/assets/img/star.png" /> -->
-                    </div>
-                    <div class="star-img">
-                      <!-- <img  src="@/assets/img/star.png" /> -->
-                    </div>
-                    <div class="star-img">
-                      <!-- <img  src="@/assets/img/star.png" /> -->
-                    </div>
-                    <div class="star-img">
-                      <!-- <img  src="@/assets/img/star.png" /> -->
-                    </div>
-                    <div class="star-img">
-                      <!-- <img  src="@/assets/img/star.png" /> -->
-                    </div>
-                  </div>
-                  <div class="stat-text">5.0</div>
-                </div>
-                <div class="commend-num-container">1241条</div>
-                <div class="consumpution-num-container">￥14141/人</div>
-              </div>
+
               <div class="address-info-container">
                 <div class="address">张家港市杨舍镇南二环路1号</div>
                 <div class="distant">13.4km</div>
               </div>
-              <div class="benefit-info-container">
-                <div class="benefit">200个精选案例</div>
-                <div class="benefit">200名设计师</div>
-                <div class="benefit">免息分期</div>
-                <div class="benefit">实景展厅</div>
-              </div>
             </div>
           </div>
-          <div class="bottom-container">
-            <div class="left-discount-container">
-              <div class="left-discount-text-container">
-                <div class="left-discount-text">已优惠2</div>
-                <div class="left-quest-icon"></div>
-                <div class="left-quest-decoration"></div>
-              </div>
-            </div>
-            <div class="right-gift-recommend-info-container">
-              <div class="right-recommend-container">
-                <div class="cute-img-container">
-                  <div class="cute-img"></div>
-                </div>
-                <div class="recommend-words-container">
-                  “ 张家港市杨舍镇塘市美心木门经营部 ”
-                </div>
-              </div>
-
-              <div class="right-gift-container">
-                <div class="gift-img-container">
-                  <div class="gift-img">礼</div>
-                </div>
-                <div class="gift-text-container">精美礼品一份</div>
-              </div>
-
-              <div class="right-group-gift-container">
-                <div class="group-gift-img-container">
-                  <div class="group-gift-img">团</div>
-                </div>
-                <div class="group-gift-text-container">精美礼品一份</div>
-              </div>
-            </div>
-          </div>
+          <div class="bottom-container"></div>
         </div>
       </div>
     </div>
@@ -102,7 +41,7 @@
 
 <script>
 export default {
-  name: 'tabListContentCard',
+  name: 'bandListCard',
   props: {
     totalwidth: { type: String, default: '100vw- 0.67rem' },
     radius: { type: String, default: '0.6rem' },
@@ -206,12 +145,12 @@ export default {
       height: calc(2 / 75) + rem;
       background-color: rgba($color: #eeeeee, $alpha: 1);
       //top: -0.4547rem;
-    //   margin: 0 auto;
+      //   margin: 0 auto;
       z-index: 99999;
     }
     .company-item-container {
       position: relative;
-      height: calc(368.2 / 75) + rem;
+      height: calc(361 / 75) + rem;
       width: calc(100vw - 0.67rem);
 
       .company-item {
@@ -239,11 +178,11 @@ export default {
           z-index: 99999;
         }
         .empty-top-padding-container {
-          height: calc(34.1 / 75) + rem;
+          height: calc(47 / 75) + rem;
         }
         .top-container {
           position: relative;
-          height: calc(157 / 75) + rem;
+          height: calc(200 / 75) + rem;
           width: 100%;
           display: flex;
           flex-direction: row;
@@ -288,87 +227,6 @@ export default {
               color: #000000;
             }
 
-            .commend-info-container {
-              position: relative;
-
-              display: flex;
-              flex-direction: row;
-              font-size: 0.3467rem;
-              text-overflow: ellipsis;
-              white-space: nowrap;
-              font-family: SourceHanSansCN;
-              font-weight: 400;
-              color: #000000;
-
-              .star-img-text-container {
-                position: relative;
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                margin-right: 0.12rem;
-
-                .star-img-container {
-                  position: relative;
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: space-between;
-
-                  align-items: center;
-                  margin-right: 0.12rem;
-                  height: 0.307rem;
-                  width: 1.693rem;
-
-                  .star-img {
-                    width: 0.307rem;
-                    height: 0.307rem;
-
-                    background-image: url('@/assets/img/star.png');
-                    background-repeat: no-repeat;
-
-                    // 充满Div
-                    background-size: 100%;
-                  }
-                }
-
-                .stat-text {
-                  color: #ff6133;
-                  font-size: 0.267rem;
-                  line-height: 0.4rem;
-                }
-              }
-
-              .commend-num-container {
-                position: relative;
-                margin-right: 0.08rem;
-                font-size: 0.267rem;
-                line-height: 0.4rem;
-
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                overflow: hidden;
-
-                font-weight: bold;
-
-                max-width: 2rem;
-              }
-
-              .consumpution-num-container {
-                position: relative;
-                margin-right: 0.12rem;
-                font-size: 0.267rem;
-                line-height: 0.4rem;
-
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                overflow: hidden;
-
-                max-width: 3rem;
-
-                font-weight: bold;
-              }
-            }
-
             .address-info-container {
               position: relative;
               display: flex;
@@ -397,34 +255,13 @@ export default {
                 max-width: 1.8rem;
               }
             }
-
-            .benefit-info-container {
-              position: relative;
-              width: 95%;
-              display: flex;
-              flex-direction: row;
-              justify-content: space-between;
-
-              .benefit {
-                white-space: nowrap;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                text-align: center;
-                font-size: 0.24rem;
-                font-weight: bold;
-                //   -webkit-transform: scale(0.95);
-
-                //   border: calc(1 / 75) + rem solid #f7f4f6;
-                background-color: #f7f4f6;
-              }
-            }
           }
         }
 
         .bottom-container {
           box-sizing: border-box;
           position: relative;
-          height: 1.984rem;
+          height: calc(113.9 / 75) + rem;
           width: 100%;
           max-width: 100%;
 

@@ -2,28 +2,25 @@
   <div class="page-wrapper">
     <div class="header">
       <!-- 导航栏 -->
-      <JKNavigator title="我的收藏"></JKNavigator>
+      <!-- <div class="total-nav-container">
+            <div class="iphone-info-container"></div>
+    
+            <div class="nav-container">
+              <div class="nav-wrapper">
+                <div class="nav-img-container">
+                  <div class="nav-img"></div>
+                </div>
+                <div class="nav-text-container">公司简介</div>
+              </div>
+            </div>
+          </div> -->
+      <JKNavigator title="XX品牌"></JKNavigator>
     </div>
     <div class="content">
-      <!-- 背景色 -->
-      <div class="content-bgc"></div>
-
-      <div class="colletciton-centent-container">
-        <TabListContentCard
-          totalwidth="100vw"
-          radius="0rem"
-          :isShowTopLine="false"
-        ></TabListContentCard>
-        <TabListContentCard
-          totalwidth="100vw"
-          radius="0rem"
-          :isShowTopLine="false"
-        ></TabListContentCard>
-        <TabListContentCard
-          totalwidth="100vw"
-          radius="0rem"
-          :isShowTopLine="false"
-        ></TabListContentCard>
+      <div class="band-list-container">
+        <div class="band-list-wrapper">
+          <bandListCard></bandListCard>
+        </div>
       </div>
     </div>
   </div>
@@ -31,13 +28,13 @@
 
 <script>
 import JKNavigator from '@/components/common/jk-navigator/JKNavigator.vue';
-import TabListContentCard from '@/components/index/tab-list/tabListContentCard.vue';
+import bandListCard from '@/components/band/band-list/bandListCard.vue';
 
 export default {
   name: 'companyProfile',
   components: {
     JKNavigator,
-    TabListContentCard,
+    bandListCard,
   },
   //变量区
   data() {
@@ -156,35 +153,25 @@ export default {
     // background-image: url('@/assets/img/company-profile.png');
     // background-repeat: no-repeat;
     // background-size: 100% 100%;
-    .content-bgc {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: white;
-    }
-    .colletciton-centent-container {
+    .band-list-container {
       position: relative;
       display: flex;
       flex-direction: column;
+      align-items: center;
       height: 100%;
-      width: 100vw;
-      &::before {
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        content: '';
-        position: absolute;
-        //   display: none;
-        display: block;
-        width: 100vw;
-        height: calc(3 / 75) + rem;
-        background-color: rgba($color: #eeeeee, $alpha: 1);
-        //top: -0.4547rem;
-        //   margin: 0 auto;
+      width: 100%;
+      background: #ffffff;
 
-        z-index: 99999;
+      .band-list-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: calc(699 / 75) + rem;
+        box-shadow: 0px 0px calc(21 / 75) + rem 0px rgba(0, 0, 0, 0.1);
+        border-radius: calc(20 / 75) + rem;
+
+        margin-top: calc(13 / 75) + rem;
       }
     }
   }

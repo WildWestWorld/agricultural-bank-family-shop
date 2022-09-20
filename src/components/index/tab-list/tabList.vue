@@ -40,7 +40,7 @@
                 ? 'tab-list-content-item active'
                 : 'tab-list-content-item '
             "
-          :key="index"
+            :key="index"
           >
             <div class="tab-list-content">
               <slot :name="'item' + index"></slot>
@@ -181,6 +181,8 @@ export default {
       display: flex;
       flex-direction: column;
       height: 100%;
+
+      margin-top: calc(16.4 / 75) + rem;
       .tab-list-content-item-container {
         position: relative;
         display: flex;

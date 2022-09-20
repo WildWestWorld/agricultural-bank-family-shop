@@ -108,19 +108,33 @@ const routes = [
             meta: {
                 title: '我要咨询'
             }
+        }, {
+            path: '/collection',
+            name: 'collection',
+            component: () => import('@/views/mine/collection.vue'),
+            meta: {
+                title: '我的收藏'
+            }
+        },{
+            path: '/sortSection',
+            name: 'sortSection',
+            component: () => import('@/views/sort/sortSection.vue'),
+            meta: {
+                title: '分类板块'
+            }
+        },{
+            path: '/bandDetail',
+            name: 'bandDetail',
+            component: () => import('@/views/band/bandDetail.vue'),
+            meta: {
+                title: '品牌详情'
+            }
         },
 
 
         ]
     },
     {
-        path: '/index',
-        name: 'Index',
-        component: () => import('@/views/index/Index.vue'),
-        meta: {
-            title: '首页'
-        }
-    }, {
         path: '/sort',
         name: 'Sort',
         component: () => import('@/views/sort/Sort.vue'),
@@ -134,21 +148,14 @@ const routes = [
         meta: {
             title: '我的'
         }
-    },{
+    }, {
         path: '/usertellist',
         name: 'usertellist',
         component: () => import('@/views/mine/usertelList.vue'),
         meta: {
             title: '客户信息'
         }
-    },{
-        path: '/collection',
-        name: 'collection',
-        component: () => import('@/views/mine/collection.vue'),
-        meta: {
-            title: '我的收藏'
-        }
-    },
+    }
 
 
 ]

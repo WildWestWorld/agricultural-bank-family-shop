@@ -2,28 +2,26 @@
   <div class="page-wrapper">
     <div class="header">
       <!-- 导航栏 -->
-      <JKNavigator title="我的收藏"></JKNavigator>
+
+      <JKNavigator title="分类板块"></JKNavigator>
     </div>
     <div class="content">
       <!-- 背景色 -->
       <div class="content-bgc"></div>
 
-      <div class="colletciton-centent-container">
-        <TabListContentCard
-          totalwidth="100vw"
-          radius="0rem"
-          :isShowTopLine="false"
-        ></TabListContentCard>
-        <TabListContentCard
-          totalwidth="100vw"
-          radius="0rem"
-          :isShowTopLine="false"
-        ></TabListContentCard>
-        <TabListContentCard
-          totalwidth="100vw"
-          radius="0rem"
-          :isShowTopLine="false"
-        ></TabListContentCard>
+      <div class="content-img-container">
+        <div class="jtl-img-container" @click="navToPage('bandDetail')">
+          <div class="jtl-img"></div>
+        </div>
+        <div class="second-img-container">
+          <div class="second-img"></div>
+        </div>
+        <div class="third-img-container">
+          <div class="third-img"></div>
+        </div>
+        <div class="fourth-img-container">
+          <div class="fourth-img"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -31,13 +29,11 @@
 
 <script>
 import JKNavigator from '@/components/common/jk-navigator/JKNavigator.vue';
-import TabListContentCard from '@/components/index/tab-list/tabListContentCard.vue';
 
 export default {
-  name: 'companyProfile',
+  name: 'sortSection',
   components: {
     JKNavigator,
-    TabListContentCard,
   },
   //变量区
   data() {
@@ -52,6 +48,9 @@ export default {
   methods: {
     JKTest() {
       console.log('测试一下');
+    },
+    navToPage(path) {
+      this.$router.push('/' + path);
     },
   },
 };
@@ -156,6 +155,7 @@ export default {
     // background-image: url('@/assets/img/company-profile.png');
     // background-repeat: no-repeat;
     // background-size: 100% 100%;
+    // 背景色
     .content-bgc {
       position: fixed;
       top: 0;
@@ -164,27 +164,69 @@ export default {
       height: 100%;
       background-color: white;
     }
-    .colletciton-centent-container {
+
+    .content-img-container {
       position: relative;
       display: flex;
       flex-direction: column;
+      width: 100%;
       height: 100%;
-      width: 100vw;
-      &::before {
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        content: '';
-        position: absolute;
-        //   display: none;
-        display: block;
-        width: 100vw;
-        height: calc(3 / 75) + rem;
-        background-color: rgba($color: #eeeeee, $alpha: 1);
-        //top: -0.4547rem;
-        //   margin: 0 auto;
+      .jtl-img-container {
+        position: relative;
+        width: calc(444 / 75) + rem;
+        height: calc(87 / 75) + rem;
+        margin-left: calc(162 / 75) + rem;
+        margin-top: calc(99 / 75) + rem;
 
-        z-index: 99999;
+        .jtl-img {
+          height: 100%;
+          width: 100%;
+          background-image: url(@/assets/img/jtl.jpg);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+        }
+      }
+      .second-img-container {
+        width: calc(216 * 2 / 75) + rem;
+        height: calc(100 * 2 / 75) + rem;
+        margin-left: calc(162 / 75) + rem;
+        margin-top: calc(96 / 75) + rem;
+
+        .second-img {
+          height: 100%;
+          width: 100%;
+          background-image: url(@/assets/img/jtl.jpg);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+        }
+      }
+      .third-img-container {
+        width: calc(475 / 75) + rem;
+        height: calc(231 / 75) + rem;
+        margin-left: calc(138 / 75) + rem;
+        margin-top: calc(114 / 75) + rem;
+
+        .third-img {
+          height: 100%;
+          width: 100%;
+          background-image: url(@/assets/img/jtl.jpg);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+        }
+      }
+      .fourth-img-container {
+        width: calc(288 / 75) + rem;
+        height: calc(208 / 75) + rem;
+        margin-left: calc(240 / 75) + rem;
+        margin-top: calc(99 / 75) + rem;
+
+        .fourth-img {
+          height: 100%;
+          width: 100%;
+          background-image: url(@/assets/img/jtl.jpg);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+        }
       }
     }
   }
