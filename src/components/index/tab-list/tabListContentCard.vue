@@ -193,7 +193,7 @@ export default {
       //top: -0.4547rem;
       //   margin: 0 auto;
 
-      z-index: 99999;
+      z-index: 100;
     }
     &.bottom-border::after {
       bottom: 0;
@@ -206,8 +206,8 @@ export default {
       height: calc(2 / 75) + rem;
       background-color: rgba($color: #eeeeee, $alpha: 1);
       //top: -0.4547rem;
-    //   margin: 0 auto;
-      z-index: 99999;
+      //   margin: 0 auto;
+      z-index: 100;
     }
     .company-item-container {
       position: relative;

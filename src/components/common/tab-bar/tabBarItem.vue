@@ -102,27 +102,27 @@ export default {
 
       background-image: url('@/assets/img/tabbar-index.png');
       background-repeat: no-repeat;
-      background-size: 100%;
+      background-size: 100% 100%;
     }
     .index {
-      //   height: calc(46 / 75) + rem;
-      //   width: calc(52 / 75) + rem;
-      height: 100%;
-      width: 100%;
+      height: calc(46 / 75) + rem;
+      width: calc(52 / 75) + rem;
+      //   height: 100%;
+      //   width: 100%;
     }
     .sort {
-      //   height: calc(41 / 75) + rem;
-      //   width: calc(41 / 75) + rem;
+      height: calc(41 / 75) + rem;
+      width: calc(41 / 75) + rem;
 
-      height: 100%;
-      width: 100%;
+      //   height: 100%;
+      //   width: 100%;
     }
     .mine {
-      //   height: calc(39 / 75) + rem;
-      //   width: calc(35 / 75) + rem;
+      height: calc(39 / 75) + rem;
+      width: calc(35 / 75) + rem;
 
-      height: 100%;
-      width: 100%;
+      //   height: 100%;
+      //   width: 100%;
     }
   }
 

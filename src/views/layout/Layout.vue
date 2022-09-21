@@ -1,5 +1,8 @@
 <template>
   <div class="page">
+      <!-- 背景颜色 -->
+      <!-- <div class="content-bgc"></div> -->
+
     <router-view></router-view>
   </div>
 </template>
@@ -40,7 +43,14 @@ export default {
 
   //不加的话 iphone5会多出来一块
   overflow-x: hidden;
-
-  
+    // 设置背景
+    // .content-bgc {
+    //   position: fixed;
+    //   top: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   background: white;
+    // }
 }
 </style>

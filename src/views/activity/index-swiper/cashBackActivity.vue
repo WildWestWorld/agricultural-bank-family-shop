@@ -155,6 +155,8 @@ export default {
 
     padding-bottom: calc(96.5 / 75) + rem;
 
+    flex: 1;
+
     // background-image: url('@/assets/img/company-profile.png');
     // background-repeat: no-repeat;
     // background-size: 100% 100%;

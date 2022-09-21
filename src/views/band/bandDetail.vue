@@ -19,7 +19,11 @@
     <div class="content">
       <div class="band-list-container">
         <div class="band-list-wrapper">
-          <bandListCard></bandListCard>
+          <bandListCard :isShowTopLine="false"></bandListCard>
+          <bandListCard :isShowTopLine="false"></bandListCard>
+
+          <bandListCard :isShowTopLine="false"></bandListCard>
+          <bandListCard :isShowTopLine="false"></bandListCard>
         </div>
       </div>
     </div>
@@ -145,7 +149,7 @@ export default {
     position: relative;
     display: flex;
     flex-direction: column;
-    height: calc(1206 / 75) + rem;
+    height: fit-content;
     width: 100vw;
 
     padding-bottom: calc(96.5 / 75) + rem;

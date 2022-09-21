@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="decoration-type-container"
-    @click="navToCompanyDetail()"
-    :style="diyStyle"
-  >
+  <div class="decoration-type-container" :style="diyStyle">
     <div
       :class="
         isShowTopLine
@@ -23,16 +19,36 @@
             </div>
             <div class="right-info-container">
               <div class="name-text-container">
-                张家港市杨舍镇塘市美心木门经营部
+                张家港市杨舍镇塘市美心木门经营部美心木门经营部美心木门经营部美心木门经营部
               </div>
 
               <div class="address-info-container">
-                <div class="address">张家港市杨舍镇南二环路1号</div>
-                <div class="distant">13.4km</div>
+                <div class="address">
+                  张家港市杨舍镇南二环路1号（红星美凯龙二号馆三楼）（红星美凯龙二号馆三楼）（红星美凯龙二号馆三楼）
+                </div>
+              </div>
+              <div class="distant-container">与我相距13.4km</div>
+            </div>
+          </div>
+          <div class="bottom-container">
+            <div class="bottom-wrapper">
+              <div class="button-container">
+                <div class="button-text-container">我要领券</div>
+              </div>
+              <div class="button-container">
+                <div class="button-text-container">我要咨询</div>
+              </div>
+              <div class="button-container">
+                <div class="button-text-container">最近活动</div>
+              </div>
+              <div class="button-container">
+                <div class="button-text-container">样板展示</div>
+              </div>
+              <div class="button-container">
+                <div class="button-text-container">我要购买</div>
               </div>
             </div>
           </div>
-          <div class="bottom-container"></div>
         </div>
       </div>
     </div>
@@ -132,7 +148,7 @@ export default {
       //top: -0.4547rem;
       //   margin: 0 auto;
 
-      z-index: 99999;
+      z-index: 100;
     }
     &.bottom-border::after {
       bottom: 0;
@@ -146,7 +162,7 @@ export default {
       background-color: rgba($color: #eeeeee, $alpha: 1);
       //top: -0.4547rem;
       //   margin: 0 auto;
-      z-index: 99999;
+      z-index: 100;
     }
     .company-item-container {
       position: relative;
@@ -178,11 +194,11 @@ export default {
           z-index: 99999;
         }
         .empty-top-padding-container {
-          height: calc(47 / 75) + rem;
+          min-height: calc(47 / 75) + rem;
         }
         .top-container {
           position: relative;
-          height: calc(200 / 75) + rem;
+          height: calc(236.4 / 75) + rem;
           width: 100%;
           display: flex;
           flex-direction: row;
@@ -190,8 +206,7 @@ export default {
 
           .left-img-container {
             position: relative;
-            width: 2.584rem;
-            min-width: 2.584rem;
+            width: calc(245.5 / 75) + rem;
             height: 100%;
             display: flex;
             flex-direction: row;
@@ -199,9 +214,9 @@ export default {
             align-items: flex-start;
 
             .left-shop-img {
-              width: 2rem;
-              height: 2rem;
-              border-radius: 0.2rem;
+              width: calc(200 / 75) + rem;
+              height: calc(200 / 75) + rem;
+              border-radius: calc(20 / 75) + rem;
             }
           }
 
@@ -210,38 +225,50 @@ export default {
             position: relative;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
 
-            padding-left: 0.2547rem;
+            padding-left: calc(36 / 75) + rem;
             // font-size: 10px;
-            width: 100%;
+            width: calc(453 / 75) + rem;
             max-width: calc(511 / 75) + rem;
 
             .name-text-container {
               position: relative;
-              font-size: 0.3467rem;
-              text-overflow: ellipsis;
-              white-space: nowrap;
+
+              overflow: hidden;
+              text-overflow: ellipsis; //当对象内文本溢出时显示省略标记
+              display: -webkit-box;
+              -webkit-line-clamp: 2; //这边的2指的是两行
+              -webkit-box-orient: vertical;
+
               font-family: SourceHanSansCN;
               font-weight: bold;
               color: #000000;
+
+              max-width: calc(388 / 75) + rem;
+              font-size: calc(26 / 75) + rem;
+
+              margin-top: calc(21 / 75) + rem;
             }
 
             .address-info-container {
               position: relative;
               display: flex;
-              justify-content: space-between;
-              margin-right: calc(19 / 75) + rem;
+              width: calc(386 / 75) + rem;
+              margin-top: calc(19 / 75) + rem;
 
               .address {
                 font-size: 0.267rem;
                 font-family: SourceHanSansCN;
                 font-weight: 400;
                 color: #747474;
-                white-space: nowrap;
-                text-overflow: ellipsis;
+
                 overflow: hidden;
-                max-width: 5rem;
+                text-overflow: ellipsis; //当对象内文本溢出时显示省略标记
+                display: -webkit-box;
+                -webkit-line-clamp: 2; //这边的2指的是两行
+                -webkit-box-orient: vertical;
+
+                max-width: calc(386 / 75) + rem;
               }
 
               .distant {
@@ -255,243 +282,47 @@ export default {
                 max-width: 1.8rem;
               }
             }
+            .distant-container {
+              margin-top: calc(20 / 75) + rem;
+
+              font-size: calc(18 / 75) + rem;
+              font-family: SourceHanSansCN;
+              font-weight: 400;
+              color: #747474;
+            }
           }
         }
 
         .bottom-container {
           box-sizing: border-box;
           position: relative;
-          height: calc(113.9 / 75) + rem;
-          width: 100%;
-          max-width: 100%;
-
+          height: calc(79.5 / 75) + rem;
           display: flex;
           flex-direction: row;
-
-          .left-discount-container {
-            position: relative;
-            width: 2.584rem;
-            min-width: 2.584rem;
+          justify-content: center;
+          width: 100%;
+          max-width: 100%;
+          .bottom-wrapper {
+            width: calc(649 / 75) + rem;
             height: 100%;
-
             display: flex;
             flex-direction: row;
-            justify-content: flex-end;
-            align-items: flex-end;
-            color: #ff6133;
-
-            font-size: 0.24rem;
-
-            .left-discount-text-container {
+            justify-content: space-around;
+            .button-container {
               position: relative;
               display: flex;
               flex-direction: row;
+              justify-content: center;
               align-items: center;
-              height: 0.4rem;
-              // width: 1.6rem;
-              // line-height: 0.8rem;
-              // font-weight: 400;
-              // letter-spacing:1.5px;
-
-              background-color: #ffecea;
-              font-weight: bold;
-
-              &::after {
-                content: '';
-                //   width: 0;
-                height: 100%;
-                //   left: 0.86rem;
-                //   position: absolute;
-                display: block;
-                border-top: 12px solid transparent;
-                border-top-width: calc(12 / 75) + rem;
-
-                //   border-left: 12px solid blue;
-                border-bottom: 12px solid transparent;
-                border-bottom-width: calc(12 / 75) + rem;
-                z-index: 11;
-              }
-
-              .left-discount-text {
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                overflow: hidden;
-                margin-right: 0.053rem;
-              }
-
-              .left-quest-icon {
-                position: relative;
-                text-align: center;
-
-                width: 0.28rem;
-                height: 0.28rem;
-
-                border: 0.5px solid #f79883;
-                border-radius: 50%;
-
-                &::before {
-                  position: relative;
-                  content: '?';
-                  color: #ff6133;
-                }
-              }
-              .left-quest-decoration {
-                width: 0px;
-                height: 0px;
-                border-left: 0px solid #ffecea;
-                border-right: 0px solid transparent;
-                border-top: 20px solid transparent;
-                border-bottom: 20px solid transparent;
-
-                border-left-width: calc(9 / 75) + rem;
-                border-top-width: calc(14.5 / 75) + rem;
-                border-bottom-width: calc(14.5 / 75) + rem;
-
-                background-color: white;
-              }
-            }
-          }
-
-          .right-gift-recommend-info-container {
-            box-sizing: border-box;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            margin-left: 0.2547rem;
-            font-size: 10px;
-            width: calc(530 / 75) + rem;
-            max-width: calc(530 / 75) + rem;
-
-            margin-top: 0.36rem;
-
-            .right-recommend-container {
-              position: relative;
-              width: 100%;
-              max-width: 100%;
-              display: flex;
-              flex-direction: row;
-              align-items: center;
-
-              .cute-img-container {
-                // height: 0.307rem;
-                // width: 0.28rem;
-                height: 0.4rem;
-                width: 0.4rem;
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-
-                .cute-img {
-                  height: 0.307rem;
-                  width: 0.28rem;
-                  background-image: url('@/assets/img/watermelon.png');
-                  background-repeat: no-repeat;
-                  background-size: 100%;
-                }
-              }
-
-              .recommend-words-container {
-                font-size: 0.267rem;
-                font-weight: bold;
-                color: #000000;
-                margin-left: 0.0933rem;
-
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                overflow: hidden;
-                max-width: calc(450 / 75) + rem;
-              }
-            }
-
-            .right-gift-container {
-              position: relative;
-              width: 100%;
-
-              display: flex;
-              flex-direction: row;
-              align-items: center;
-              justify-content: flex-start;
-
-              .gift-img-container {
-                position: relative;
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-content: center;
-                width: 0.4rem;
-                height: 0.4rem;
-
-                background-color: #fbf0eb;
-
-                font-weight: bold;
-
-                .gift-img {
-                  position: relative;
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: center;
-                  align-items: center;
-
-                  font-family: SourceHanSansCN;
-                  color: #ff6133;
-                  font-size: 0.24rem;
-
-                  // -webkit-transform: scale(0.95);
-                }
-              }
-
-              .gift-text-container {
-                font-size: 0.267rem;
-                font-weight: bold;
-                color: #000000;
-                margin-left: 0.1333rem;
-              }
-            }
-
-            .right-group-gift-container {
-              position: relative;
-              width: 100%;
-
-              display: flex;
-              flex-direction: row;
-              align-items: center;
-              justify-content: flex-start;
-
-              .group-gift-img-container {
-                position: relative;
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-content: center;
-                width: 0.4rem;
-                height: 0.4rem;
-
-                background-color: #ffecea;
-
-                font-weight: bold;
-
-                .group-gift-img {
-                  position: relative;
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: center;
-                  align-items: center;
-
-                  font-family: SourceHanSansCN;
-                  color: #ff6133;
-                  font-size: 0.24rem;
-
-                  // -webkit-transform: scale(0.95);
-                }
-              }
-
-              .group-gift-text-container {
-                font-size: 0.267rem;
-                font-weight: bold;
-                color: #000000;
-                margin-left: 0.1333rem;
+              width: calc(121 / 75) + rem;
+              height: calc(41 / 75) + rem;
+              background: #00995a;
+              border-radius: calc(20 / 75) + rem;
+              .button-text-container {
+                font-size: calc(22 / 75) + rem;
+                font-family: SourceHanSansCN;
+                font-weight: 400;
+                color: #ffffff;
               }
             }
           }

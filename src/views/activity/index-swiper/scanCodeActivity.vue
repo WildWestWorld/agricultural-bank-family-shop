@@ -55,17 +55,20 @@
         <div class="scan-code-activity-bcg"></div>
       </div>
     </div>
+    <JKDialog></JKDialog>
   </div>
 </template>
 
 <script>
 import JKNavigator from '@/components/common/jk-navigator/JKNavigator.vue';
+import JKDialog from '@/components/common/jk-dialog/JKDialog.vue';
 
 export default {
   name: 'companyProfile',
   components: {
     JKNavigator,
-  },
+    JKDialog
+},
   //变量区
   data() {
     return {};

@@ -125,7 +125,10 @@
         </div>
         <!-- 下面 -->
         <div class="bottom-activity-img-container">
-          <div class="discount-activity-img-container">
+          <div
+            class="discount-activity-img-container"
+            @click="navToPage('discountActivity')"
+          >
             <div class="discount-activity-img"></div>
           </div>
           <div
@@ -747,7 +750,7 @@ export default {
           .company-introduce-img {
             width: 100%;
             height: 100%;
-            background-image: url('@/assets/img/last-activity.png');
+            background-image: url('@/assets/img/company-introduce.png');
             background-repeat: no-repeat;
             background-size: 100% 100%;
           }

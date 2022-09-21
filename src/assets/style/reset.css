@@ -1,12 +1,36 @@
 @import "~normalize.css";
+
 /* @import 'normalize.css/normalize.css'; */
 /* 样式的重置 */
-body, html, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, header, menu, section, p, input, td, th, ins {
+body,
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+header,
+menu,
+section,
+p,
+input,
+td,
+th,
+ins {
     padding: 0;
     margin: 0;
 }
 
-ul, ol, li {
+ul,
+ol,
+li {
     list-style: none;
 }
 
@@ -20,11 +44,16 @@ a:hover {
     text-decoration: underline;
 }
 
-i, em {
+i,
+em {
     font-style: normal;
 }
 
-input, textarea, button, select, a {
+input,
+textarea,
+button,
+select,
+a {
     outline: none;
     border: none;
 }
@@ -38,7 +67,21 @@ img {
     border: none;
     vertical-align: middle;
 }
+
 /*主题色*/
-:root{
-    --theme-color:#00995a;
+:root {
+    --theme-color: #00995a;
 }
+
+body {
+    margin: 0;
+    padding:
+        constant(safe-area-inset-top) constant(safe-area-inset-right) constant(safe-area-inset-bottom) constant(safe-area-inset-left);
+    padding:
+        env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    box-sizing: border-box;
+}
+
+/* @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+    html,body{height: 812px;}
+    } */
