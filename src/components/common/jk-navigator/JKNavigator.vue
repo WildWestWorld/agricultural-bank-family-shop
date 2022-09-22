@@ -33,6 +33,7 @@ export default {
   data() {
     return {};
   },
+
   //生命周期区
   mounted() {
     // console.log(this.$store);
@@ -42,7 +43,24 @@ export default {
   methods: {
     // 返回上一页并且刷新
     routerGoBackWithFresh() {
-      this.$router.go(-1);
+      let currentPage = this.$router.currentRoute.path;
+      let currentPageName = currentPage.split('/')[1];
+      console.log(currentPageName);
+
+      if (currentPageName === 'sort' || currentPageName === 'mine') {
+        // console.log(currentPageName === ('sort' || 'mine' || 'index')), '123';
+        console.log('触发');
+        this.$router.replace('/index');
+        this.$store.commit('changeActiveTabBarIndexState', 0);
+
+        //     // this.$store.commit('changeIsFreshTabBarState', true);
+        //     // this.$nextTick(() => {
+        //     //   this.$store.commit('changeIsFreshTabBarState', false);
+        //     // });
+      } else {
+        this.$router.go(-1);
+      }
+      //   console.log(this.$router);
     },
     //返回上一页不刷新
     routerGoBackWithoutFresh() {

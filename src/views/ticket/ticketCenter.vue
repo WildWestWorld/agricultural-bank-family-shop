@@ -17,6 +17,9 @@
       <JKNavigator title="优惠券"></JKNavigator>
     </div>
     <div class="content">
+      <!-- 背景颜色 -->
+      <div class="content-bgc"></div>
+
       <!-- 奖券TabList -->
       <ticketTabList>
         <div slot="item0">
@@ -60,13 +63,13 @@
 </template>
 
 <script>
-import JKNavigator from "@/components/common/jk-navigator/JKNavigator.vue";
-import TicketTabList from "@/components/ticket-center/ticket-tab-list/ticketTabList.vue";
-import TicketTypeTabList from "@/components/ticket-center/ticket-tab-list/ticketTypeTabList.vue";
-import EmptyTicketTips from "@/components/ticket-center/ticket-tab-list/emptyTicketTips.vue";
+import JKNavigator from '@/components/common/jk-navigator/JKNavigator.vue';
+import TicketTabList from '@/components/ticket-center/ticket-tab-list/ticketTabList.vue';
+import TicketTypeTabList from '@/components/ticket-center/ticket-tab-list/ticketTypeTabList.vue';
+import EmptyTicketTips from '@/components/ticket-center/ticket-tab-list/emptyTicketTips.vue';
 
 export default {
-  name: "companyProfile",
+  name: 'companyProfile',
   components: {
     JKNavigator,
     TicketTabList,
@@ -77,10 +80,10 @@ export default {
   data() {
     return {
       ticketTypeData: [
-        { name: "可使用" },
-        { name: "待返现" },
-        { name: "已使用" },
-        { name: "已失效" },
+        { name: '可使用' },
+        { name: '待返现' },
+        { name: '已使用' },
+        { name: '已失效' },
       ],
       activeTicketTypeIndex: 0,
     };
@@ -93,7 +96,7 @@ export default {
   //方法区
   methods: {
     JKTest() {
-      console.log("测试一下");
+      console.log('测试一下');
     },
     changeActiveTicketTypeIndex(index) {
       let activeIndex = this.activeTicketTypeIndex;
@@ -169,7 +172,7 @@ export default {
             // margin-bottom: calc(27 / 75) + rem;
 
             .nav-img {
-              background-image: url("@/assets/img/nav-left-arrow.png");
+              background-image: url('@/assets/img/nav-left-arrow.png');
               background-repeat: no-repeat;
               background-size: 100% 100%;
               height: 100%;
@@ -183,7 +186,7 @@ export default {
 
             // margin-bottom: calc(27 / 75) + rem;
             font-size: calc(36 / 75) + rem;
-            font-family: "SourceHanSansCN-Medium";
+            font-family: 'SourceHanSansCN-Medium';
             font-weight: 500;
             // font-size: 18px !important;
           }
@@ -200,7 +203,15 @@ export default {
     width: 100vw;
 
     padding-bottom: calc(96.5 / 75) + rem;
-
+    // 设置背景
+    .content-bgc {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+    }
     /* 奖券内容 (已转移到ticketTypeTabList)*/
     .ticket-content-container {
       position: relative;
@@ -243,7 +254,7 @@ export default {
             border-radius: calc(29 / 75) + rem;
 
             font-size: calc(28 / 75) + rem;
-            font-family: "SourceHanSansCN";
+            font-family: 'SourceHanSansCN';
             font-weight: 400;
             color: #949494;
           }
@@ -303,7 +314,7 @@ export default {
             height: 100%;
             width: 100%;
 
-            background-image: url("@/assets/img/empty-ticket-img.png");
+            background-image: url('@/assets/img/empty-ticket-img.png');
             background-repeat: no-repeat;
             background-size: 100% 100%;
           }

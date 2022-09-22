@@ -24,25 +24,23 @@
               </div>
               <div class="right-band-container">
                 <div class="top-band-img-container">
-                  <div class="top-left-img-container">
-                    <div class="band-img"></div>
-                  </div>
-                  <div class="top-right-img-container">
+                  <div class="band-img-container">
                     <div class="band-img"></div>
                   </div>
                 </div>
+
                 <div class="bottom-band-img-container">
-                  <div class="bottom-left-img-container">
-                    <div class="band-img"></div>
-                  </div>
-                  <div class="bottom-right-img-container">
+                  <div class="band-img-container">
                     <div class="band-img"></div>
                   </div>
                 </div>
               </div>
             </div>
             <!-- 建筑商户 -->
-            <div class="construct-merchant-container">
+            <div
+              class="construct-merchant-container"
+              @click="navToPage('sortSection')"
+            >
               <div class="left-type-info-container">
                 <div class="left-type-info-wrapper">
                   <div class="type-img-container">
@@ -53,22 +51,23 @@
               </div>
               <div class="right-band-container">
                 <div class="top-band-img-container">
-                  <div class="top-left-img-container">
-                    <div class="band-img"></div>
-                  </div>
-                  <div class="top-right-img-container">
+                  <div class="band-img-container">
                     <div class="band-img"></div>
                   </div>
                 </div>
+
                 <div class="bottom-band-img-container">
-                  <div class="bottom-middle-img-container">
+                  <div class="band-img-container">
                     <div class="band-img"></div>
                   </div>
                 </div>
               </div>
             </div>
             <!-- 家居软装 -->
-            <div class="home-decoration-container">
+            <div
+              class="home-decoration-container"
+              @click="navToPage('sortSection')"
+            >
               <div class="left-type-info-container">
                 <div class="left-type-info-wrapper">
                   <div class="type-img-container">
@@ -79,15 +78,13 @@
               </div>
               <div class="right-band-container">
                 <div class="top-band-img-container">
-                  <div class="top-left-img-container">
-                    <div class="band-img"></div>
-                  </div>
-                  <div class="top-right-img-container">
+                  <div class="band-img-container">
                     <div class="band-img"></div>
                   </div>
                 </div>
+
                 <div class="bottom-band-img-container">
-                  <div class="bottom-middle-img-container">
+                  <div class="band-img-container">
                     <div class="band-img"></div>
                   </div>
                 </div>
@@ -311,21 +308,21 @@ export default {
                 position: relative;
                 display: flex;
                 flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
                 height: calc(128 / 75) + rem;
                 width: 100%;
-                .top-left-img-container {
+                .band-img-container {
                   position: relative;
-                  width: calc(225 / 75) + rem;
-                  height: calc(44 / 75) + rem;
-
-                  margin-top: calc(52 / 75) + rem;
-                  margin-left: calc(34 / 75) + rem;
+                  width: calc(270 / 75) + rem;
+                  height: calc(90 / 75) + rem;
 
                   .band-img {
                     height: 100%;
                     width: 100%;
 
-                    background-image: url(@/assets/img/jtl.jpg);
+                    background-image: url(@/assets/img/zhong-bo-logo.png);
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
                   }
@@ -352,33 +349,38 @@ export default {
                 position: relative;
                 display: flex;
                 flex-direction: row;
-                height: calc(146 / 75) + rem;
+                justify-content: center;
+                align-items: center;
+
+                height: calc(128 / 75) + rem;
                 width: 100%;
-                .bottom-left-img-container {
-                  width: calc(216 / 75) + rem;
-                  height: calc(106 / 75) + rem;
-                  margin-left: calc(43 / 75) + rem;
+                .band-img-container {
+                  position: relative;
+                  width: calc(270 / 75) + rem;
+                  height: calc(90 / 75) + rem;
 
                   .band-img {
                     height: 100%;
                     width: 100%;
 
-                    background-image: url(@/assets/img/yzf.jpg);
+                    background-image: url(@/assets/img/zhong-bo-logo.png);
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
                   }
                 }
-                .bottom-right-img-container {
-                  width: calc(146 / 75) + rem;
-                  height: calc(106 / 75) + rem;
-                  margin-left: calc(50 / 75) + rem;
-                  margin-top: calc(8 / 75) + rem;
+                .top-right-img-container {
+                  position: relative;
+                  width: calc(209 / 75) + rem;
+                  height: calc(76 / 75) + rem;
+
+                  margin-top: calc(33 / 75) + rem;
+                  margin-left: calc(38 / 75) + rem;
 
                   .band-img {
                     height: 100%;
                     width: 100%;
 
-                    background-image: url(@/assets/img/jdzs.png);
+                    background-image: url(@/assets/img/dyrs.jpeg);
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
                   }
@@ -443,38 +445,38 @@ export default {
                 position: relative;
                 display: flex;
                 flex-direction: row;
-                height: calc(164 / 75) + rem;
-                width: 100%;
-                .top-left-img-container {
-                  position: relative;
-                  width: calc(218 / 75) + rem;
-                  height: calc(74 / 75) + rem;
+                justify-content: center;
+                align-items: center;
 
-                  margin-top: calc(38 / 75) + rem;
-                  margin-left: calc(40 / 75) + rem;
+                height: calc(128 / 75) + rem;
+                width: 100%;
+                .band-img-container {
+                  position: relative;
+                  width: calc(270 / 75) + rem;
+                  height: calc(90 / 75) + rem;
 
                   .band-img {
                     height: 100%;
                     width: 100%;
 
-                    background-image: url(@/assets/img/smt.jpg);
+                    background-image: url(@/assets/img/zhong-bo-logo.png);
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
                   }
                 }
                 .top-right-img-container {
                   position: relative;
-                  width: calc(212 / 75) + rem;
-                  height: calc(106 / 75) + rem;
+                  width: calc(209 / 75) + rem;
+                  height: calc(76 / 75) + rem;
 
-                  margin-top: calc(24 / 75) + rem;
-                  margin-left: calc(20 / 75) + rem;
+                  margin-top: calc(33 / 75) + rem;
+                  margin-left: calc(38 / 75) + rem;
 
                   .band-img {
                     height: 100%;
                     width: 100%;
 
-                    background-image: url(@/assets/img/ahwy.jpeg);
+                    background-image: url(@/assets/img/dyrs.jpeg);
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
                   }
@@ -484,18 +486,38 @@ export default {
                 position: relative;
                 display: flex;
                 flex-direction: row;
-                height: calc(146 / 75) + rem;
+                justify-content: center;
+                align-items: center;
+
+                height: calc(128 / 75) + rem;
                 width: 100%;
-                .bottom-middle-img-container {
-                  width: calc(226 / 75) + rem;
-                  height: calc(73 / 75) + rem;
-                  margin-left: calc(165 / 75) + rem;
+                .band-img-container {
+                  position: relative;
+                  width: calc(270 / 75) + rem;
+                  height: calc(90 / 75) + rem;
 
                   .band-img {
                     height: 100%;
                     width: 100%;
 
-                    background-image: url(@/assets/img/kdy.jpeg);
+                    background-image: url(@/assets/img/zhong-bo-logo.png);
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                  }
+                }
+                .top-right-img-container {
+                  position: relative;
+                  width: calc(209 / 75) + rem;
+                  height: calc(76 / 75) + rem;
+
+                  margin-top: calc(33 / 75) + rem;
+                  margin-left: calc(38 / 75) + rem;
+
+                  .band-img {
+                    height: 100%;
+                    width: 100%;
+
+                    background-image: url(@/assets/img/dyrs.jpeg);
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
                   }
@@ -561,38 +583,38 @@ export default {
                 position: relative;
                 display: flex;
                 flex-direction: row;
-                height: calc(164 / 75) + rem;
-                width: 100%;
-                .top-left-img-container {
-                  position: relative;
-                  width: calc(216 / 75) + rem;
-                  height: calc(120 / 75) + rem;
+                justify-content: center;
+                align-items: center;
 
-                  margin-top: calc(31 / 75) + rem;
-                  margin-left: calc(50 / 75) + rem;
+                height: calc(128 / 75) + rem;
+                width: 100%;
+                .band-img-container {
+                  position: relative;
+                  width: calc(270 / 75) + rem;
+                  height: calc(90 / 75) + rem;
 
                   .band-img {
                     height: 100%;
                     width: 100%;
 
-                    background-image: url(@/assets/img/yb.png);
+                    background-image: url(@/assets/img/zhong-bo-logo.png);
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
                   }
                 }
                 .top-right-img-container {
                   position: relative;
-                  width: calc(147 / 75) + rem;
-                  height: calc(135 / 75) + rem;
+                  width: calc(209 / 75) + rem;
+                  height: calc(76 / 75) + rem;
 
-                  margin-top: calc(19 / 75) + rem;
-                  margin-left: calc(31 / 75) + rem;
+                  margin-top: calc(33 / 75) + rem;
+                  margin-left: calc(38 / 75) + rem;
 
                   .band-img {
                     height: 100%;
                     width: 100%;
 
-                    background-image: url(@/assets/img/ydjj.jpeg);
+                    background-image: url(@/assets/img/dyrs.jpeg);
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
                   }
@@ -602,18 +624,38 @@ export default {
                 position: relative;
                 display: flex;
                 flex-direction: row;
-                height: calc(146 / 75) + rem;
+                justify-content: center;
+                align-items: center;
+
+                height: calc(128 / 75) + rem;
                 width: 100%;
-                .bottom-middle-img-container {
-                  width: calc(274 / 75) + rem;
-                  height: calc(100 / 75) + rem;
-                  margin-left: calc(129 / 75) + rem;
+                .band-img-container {
+                  position: relative;
+                  width: calc(270 / 75) + rem;
+                  height: calc(90 / 75) + rem;
 
                   .band-img {
                     height: 100%;
                     width: 100%;
 
-                    background-image: url(@/assets/img/md.jpeg);
+                    background-image: url(@/assets/img/zhong-bo-logo.png);
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                  }
+                }
+                .top-right-img-container {
+                  position: relative;
+                  width: calc(209 / 75) + rem;
+                  height: calc(76 / 75) + rem;
+
+                  margin-top: calc(33 / 75) + rem;
+                  margin-left: calc(38 / 75) + rem;
+
+                  .band-img {
+                    height: 100%;
+                    width: 100%;
+
+                    background-image: url(@/assets/img/dyrs.jpeg);
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
                   }

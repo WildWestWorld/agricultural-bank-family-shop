@@ -181,11 +181,18 @@
           <div slot="item0">
             <tabListContentCard></tabListContentCard>
             <tabListContentCard></tabListContentCard>
-
             <tabListContentCard></tabListContentCard>
           </div>
-          <div slot="item1">建筑商户</div>
-          <div slot="item2">家居软装</div>
+          <div slot="item1">
+            <tabListContentCard></tabListContentCard>
+            <tabListContentCard></tabListContentCard>
+          </div>
+          <div slot="item2">
+            <tabListContentCard></tabListContentCard>
+            <tabListContentCard></tabListContentCard>
+            <tabListContentCard></tabListContentCard>
+            <tabListContentCard></tabListContentCard>
+          </div>
         </tabList>
       </div>
     </div>

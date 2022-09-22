@@ -55,7 +55,7 @@
         <div class="scan-code-activity-bcg"></div>
       </div>
     </div>
-    <JKDialog></JKDialog>
+    <!-- <JKDialog></JKDialog> -->
   </div>
 </template>
 
@@ -67,8 +67,8 @@ export default {
   name: 'companyProfile',
   components: {
     JKNavigator,
-    JKDialog
-},
+    JKDialog,
+  },
   //变量区
   data() {
     return {};
@@ -180,7 +180,7 @@ export default {
     flex-direction: column;
     height: fit-content;
     width: 100vw;
-
+    flex: 1;
     padding-bottom: calc(96.5 / 75) + rem;
     // 门店福利
 
@@ -324,6 +324,8 @@ export default {
       height: calc(1077 / 75) + rem;
       padding-bottom: calc(96.5 / 75) + rem;
 
+      flex: 1;
+      //   flex: 1;
       .scan-code-activity-bcg {
         position: absolute;
 

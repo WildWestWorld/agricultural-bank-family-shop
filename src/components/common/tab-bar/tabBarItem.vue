@@ -56,6 +56,7 @@ export default {
         : `url(${this.$props.info.icon})`;
     },
   },
+
   data() {
     return {};
   },

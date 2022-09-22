@@ -141,7 +141,7 @@ export default {
     flex-direction: column;
     height: calc(1206 / 75) + rem;
     width: 100vw;
-
+    flex: 1;
     padding-bottom: calc(96.5 / 75) + rem;
 
     // background-image: url('@/assets/img/company-profile.png');

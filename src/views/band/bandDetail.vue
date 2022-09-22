@@ -14,7 +14,7 @@
               </div>
             </div>
           </div> -->
-      <JKNavigator title="XX品牌"></JKNavigator>
+      <JKNavigator title="中博家居"></JKNavigator>
     </div>
     <div class="content">
       <div class="band-list-container">

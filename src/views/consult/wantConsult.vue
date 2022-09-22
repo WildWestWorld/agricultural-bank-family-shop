@@ -160,7 +160,7 @@ export default {
     flex-direction: column;
     height: calc(1206 / 75) + rem;
     width: 100vw;
-
+    flex: 1;
     padding-bottom: calc(96.5 / 75) + rem;
 
     // background-image: url('@/assets/img/company-profile.png');
@@ -172,6 +172,8 @@ export default {
       flex-direction: row;
       height: calc(1207.05 / 75) + rem;
       width: 100vw;
+
+      flex: 1;
 
       background-image: url(@/assets/img/want-consult-img.png);
       background-repeat: no-repeat;

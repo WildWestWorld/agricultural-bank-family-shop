@@ -10,10 +10,20 @@
       <div class="content-bgc"></div>
 
       <div class="content-img-container">
-        <div class="jtl-img-container" @click="navToPage('bandDetail')">
-          <div class="jtl-img"></div>
+        <div class="zb-img-container" @click="navToPage('bandDetail')">
+          <div class="zb-img"></div>
         </div>
-        <div class="second-img-container">
+        <div class="zb-img-container" @click="navToPage('bandDetail')">
+          <div class="zb-img"></div>
+        </div>
+        <div class="zb-img-container" @click="navToPage('bandDetail')">
+          <div class="zb-img"></div>
+        </div>
+        <div class="zb-img-container" @click="navToPage('bandDetail')">
+          <div class="zb-img"></div>
+        </div>
+
+        <!-- <div class="second-img-container">
           <div class="second-img"></div>
         </div>
         <div class="third-img-container">
@@ -21,7 +31,7 @@
         </div>
         <div class="fourth-img-container">
           <div class="fourth-img"></div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -169,65 +179,68 @@ export default {
       position: relative;
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
       width: 100%;
       height: 100%;
-      .jtl-img-container {
+      .zb-img-container {
         position: relative;
-        width: calc(444 / 75) + rem;
-        height: calc(87 / 75) + rem;
-        margin-left: calc(162 / 75) + rem;
-        margin-top: calc(99 / 75) + rem;
+        width: calc(600 / 75) + rem;
+        height: calc(200 / 75) + rem;
+        // margin-left: calc(162 / 75) + rem;
+        // margin-top: calc(99 / 75) + rem;
 
-        .jtl-img {
+        .zb-img {
           height: 100%;
           width: 100%;
-          background-image: url(@/assets/img/jtl.jpg);
+          background-image: url(@/assets/img/zhong-bo-logo.png);
           background-repeat: no-repeat;
           background-size: 100% 100%;
         }
       }
-      .second-img-container {
-        width: calc(216 * 2 / 75) + rem;
-        height: calc(100 * 2 / 75) + rem;
-        margin-left: calc(162 / 75) + rem;
-        margin-top: calc(96 / 75) + rem;
 
-        .second-img {
-          height: 100%;
-          width: 100%;
-          background-image: url(@/assets/img/jtl.jpg);
-          background-repeat: no-repeat;
-          background-size: 100% 100%;
-        }
-      }
-      .third-img-container {
-        width: calc(475 / 75) + rem;
-        height: calc(231 / 75) + rem;
-        margin-left: calc(138 / 75) + rem;
-        margin-top: calc(114 / 75) + rem;
+      //   .second-img-container {
+      //     width: calc(216 * 2 / 75) + rem;
+      //     height: calc(100 * 2 / 75) + rem;
+      //     margin-left: calc(162 / 75) + rem;
+      //     margin-top: calc(96 / 75) + rem;
 
-        .third-img {
-          height: 100%;
-          width: 100%;
-          background-image: url(@/assets/img/jtl.jpg);
-          background-repeat: no-repeat;
-          background-size: 100% 100%;
-        }
-      }
-      .fourth-img-container {
-        width: calc(288 / 75) + rem;
-        height: calc(208 / 75) + rem;
-        margin-left: calc(240 / 75) + rem;
-        margin-top: calc(99 / 75) + rem;
+      //     .second-img {
+      //       height: 100%;
+      //       width: 100%;
+      //       background-image: url(@/assets/img/jtl.jpg);
+      //       background-repeat: no-repeat;
+      //       background-size: 100% 100%;
+      //     }
+      //   }
+      //   .third-img-container {
+      //     width: calc(475 / 75) + rem;
+      //     height: calc(231 / 75) + rem;
+      //     margin-left: calc(138 / 75) + rem;
+      //     margin-top: calc(114 / 75) + rem;
 
-        .fourth-img {
-          height: 100%;
-          width: 100%;
-          background-image: url(@/assets/img/jtl.jpg);
-          background-repeat: no-repeat;
-          background-size: 100% 100%;
-        }
-      }
+      //     .third-img {
+      //       height: 100%;
+      //       width: 100%;
+      //       background-image: url(@/assets/img/jtl.jpg);
+      //       background-repeat: no-repeat;
+      //       background-size: 100% 100%;
+      //     }
+      //   }
+      //   .fourth-img-container {
+      //     width: calc(288 / 75) + rem;
+      //     height: calc(208 / 75) + rem;
+      //     margin-left: calc(240 / 75) + rem;
+      //     margin-top: calc(99 / 75) + rem;
+
+      //     .fourth-img {
+      //       height: 100%;
+      //       width: 100%;
+      //       background-image: url(@/assets/img/jtl.jpg);
+      //       background-repeat: no-repeat;
+      //       background-size: 100% 100%;
+      //     }
+      //   }
     }
   }
 }

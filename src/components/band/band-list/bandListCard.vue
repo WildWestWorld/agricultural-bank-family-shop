@@ -12,37 +12,50 @@
           <div class="empty-top-padding-container"></div>
           <div class="top-container">
             <div class="left-img-container">
-              <img
-                class="left-shop-img"
-                src="http://p3.music.126.net/wGbO39sAMI9lroiLYXJsDQ==/109951167760004737.jpg?param=400y400"
-              />
+              <img class="left-shop-img" src="@/assets/img/zhong-bo-logo.png" />
             </div>
             <div class="right-info-container">
-              <div class="name-text-container">
-                张家港市杨舍镇塘市美心木门经营部美心木门经营部美心木门经营部美心木门经营部
-              </div>
+              <div class="name-text-container">中博家居</div>
 
               <div class="address-info-container">
-                <div class="address">
-                  张家港市杨舍镇南二环路1号（红星美凯龙二号馆三楼）（红星美凯龙二号馆三楼）（红星美凯龙二号馆三楼）
-                </div>
+                <div class="address">天城路86号中博家居广场</div>
               </div>
-              <div class="distant-container">与我相距13.4km</div>
+              <div class="distant-container">与我相距1.4km</div>
             </div>
           </div>
           <div class="bottom-container">
             <div class="bottom-wrapper">
               <div class="button-container">
-                <div class="button-text-container">我要领券</div>
+                <div
+                  class="button-text-container"
+                  @click="navToPage('guessFavorite')"
+                >
+                  我要领券
+                </div>
               </div>
               <div class="button-container">
-                <div class="button-text-container">我要咨询</div>
+                <div
+                  class="button-text-container"
+                  @click="navToPage('wantConsult')"
+                >
+                  我要咨询
+                </div>
               </div>
               <div class="button-container">
-                <div class="button-text-container">最近活动</div>
+                <div
+                  class="button-text-container"
+                  @click="navToPage('lastActivity')"
+                >
+                  最近活动
+                </div>
               </div>
               <div class="button-container">
-                <div class="button-text-container">样板展示</div>
+                <div
+                  class="button-text-container"
+                  @click="navToPage('designerExample')"
+                >
+                  样板展示
+                </div>
               </div>
               <div class="button-container">
                 <div class="button-text-container">我要购买</div>
@@ -76,9 +89,8 @@ export default {
     return {};
   },
   methods: {
-    navToCompanyDetail() {
-      this.$router.push('/companyDetail');
-      console.log('test');
+    navToPage(path) {
+      this.$router.push('/' + path);
     },
   },
 };

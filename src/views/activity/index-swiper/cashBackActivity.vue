@@ -188,6 +188,7 @@ export default {
       height: calc(397 / 75) + rem;
       width: 100%;
       background-color: #fd9346;
+      flex: 1;
       .collect-ticket-text-container {
         position: relative;
         display: flex;

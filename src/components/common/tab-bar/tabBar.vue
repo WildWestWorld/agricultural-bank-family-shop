@@ -19,15 +19,20 @@
 
 <script>
 import tabBarItem from '@/components/common/tab-bar/tabBarItem.vue';
+import { mapState } from 'vuex';
 
 export default {
   name: 'tabBar',
   components: {
     tabBarItem,
   },
+  computed: mapState({
+    // isFreshTabBar: (state) => state.isFreshTabBar,
+    activeTabBarIndex: (state) => state.activeTabBarIndex,
+  }),
   data() {
     return {
-      activeTabBarIndex: 0,
+      //   activeTabBarIndex: 0,
       tabBarData: [
         {
           title: '首页',
@@ -53,29 +58,30 @@ export default {
       ],
     };
   },
-  created () {
-    const topath = this.$route.path
-    if (topath === '/') {
-      // 页面刷新
-      this.activeTabBarIndex = Number(localStorage.getItem('activeTabBarIndex')) || 0;
-    } else {
-      this.setActive(topath)
-    }
+  created() {
+    // const topath = this.$route.path;
+    // if (topath === '/') {
+    //   // 页面刷新
+    //   this.activeTabBarIndex =
+    //     Number(localStorage.getItem('activeTabBarIndex')) || 0;
+    // } else {
+    //   this.setActive(topath);
+    // }
   },
   //  方法区
   methods: {
-    setActive (path) {
+    setActive(path) {
       this.tabBarData.forEach((tab, i) => {
         if (tab.path === path) {
-          this.activeTabBarIndex = i
-          return false
+          this.activeTabBarIndex = i;
+          return false;
         }
-      })
+      });
     },
     //改变正在使用的变量activeTabItemIndex
     changeActiveTabBarIndex(index) {
-      this.activeTabBarIndex = index;
-      localStorage.setItem('activeTabBarIndex', index)
+      this.$store.commit('changeActiveTabBarIndexState', index);
+      //   localStorage.setItem('activeTabBarIndex', index);
       console.log(this.activeTabBarIndex);
     },
   },
