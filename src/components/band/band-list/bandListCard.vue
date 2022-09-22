@@ -12,10 +12,16 @@
           <div class="empty-top-padding-container"></div>
           <div class="top-container">
             <div class="left-img-container">
-              <img class="left-shop-img" src="@/assets/img/zhong-bo-logo.png" />
+              <div class="left-img-wrapper">
+                <img
+                  class="left-shop-img"
+                  src="@/assets/img/zhong-bo-logo.png"
+                />
+              </div>
             </div>
+
             <div class="right-info-container">
-              <div class="name-text-container">中博家居</div>
+              <div class="name-text-container">中博装饰</div>
 
               <div class="address-info-container">
                 <div class="address">天城路86号中博家居广场</div>
@@ -224,11 +230,19 @@ export default {
             flex-direction: row;
             justify-content: flex-end;
             align-items: flex-start;
-
-            .left-shop-img {
-              width: calc(200 / 75) + rem;
-              height: calc(200 / 75) + rem;
-              border-radius: calc(20 / 75) + rem;
+            border-radius: calc(20 / 75) + rem;
+            .left-img-wrapper {
+              position: relative;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              height: calc(160 / 75) + rem;
+              width: 90%;
+              .left-shop-img {
+                display: block;
+                width: 100%;
+                margin: 0 auto;
+              }
             }
           }
 

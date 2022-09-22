@@ -59,29 +59,31 @@ export default {
     };
   },
   created() {
-    // const topath = this.$route.path;
-    // if (topath === '/') {
-    //   // 页面刷新
-    //   this.activeTabBarIndex =
-    //     Number(localStorage.getItem('activeTabBarIndex')) || 0;
-    // } else {
-    //   this.setActive(topath);
-    // }
+    const topath = this.$route.path;
+    if (topath === '/') {
+      // 页面刷新
+      //   this.activeTabBarIndex =
+
+      this.$store.commit(
+        'changeActiveTabBarIndexState',
+        Number(localStorage.getItem('activeTabBarIndex')) || 0
+      );
+    }
   },
   //  方法区
   methods: {
-    setActive(path) {
-      this.tabBarData.forEach((tab, i) => {
-        if (tab.path === path) {
-          this.activeTabBarIndex = i;
-          return false;
-        }
-      });
-    },
+    // setActive(path) {
+    //   this.tabBarData.forEach((tab, i) => {
+    //     if (tab.path === path) {
+    //         this.$store.commit('changeActiveTabBarIndexState', i);
+    //       return false;
+    //     }
+    //   });
+    // },
     //改变正在使用的变量activeTabItemIndex
     changeActiveTabBarIndex(index) {
       this.$store.commit('changeActiveTabBarIndexState', index);
-      //   localStorage.setItem('activeTabBarIndex', index);
+      localStorage.setItem('activeTabBarIndex', index);
       console.log(this.activeTabBarIndex);
     },
   },

@@ -31,8 +31,8 @@
               <div class="top-installments-container">
                 <div class="top-installments-wrapper">
                   <div class="installments-info-container">
-                    <div class="num-text-container">0</div>
-                    <div class="installments-text-container">我的分期</div>
+                    <div class="num-text-container"></div>
+                    <div class="installments-text-container"></div>
                   </div>
                 </div>
               </div>

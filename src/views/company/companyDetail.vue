@@ -32,7 +32,7 @@
             <!-- card的上半部分 -->
             <div class="top-info-container">
               <div class="top-info-left-container">
-                <div class="name-text-container">中博家居</div>
+                <div class="name-text-container">中博装饰</div>
                 <div class="commend-info-container">
                   <div class="star-img-text-container">
                     <div class="star-img-container">

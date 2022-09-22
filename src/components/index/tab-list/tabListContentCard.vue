@@ -17,7 +17,10 @@
           <div class="top-container">
             <div class="left-img-container">
               <div class="left-shop-img-wrapper">
-                <div class="left-shop-img"></div>
+                <img
+                  class="left-shop-img"
+                  src="@/assets/img/zhong-bo-logo.png"
+                />
               </div>
             </div>
             <div class="right-info-container">
@@ -252,18 +255,19 @@ export default {
             display: flex;
             flex-direction: row;
             justify-content: flex-end;
-            align-items: flex-start;
+            align-items: center;
 
             .left-shop-img-wrapper {
-              width: 2rem;
-              height: 2rem;
+              width: 90%;
+              //   height: 0.8rem;
               border-radius: 0.2rem;
+
               .left-shop-img {
                 width: 100%;
                 height: 100%;
-                background-image: url(@/assets/img/zhong-bo-logo.png);
-                background-repeat: no-repeat;
-                background-size: 100% 100%;
+                // background-image: url(@/assets/img/zhong-bo-logo.png);
+                // background-repeat: no-repeat;
+                // background-size: 100% 100%;
               }
             }
           }

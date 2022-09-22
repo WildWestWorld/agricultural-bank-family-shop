@@ -52,6 +52,7 @@ export default {
         console.log('触发');
         this.$router.replace('/index');
         this.$store.commit('changeActiveTabBarIndexState', 0);
+        localStorage.setItem('activeTabBarIndex', 0);
 
         //     // this.$store.commit('changeIsFreshTabBarState', true);
         //     // this.$nextTick(() => {
