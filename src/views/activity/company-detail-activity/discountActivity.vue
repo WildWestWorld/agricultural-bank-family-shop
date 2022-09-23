@@ -11,9 +11,21 @@
 
       <div class="discount-list-container">
         <div class="discount-list-wrapper">
-          <DiscountListCard></DiscountListCard>
-          <DiscountListCard></DiscountListCard>
-          <DiscountListCard></DiscountListCard>
+          <DiscountListCard
+            title="环保健康家60㎡（两室两厅一厨一卫）"
+            nowPrice="69800"
+            beforePrice="129800"
+          ></DiscountListCard>
+          <DiscountListCard
+            title="环保定制家90㎡（三室两厅一厨一卫）"
+            beforePrice="208800"
+            nowPrice="108800"
+          ></DiscountListCard>
+          <DiscountListCard
+            title="环保健康家60㎡（两室两厅一厨一卫）"
+            nowPrice="0 "
+            beforePrice="129800"
+          ></DiscountListCard>
           <DiscountListCard></DiscountListCard>
           <DiscountListCard></DiscountListCard>
           <DiscountListCard></DiscountListCard>

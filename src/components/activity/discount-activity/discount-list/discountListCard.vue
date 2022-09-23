@@ -9,10 +9,12 @@
     <!-- 右边的信息和按钮 -->
     <div class="right-text-button-container">
       <div class="info-container">
-        <div class="title-text-container">装修基材大礼包</div>
+        <div class="title-text-container">{{ title }}</div>
         <div class="discount-text-container">
-          <div class="now-price-text-container">￥9.9</div>
-          <div class="before-price-text-container">￥2000</div>
+          <div class="now-price-text-container">￥{{ nowPrice }}</div>
+          <div class="before-price-text-container" v-if="isShowBeforePrice">
+            ￥{{ beforePrice }}
+          </div>
         </div>
       </div>
       <div class="buy-sale-container">
@@ -26,7 +28,13 @@
 <script>
 export default {
   name: 'discountListCard',
-  props: {},
+  props: {
+    title: { type: String, default: '装修基材大礼包' },
+    nowPrice: { type: Number, default: 0 },
+    beforePrice: { type: Number, default: 0 },
+    isShowBeforePrice: { type: Boolean, default: true },
+    info: { type: Object, default: () => null },
+  },
   computed: {},
   data() {
     return {};
@@ -96,17 +104,26 @@ export default {
         position: relative;
         font-size: calc(30 / 75) + rem;
         text-overflow: ellipsis;
-        white-space: nowrap;
+        // white-space: nowrap;
         font-family: SourceHanSansCN;
         font-weight: bold;
         color: #000000;
         margin-top: calc(11 / 75) + rem;
+
+        flex: 1.3;
+
+        overflow: hidden;
+        text-overflow: ellipsis; //当对象内文本溢出时显示省略标记
+        display: -webkit-box;
+        -webkit-line-clamp: 2; //这边的2指的是两行
+        -webkit-box-orient: vertical;
       }
       .discount-text-container {
         position: relative;
         display: flex;
         flex-direction: row;
         margin-top: calc(6 / 75) + rem;
+        flex: 1;
         .now-price-text-container {
           color: #ff6133;
           font-size: calc(30 / 75) + rem;
@@ -131,7 +148,8 @@ export default {
       display: flex;
       flex-direction: column;
       height: 100%;
-      margin-top: calc(11 / 75) + rem;
+      justify-content: center;
+      //   margin-top: calc(11 / 75) + rem;
 
       .button-container {
         position: relative;
