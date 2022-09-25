@@ -1,5 +1,4 @@
 <template>
-
   <div class="page">
     <div class="page-wrapper">
       <div class="header">
@@ -91,6 +90,29 @@
                 </div>
               </div>
             </div>
+
+            <div class="test">
+              <svg
+                t="1664102717928"
+                class="icon"
+                viewBox="0 0 1024 1024"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                p-id="3824"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+
+              >
+                <path
+                  d="M946.44567 407.179676c-3.706415-11.056823-13.268188-19.154245-24.823362-20.929682l-263.117606-40.614L540.930913 93.91802c-5.108345-10.93198-16.071024-17.939581-28.155247-17.971303-0.030699 0-0.062422 0-0.062422 0-12.021801 0-22.985504 6.945179-28.155247 17.84646L365.79001 345.247138l-263.917832 39.507806c-11.399631 1.961678-20.774139 10.060123-24.355711 21.054525-3.613294 10.963703-0.778736 23.047926 7.257288 31.332612l191.202717 196.684568-45.6282 277.132808c-1.930979 11.741415 3.0208 23.608697 12.769838 30.491455 9.717316 6.882757 22.549575 7.630794 32.983205 1.868557l235.366565-129.47177 234.868215 130.282229c4.703115 2.616594 9.904581 3.924379 15.106046 3.924379 6.291287 0 12.551874-1.868557 17.877159-5.699816 9.748015-6.852058 14.763239-18.687618 12.862959-30.460756L747.488339 634.635061l191.669344-195.84341C947.286828 430.476265 950.121386 418.2365 946.44567 407.179676z"
+                  p-id="3825"
+                  fill="#bfbfbf"
+                  id=heart
+                ></path>
+              </svg>
+
+              <span></span>
+            </div>
+            
           </div>
         </div>
       </div>
@@ -99,10 +121,10 @@
 </template>
 
 <script>
-import JKNavigator from '@/components/common/jk-navigator/JKNavigator.vue';
+import JKNavigator from "@/components/common/jk-navigator/JKNavigator.vue";
 
 export default {
-  name: 'Sort',
+  name: "Sort",
   components: {
     JKNavigator,
   },
@@ -110,7 +132,7 @@ export default {
   //变量区
   data() {
     return {
-      test: '123',
+      test: "123",
     };
   },
   //生命周期区
@@ -121,13 +143,12 @@ export default {
   //方法区
   methods: {
     JKTest() {
-      console.log('测试一下');
+      console.log("测试一下");
     },
 
     navToPage(path) {
-      this.$router.push('/' + path);
+      this.$router.push("/" + path);
     },
-
   },
 };
 </script>
@@ -207,7 +228,7 @@ export default {
               // margin-bottom: calc(27 / 75) + rem;
 
               .nav-img {
-                background-image: url('@/assets/img/nav-left-arrow.png');
+                background-image: url("@/assets/img/nav-left-arrow.png");
                 background-repeat: no-repeat;
                 background-size: 100% 100%;
                 height: 100%;
@@ -221,7 +242,7 @@ export default {
 
               // margin-bottom: calc(27 / 75) + rem;
               font-size: calc(36 / 75) + rem;
-              font-family: 'SourceHanSansCN-Medium';
+              font-family: "SourceHanSansCN-Medium";
               font-weight: 500;
               // font-size: 18px !important;
             }
@@ -665,6 +686,138 @@ export default {
                     background-size: 100% 100%;
                   }
                 }
+              }
+            }
+          }
+
+          .test {
+            position: relative;
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+              width: calc(40 / 75) + rem;
+              height: calc(40 / 75) + rem;
+            /* 自定义属性 用var函数进行调用 */
+            --heart-stroke-color: yellow;
+            svg {
+              position: relative;
+              width: 50vw;
+              z-index: 10; 
+            }
+            #heart {
+              fill: #eee;
+              /* svg形状的边框颜色 */
+              stroke: black;
+              /* stroke: var(--heart-stroke-color); */
+
+              /* svg形状边框的宽度 */
+              stroke-width: 40px;
+
+              /* 我们可以设置stroke-dashoffset与stroke-dasharray相同的值实现“画线”的效果： */
+
+              /* svg形状边框线 / 虚线 等比例分割的距离 */
+              /*  只有一个值是实线的长度，两个值是 实线的长度和虚线的长度*/
+              stroke-dasharray: 4000;
+
+              /*  svg形状边框线 / 虚线 开始的位置 正值就是左移*/
+              /* 当stroke-dasharray = stroke-dashoffset时我们就看不见线了，当我们stroke-dashoffset 越来越小，线就开始右移我们就能逐渐看见线了*/
+              stroke-dashoffset: 4000;
+
+              /* 设置边框线的首尾的形状 */
+              stroke-linecap: round;
+            }
+            /* 里面的span的内容其实看不见的会被svg图片挡住，我们看到是里面的shadow */
+            span {
+              display: block;
+              height: 24px;
+              width: 24px;
+              background-color: yellow;
+              border-radius: 50%;
+
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%) scale(0);
+              z-index: 99;
+
+              //盒子阴影  (x的位置,y的位置，blur模糊的大小，阴影的颜色)
+              //利用盒子阴影 可以复制和原来的盒子盒子一样的宽高的元素
+              box-shadow: 0 -160px 0 var(--heart-stroke-color),
+                0 160px 0 var(--heart-stroke-color),
+                -160px 0 0 var(--heart-stroke-color),
+                160px 0 0 var(--heart-stroke-color),
+                -120px -120px 0 var(--heart-stroke-color),
+                120px -120px 0 var(--heart-stroke-color),
+                120px 120px 0 var(--heart-stroke-color),
+                -120px 120px 0 var(--heart-stroke-color);
+            }
+
+            svg #heart {
+              /* forwards 执行完毕后停在最后一帧 */
+              animation: drawHeart 1s linear forwards;
+            }
+            svg {
+              animation: beat 1s linear forwards;
+            }
+            span {
+              animation: blick 0.5s ease-in-out forwards;
+              animation-delay: 1s;
+            }
+            /* 定义画心动画 */
+            @keyframes drawHeart {
+              0% {
+                /* fill: #eee; */
+              stroke: black;
+
+                stroke-dashoffset: 4000;
+              }
+              /* 划线 */
+              80% {
+                fill: #eee;
+              stroke: yellow;
+
+                stroke-dashoffset: 0;
+              }
+              /* 划线完毕后,然后让svg背景变红 */
+              100% {
+                fill: yellow;
+              stroke: yellow;
+
+                stroke-dashoffset: 0;
+              }
+            }
+            /* 定义心跳动画 (图形点亮后轻微变大后变回原状)*/
+            @keyframes beat {
+              0% {
+                transform: scale(1);
+              }
+              70% {
+                transform: scale(1);
+              }
+              80% {
+                transform: scale(1.2);
+              }
+              100% {
+                transform: scale(1);
+              }
+            }
+            /* 定义点亮动画 */
+            /* 这里的translate(-50%, -50%)只是为了保持盒子原来的居中效果，无其他含义 */
+            /* 主要效果是scale先变小后变大，让人感觉像是展开 */
+            @keyframes blick {
+              0% {
+                transform: translate(-50%, -50%) scale(0.5);
+                opacity: 0.8;
+              }
+              50% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+              }
+              100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0;
               }
             }
           }
