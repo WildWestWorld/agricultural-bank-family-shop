@@ -1,4 +1,5 @@
 <template>
+
   <div class="page">
     <div class="page-wrapper">
       <div class="header">
@@ -105,6 +106,7 @@ export default {
   components: {
     JKNavigator,
   },
+
   //变量区
   data() {
     return {
@@ -121,14 +123,17 @@ export default {
     JKTest() {
       console.log('测试一下');
     },
+
     navToPage(path) {
       this.$router.push('/' + path);
     },
+
   },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped lang="scss">
 .page {
   box-sizing: border-box;
@@ -669,3 +674,4 @@ export default {
   }
 }
 </style>
+

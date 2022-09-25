@@ -190,9 +190,11 @@ export default {
         transform: translate3d(
           calc((-671 - 22.1) / 75) + rem,
           0,
+
           calc(-200 / 75) + rem
         );
         z-index: -200;
+
 
         transform-origin: right;
         display: block;
