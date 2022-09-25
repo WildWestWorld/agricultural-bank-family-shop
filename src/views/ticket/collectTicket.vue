@@ -1,11 +1,11 @@
 <template>
   <div class="page-wrapper">
     <div class="header">
-      <!-- 导航栏 -->
-
       <JKNavigator title="领取奖券"></JKNavigator>
     </div>
-    <div class="content">!蓝湖原型图 是一张图片，无法正常编写!</div>
+    <div class="content">
+      <div class="company-profile-bcg-container"></div>
+    </div>
   </div>
 </template>
 
@@ -13,7 +13,7 @@
 import JKNavigator from '@/components/common/jk-navigator/JKNavigator.vue';
 
 export default {
-  name: 'collectTicket',
+  name: 'companyProfile',
   components: {
     JKNavigator,
   },
@@ -126,7 +126,7 @@ export default {
     position: relative;
     display: flex;
     flex-direction: column;
-    height: calc(1206 / 75) + rem;
+    height: calc(1404.5 / 75) + rem;
     width: 100vw;
 
     padding-bottom: calc(96.5 / 75) + rem;
@@ -134,6 +134,20 @@ export default {
     // background-image: url('@/assets/img/company-profile.png');
     // background-repeat: no-repeat;
     // background-size: 100% 100%;
+    .company-profile-bcg-container {
+      position: relative;
+      box-sizing: border-box;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+
+      background-image: url('@/assets/img/collect-ticket-img.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+
+      padding-bottom: calc(96.5 / 75) + rem;
+    }
   }
 }
 </style>

@@ -9,7 +9,8 @@ import router from "@/router";
 
 
 // Vant组件专区
-import { Button, Tabbar, TabbarItem, Swipe, SwipeItem, Lazyload, Search, Tab, Tabs } from 'vant';
+import { NavBar, Button, Tabbar, TabbarItem, Swipe, SwipeItem, Lazyload, Search, Tab, Tabs } from 'vant';
+Vue.use(NavBar);
 Vue.use(Tabbar);
 Vue.use(TabbarItem);
 Vue.use(Button);

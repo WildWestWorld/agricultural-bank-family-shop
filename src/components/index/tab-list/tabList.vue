@@ -40,7 +40,7 @@
                 ? 'tab-list-content-item active'
                 : 'tab-list-content-item '
             "
-          :key="index"
+            :key="index"
           >
             <div class="tab-list-content">
               <slot :name="'item' + index"></slot>
@@ -81,11 +81,15 @@ export default {
     this.tabListSliderInit();
     this.getScreenWidth();
   },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.hightChange, true);
+  },
   //方法区
   methods: {
     // 初始化tabList的滑块位置
     tabListSliderInit() {
-      console.log(this.$refs.tabList[0].clientWidth);
+      //   console.log(this.$refs.tabList[0].clientWidth);
+
       this.tabListPositionInit = this.$refs.tabList[0].clientWidth / 2;
       this.tabListItemWidth = this.$refs.tabList[0].clientWidth;
 
@@ -97,16 +101,25 @@ export default {
       this.screenWidth = document.body.clientWidth;
       console.log(document.body.clientWidth);
       //   当页面发生改变
-      window.onresize = () => {
-        console.log('高度改变');
-        this.screenWidth = document.body.clientWidth;
-        this.tabListSliderInit();
-        console.log(this.screenWidth);
-      };
+
+      window.addEventListener('resize', this.hightChange, true);
+
+      //   window.onresize = () => {
+      //     console.log('高度改变');
+      //     this.screenWidth = document.body.clientWidth;
+      //     this.tabListSliderInit();
+      //     console.log(this.screenWidth);
+      //   };
     },
     //改变正在使用的变量activeTabItemIndex
     changeActiveTabItemIndex(index) {
       this.activeTabItemIndex = index;
+    },
+    hightChange() {
+      console.log('高度改变');
+      this.screenWidth = document.body.clientWidth;
+      this.tabListSliderInit();
+      console.log(this.screenWidth);
     },
   },
 };
@@ -181,6 +194,8 @@ export default {
       display: flex;
       flex-direction: column;
       height: 100%;
+
+      margin-top: calc(16.4 / 75) + rem;
       .tab-list-content-item-container {
         position: relative;
         display: flex;

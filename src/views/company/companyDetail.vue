@@ -32,7 +32,7 @@
             <!-- card的上半部分 -->
             <div class="top-info-container">
               <div class="top-info-left-container">
-                <div class="name-text-container">麦丰家装（城西店）</div>
+                <div class="name-text-container">中博装饰</div>
                 <div class="commend-info-container">
                   <div class="star-img-text-container">
                     <div class="star-img-container">
@@ -58,7 +58,7 @@
                   <div class="consumpution-num-container">￥14141/人</div>
                 </div>
                 <div class="address-info-container">
-                  <div class="address">张家港市杨舍镇南二环路1号</div>
+                  <div class="address">天城路86号中博家居广场</div>
                   <!-- <div class="distant">13.4km</div> -->
                 </div>
               </div>
@@ -86,10 +86,10 @@
                 <div class="bottom-middle-container">
                   <div class="address-container">
                     <div class="address-text-container">
-                      文一西路830号蒋村商务中心第六空间F301/302/303/305展厅
+                      浙江省杭州市上城区天城路86号
                     </div>
                     <div class="address-distant-container">
-                      距地铁5号线蒋村站E1口步行910m
+                      天城路86号中博家居广场
                     </div>
                   </div>
                 </div>
@@ -125,7 +125,10 @@
         </div>
         <!-- 下面 -->
         <div class="bottom-activity-img-container">
-          <div class="discount-activity-img-container">
+          <div
+            class="discount-activity-img-container"
+            @click="navToPage('discountActivity')"
+          >
             <div class="discount-activity-img"></div>
           </div>
           <div
@@ -747,7 +750,7 @@ export default {
           .company-introduce-img {
             width: 100%;
             height: 100%;
-            background-image: url('@/assets/img/last-activity.png');
+            background-image: url('@/assets/img/company-introduce.png');
             background-repeat: no-repeat;
             background-size: 100% 100%;
           }

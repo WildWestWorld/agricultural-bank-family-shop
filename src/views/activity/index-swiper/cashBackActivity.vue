@@ -155,6 +155,8 @@ export default {
 
     padding-bottom: calc(96.5 / 75) + rem;
 
+    flex: 1;
+
     // background-image: url('@/assets/img/company-profile.png');
     // background-repeat: no-repeat;
     // background-size: 100% 100%;
@@ -186,6 +188,7 @@ export default {
       height: calc(397 / 75) + rem;
       width: 100%;
       background-color: #fd9346;
+      flex: 1;
       .collect-ticket-text-container {
         position: relative;
         display: flex;

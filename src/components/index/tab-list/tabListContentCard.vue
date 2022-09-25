@@ -1,20 +1,30 @@
 <template>
-  <div class="decoration-type-container" @click="navToCompanyDetail()">
-    <div class="company-container">
+  <div
+    class="decoration-type-container"
+    @click="navToCompanyDetail()"
+    :style="diyStyle"
+  >
+    <div
+      :class="
+        isShowTopLine
+          ? 'company-container top-border'
+          : 'company-container bottom-border'
+      "
+    >
       <div class="company-item-container">
         <div class="company-item">
           <div class="empty-top-padding-container"></div>
           <div class="top-container">
             <div class="left-img-container">
-              <img
-                class="left-shop-img"
-                src="http://p3.music.126.net/wGbO39sAMI9lroiLYXJsDQ==/109951167760004737.jpg?param=400y400"
-              />
+              <div class="left-shop-img-wrapper">
+                <img
+                  class="left-shop-img"
+                  src="@/assets/img/zhong-bo-logo.png"
+                />
+              </div>
             </div>
             <div class="right-info-container">
-              <div class="name-text-container">
-                张家港市杨舍镇塘市美心木门经营部
-              </div>
+              <div class="name-text-container">中博装饰</div>
               <div class="commend-info-container">
                 <div class="star-img-text-container">
                   <div class="star-img-container">
@@ -40,8 +50,8 @@
                 <div class="consumpution-num-container">￥14141/人</div>
               </div>
               <div class="address-info-container">
-                <div class="address">张家港市杨舍镇南二环路1号</div>
-                <div class="distant">13.4km</div>
+                <div class="address">天城路86号中博家居广场</div>
+                <div class="distant">1.4km</div>
               </div>
               <div class="benefit-info-container">
                 <div class="benefit">200个精选案例</div>
@@ -64,9 +74,7 @@
                 <div class="cute-img-container">
                   <div class="cute-img"></div>
                 </div>
-                <div class="recommend-words-container">
-                  “ 张家港市杨舍镇塘市美心木门经营部 ”
-                </div>
+                <div class="recommend-words-container">“ 中博装饰 ”</div>
               </div>
 
               <div class="right-gift-container">
@@ -93,8 +101,20 @@
 <script>
 export default {
   name: 'tabListContentCard',
-  props: {},
-  computed: {},
+  props: {
+    totalwidth: { type: String, default: '100vw- 0.67rem' },
+    radius: { type: String, default: '0.6rem' },
+    isShowTopLine: { tyoe: Boolean, default: true },
+  },
+  computed: {
+    diyStyle() {
+      let style = {
+        width: this.$props.totalwidth,
+        borderRadius: this.$props.radius,
+      };
+      return style;
+    },
+  },
   data() {
     return {};
   },
@@ -157,7 +177,36 @@ export default {
 
     height: fit-content;
     //width: 100vw;
+    &.top-border::before {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      content: '';
+      position: absolute;
+      //   display: none;
+      display: block;
+      width: calc(633 / 75) + rem;
+      height: calc(2 / 75) + rem;
+      background-color: rgba($color: #eeeeee, $alpha: 1);
+      //top: -0.4547rem;
+      //   margin: 0 auto;
 
+      z-index: 100;
+    }
+    &.bottom-border::after {
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      content: '';
+      position: absolute;
+      display: block;
+      width: calc(633 / 75) + rem;
+      height: calc(2 / 75) + rem;
+      background-color: rgba($color: #eeeeee, $alpha: 1);
+      //top: -0.4547rem;
+      //   margin: 0 auto;
+      z-index: 100;
+    }
     .company-item-container {
       position: relative;
       height: calc(368.2 / 75) + rem;
@@ -177,11 +226,15 @@ export default {
         &::before {
           content: '';
           position: relative;
-          width: 80vw;
-          height: 1px;
-          background-color: rgba($color: grey, $alpha: 0.1);
+          display: none;
+
+          //   display: block;
+          width: calc(633 / 75) + rem;
+          height: calc(2 / 75) + rem;
+          background-color: rgba($color: #eeeeee, $alpha: 1);
           //top: -0.4547rem;
           margin: 0 auto;
+          z-index: 99999;
         }
         .empty-top-padding-container {
           height: calc(34.1 / 75) + rem;
@@ -202,12 +255,20 @@ export default {
             display: flex;
             flex-direction: row;
             justify-content: flex-end;
-            align-items: flex-start;
+            align-items: center;
 
-            .left-shop-img {
-              width: 2rem;
-              height: 2rem;
+            .left-shop-img-wrapper {
+              width: 90%;
+              //   height: 0.8rem;
               border-radius: 0.2rem;
+
+              .left-shop-img {
+                width: 100%;
+                height: 100%;
+                // background-image: url(@/assets/img/zhong-bo-logo.png);
+                // background-repeat: no-repeat;
+                // background-size: 100% 100%;
+              }
             }
           }
 
@@ -412,8 +473,11 @@ export default {
                 //   position: absolute;
                 display: block;
                 border-top: 12px solid transparent;
+                border-top-width: calc(12 / 75) + rem;
+
                 //   border-left: 12px solid blue;
                 border-bottom: 12px solid transparent;
+                border-bottom-width: calc(12 / 75) + rem;
                 z-index: 11;
               }
 

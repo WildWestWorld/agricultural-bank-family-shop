@@ -19,15 +19,20 @@
 
 <script>
 import tabBarItem from '@/components/common/tab-bar/tabBarItem.vue';
+import { mapState } from 'vuex';
 
 export default {
   name: 'tabBar',
   components: {
     tabBarItem,
   },
+  computed: mapState({
+    // isFreshTabBar: (state) => state.isFreshTabBar,
+    activeTabBarIndex: (state) => state.activeTabBarIndex,
+  }),
   data() {
     return {
-      activeTabBarIndex: 0,
+      //   activeTabBarIndex: 0,
       tabBarData: [
         {
           title: '首页',
@@ -53,11 +58,32 @@ export default {
       ],
     };
   },
+  created() {
+    const topath = this.$route.path;
+    if (topath === '/') {
+      // 页面刷新
+      //   this.activeTabBarIndex =
+
+      this.$store.commit(
+        'changeActiveTabBarIndexState',
+        Number(localStorage.getItem('activeTabBarIndex')) || 0
+      );
+    }
+  },
   //  方法区
   methods: {
+    // setActive(path) {
+    //   this.tabBarData.forEach((tab, i) => {
+    //     if (tab.path === path) {
+    //         this.$store.commit('changeActiveTabBarIndexState', i);
+    //       return false;
+    //     }
+    //   });
+    // },
     //改变正在使用的变量activeTabItemIndex
     changeActiveTabBarIndex(index) {
-      this.activeTabBarIndex = index;
+      this.$store.commit('changeActiveTabBarIndexState', index);
+      localStorage.setItem('activeTabBarIndex', index);
       console.log(this.activeTabBarIndex);
     },
   },

@@ -6,7 +6,9 @@ Vue.use(Vuex)
 
 // 用来存储数据
 const state = {
-    test: "123"
+    test: "123",
+    activeTabBarIndex: 0,
+    isFreshTabBar: false
 }
 // 响应组件中的事件
 const actions = {
@@ -17,7 +19,14 @@ const actions = {
 }
 // 操作数据
 const mutations = {
-
+    changeActiveTabBarIndexState (state, payload) {
+        console.log(payload)
+        state.activeTabBarIndex = payload
+    },
+    changeIsFreshTabBarState (state, payload) {
+        console.log(payload)
+        state.isFreshTabBar = payload
+    }
 }
 // 用来将state数据进行加工
 const getters = {

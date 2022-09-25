@@ -55,16 +55,19 @@
         <div class="scan-code-activity-bcg"></div>
       </div>
     </div>
+    <!-- <JKDialog></JKDialog> -->
   </div>
 </template>
 
 <script>
 import JKNavigator from '@/components/common/jk-navigator/JKNavigator.vue';
+import JKDialog from '@/components/common/jk-dialog/JKDialog.vue';
 
 export default {
   name: 'companyProfile',
   components: {
     JKNavigator,
+    JKDialog,
   },
   //变量区
   data() {
@@ -177,7 +180,7 @@ export default {
     flex-direction: column;
     height: fit-content;
     width: 100vw;
-
+    flex: 1;
     padding-bottom: calc(96.5 / 75) + rem;
     // 门店福利
 
@@ -321,6 +324,8 @@ export default {
       height: calc(1077 / 75) + rem;
       padding-bottom: calc(96.5 / 75) + rem;
 
+      flex: 1;
+      //   flex: 1;
       .scan-code-activity-bcg {
         position: absolute;
 

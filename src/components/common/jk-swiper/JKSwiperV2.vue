@@ -183,20 +183,26 @@ export default {
         );
         transform-origin: left;
         display: block;
+        z-index: -100;
       }
       .next {
         // 671 是图片的宽度，移动这个是为了让前一张图片移除来 22.1 是两张照片的间距
         transform: translate3d(
           calc((-671 - 22.1) / 75) + rem,
           0,
-          calc(-100 / 75) + rem
+
+          calc(-200 / 75) + rem
         );
+        z-index: -200;
+
+
         transform-origin: right;
         display: block;
       }
       .active {
         transform: translate3d(0, 0, 0);
         display: block;
+        z-index: 200;
       }
       // .swiper-item-img {
       //   position: relative;

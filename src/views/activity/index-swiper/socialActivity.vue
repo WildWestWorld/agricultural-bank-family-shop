@@ -17,6 +17,8 @@
       <JKNavigator title="家装社区活动"></JKNavigator>
     </div>
     <div class="content">
+      <div class="content-bgc"></div>
+
       <div class="activity-container">
         <!-- 上面的活动时间地点容器 -->
         <div class="top-activity-info-container">
@@ -75,12 +77,10 @@
                     <div class="left-index-img"></div>
                   </div>
                   <div class="right-text-container">
-                    <div class="right-text">
-                      现场签单赠送价值300元的礼品
-                    </div>
+                    <div class="right-text">现场签单赠送价值300元的礼品</div>
                   </div>
                 </div>
-                
+
                 <div class="gift3-info-container">
                   <div class="left-index-img-container">
                     <div class="left-index-img"></div>
@@ -110,7 +110,7 @@
                   </div>
                   <div class="right-text-container">
                     <div class="right-text">
-                     赠送欧派橱柜5000元抵用券，同时凭农行家装分期卡在欧派橱柜消费可再享9.7折
+                      赠送欧派橱柜5000元抵用券，同时凭农行家装分期卡在欧派橱柜消费可再享9.7折
                     </div>
                   </div>
                 </div>
@@ -120,9 +120,7 @@
                     <div class="left-index-img"></div>
                   </div>
                   <div class="right-text-container">
-                    <div class="right-text">
-                      现场扫码预约客户赠送纸巾一袋
-                    </div>
+                    <div class="right-text">现场扫码预约客户赠送纸巾一袋</div>
                   </div>
                 </div>
               </div>
@@ -145,10 +143,10 @@
 </template>
 
 <script>
-import JKNavigator from "@/components/common/jk-navigator/JKNavigator.vue";
+import JKNavigator from '@/components/common/jk-navigator/JKNavigator.vue';
 
 export default {
-  name: "companyProfile",
+  name: 'companyProfile',
   components: {
     JKNavigator,
   },
@@ -164,7 +162,7 @@ export default {
   //方法区
   methods: {
     JKTest() {
-      console.log("测试一下");
+      console.log('测试一下');
     },
   },
 };
@@ -234,7 +232,7 @@ export default {
             // margin-bottom: calc(27 / 75) + rem;
 
             .nav-img {
-              background-image: url("@/assets/img/nav-left-arrow.png");
+              background-image: url('@/assets/img/nav-left-arrow.png');
               background-repeat: no-repeat;
               background-size: 100% 100%;
               height: 100%;
@@ -248,7 +246,7 @@ export default {
 
             // margin-bottom: calc(27 / 75) + rem;
             font-size: calc(36 / 75) + rem;
-            font-family: "SourceHanSansCN-Medium";
+            font-family: 'SourceHanSansCN-Medium';
             font-weight: 500;
             // font-size: 18px !important;
           }
@@ -271,6 +269,16 @@ export default {
     // background-image: url('@/assets/img/company-profile.png');
     // background-repeat: no-repeat;
     // background-size: 100% 100%;
+
+    // 设置背景
+    .content-bgc {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #076f55;
+    }
     .activity-container {
       position: relative;
       display: flex;
@@ -320,7 +328,7 @@ export default {
 
               .left-title-text {
                 font-size: calc(25 / 75) + rem;
-                font-family: "SourceHanSansCN";
+                font-family: 'SourceHanSansCN';
                 font-weight: bold;
                 color: #ffffff;
                 white-space: nowrap;
@@ -334,7 +342,7 @@ export default {
               margin-left: calc(18.1 / 75) + rem;
               .right-info-text {
                 font-size: calc(23 / 75) + rem;
-                font-family: "SourceHanSansCN";
+                font-family: 'SourceHanSansCN';
                 font-weight: 500;
                 color: #122167;
               }
@@ -364,7 +372,7 @@ export default {
 
               .left-title-text {
                 font-size: calc(25 / 75) + rem;
-                font-family: "SourceHanSansCN";
+                font-family: 'SourceHanSansCN';
                 font-weight: bold;
                 color: #ffffff;
                 white-space: nowrap;
@@ -379,7 +387,7 @@ export default {
 
               .right-info-text {
                 font-size: calc(23 / 75) + rem;
-                font-family: "SourceHanSansCN";
+                font-family: 'SourceHanSansCN';
                 font-weight: 500;
                 color: #122167;
               }
@@ -404,7 +412,7 @@ export default {
 
               .left-title-text {
                 font-size: calc(25 / 75) + rem;
-                font-family: "SourceHanSansCN";
+                font-family: 'SourceHanSansCN';
                 font-weight: bold;
                 color: #ffffff;
                 white-space: nowrap;
@@ -419,7 +427,7 @@ export default {
 
               .right-info-text {
                 font-size: calc(23 / 75) + rem;
-                font-family: "SourceHanSansCN";
+                font-family: 'SourceHanSansCN';
                 font-weight: 500;
                 color: #122167;
               }
@@ -454,7 +462,7 @@ export default {
               height: calc(65 / 75) + rem;
               width: calc(583 / 75) + rem;
               font-size: calc(23 / 75) + rem;
-              font-family: "SourceHanSansCN";
+              font-family: 'SourceHanSansCN';
               font-weight: 500;
               color: #122167;
               //   可能需要修改
@@ -484,7 +492,7 @@ export default {
                 width: 100%;
                 height: calc(62 / 75) + rem;
 
-                margin-top: calc(27 / 75)+rem;
+                margin-top: calc(27 / 75) + rem;
                 .left-index-img-container {
                   position: relative;
                   height: calc(62 / 75) + rem;
@@ -492,7 +500,7 @@ export default {
                   .left-index-img {
                     height: 100%;
                     width: 100%;
-                    background-image: url("@/assets/img/01.png");
+                    background-image: url('@/assets/img/01.png');
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
                   }
@@ -506,7 +514,7 @@ export default {
                   margin-left: calc(32 / 75) + rem;
                   .right-text {
                     font-size: calc(24 / 75) + rem;
-                    font-family: "Adobe Heiti Std";
+                    font-family: 'Adobe Heiti Std';
                     font-weight: normal;
                     color: #03198f;
                   }
@@ -519,7 +527,7 @@ export default {
                 width: 100%;
                 height: calc(62 / 75) + rem;
 
-                margin-top: calc(28 / 75)+rem;
+                margin-top: calc(28 / 75) + rem;
 
                 .left-index-img-container {
                   position: relative;
@@ -528,7 +536,7 @@ export default {
                   .left-index-img {
                     height: 100%;
                     width: 100%;
-                    background-image: url("@/assets/img/02.png");
+                    background-image: url('@/assets/img/02.png');
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
                   }
@@ -542,7 +550,7 @@ export default {
                   margin-left: calc(32 / 75) + rem;
                   .right-text {
                     font-size: calc(24 / 75) + rem;
-                    font-family: "Adobe Heiti Std";
+                    font-family: 'Adobe Heiti Std';
                     font-weight: normal;
                     color: #03198f;
                   }
@@ -555,7 +563,7 @@ export default {
                 width: 100%;
                 height: calc(62 / 75) + rem;
 
-                margin-top: calc(37 / 75)+rem;
+                margin-top: calc(37 / 75) + rem;
 
                 .left-index-img-container {
                   position: relative;
@@ -564,7 +572,7 @@ export default {
                   .left-index-img {
                     height: 100%;
                     width: 100%;
-                    background-image: url("@/assets/img/03.png");
+                    background-image: url('@/assets/img/03.png');
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
                   }
@@ -578,7 +586,7 @@ export default {
                   margin-left: calc(32 / 75) + rem;
                   .right-text {
                     font-size: calc(24 / 75) + rem;
-                    font-family: "Adobe Heiti Std";
+                    font-family: 'Adobe Heiti Std';
                     font-weight: normal;
                     color: #03198f;
                   }
@@ -591,7 +599,7 @@ export default {
                 width: 100%;
                 height: calc(62 / 75) + rem;
 
-                margin-top: calc(37 / 75)+rem;
+                margin-top: calc(37 / 75) + rem;
                 .left-index-img-container {
                   position: relative;
                   height: calc(62 / 75) + rem;
@@ -601,7 +609,7 @@ export default {
                   .left-index-img {
                     height: 100%;
                     width: 100%;
-                    background-image: url("@/assets/img/04.png");
+                    background-image: url('@/assets/img/04.png');
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
                   }
@@ -615,7 +623,7 @@ export default {
                   margin-left: calc(32 / 75) + rem;
                   .right-text {
                     font-size: calc(24 / 75) + rem;
-                    font-family: "Adobe Heiti Std";
+                    font-family: 'Adobe Heiti Std';
                     font-weight: normal;
                     color: #03198f;
                   }
@@ -629,7 +637,7 @@ export default {
                 width: 100%;
                 height: calc(82 / 75) + rem;
 
-                margin-top: calc(46 / 75)+rem;
+                margin-top: calc(46 / 75) + rem;
 
                 .left-index-img-container {
                   position: relative;
@@ -640,7 +648,7 @@ export default {
                   .left-index-img {
                     height: 100%;
                     width: 100%;
-                    background-image: url("@/assets/img/05.png");
+                    background-image: url('@/assets/img/05.png');
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
                   }
@@ -654,7 +662,7 @@ export default {
                   margin-left: calc(32 / 75) + rem;
                   .right-text {
                     font-size: calc(24 / 75) + rem;
-                    font-family: "Adobe Heiti Std";
+                    font-family: 'Adobe Heiti Std';
                     font-weight: normal;
                     color: #03198f;
                   }
@@ -667,7 +675,7 @@ export default {
                 width: 100%;
                 height: calc(62 / 75) + rem;
 
-                margin-top: calc(55 / 75)+rem;
+                margin-top: calc(55 / 75) + rem;
 
                 .left-index-img-container {
                   position: relative;
@@ -678,7 +686,7 @@ export default {
                   .left-index-img {
                     height: 100%;
                     width: 100%;
-                    background-image: url("@/assets/img/06.png");
+                    background-image: url('@/assets/img/06.png');
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
                   }
@@ -692,7 +700,7 @@ export default {
                   margin-left: calc(32 / 75) + rem;
                   .right-text {
                     font-size: calc(24 / 75) + rem;
-                    font-family: "Adobe Heiti Std";
+                    font-family: 'Adobe Heiti Std';
                     font-weight: normal;
                     color: #03198f;
                   }
@@ -722,7 +730,7 @@ export default {
               border-radius: calc(4 / 75) + rem;
               .bottom-entroll-button-text {
                 font-size: calc(34 / 75) + rem;
-                font-family: "SourceHanSansCN";
+                font-family: 'SourceHanSansCN';
                 font-weight: bold;
                 color: #ffffff;
               }
@@ -731,21 +739,21 @@ export default {
         }
       }
     }
-    .bgc-person-img-container{
+    .bgc-person-img-container {
       position: absolute;
       box-sizing: border-box;
       right: 0;
       bottom: 0;
-      width: calc(285 / 75)+rem;
-      height: calc(309 / 75)+rem;
-      .bgc-person-img{
+      width: calc(285 / 75) + rem;
+      height: calc(309 / 75) + rem;
+      .bgc-person-img {
         position: relative;
         width: 100%;
         height: 100%;
 
-        background-image: url("@/assets/img/social-activity-person-img.png");
+        background-image: url('@/assets/img/social-activity-person-img.png');
         background-repeat: no-repeat;
-        background-size:  100% 100%;
+        background-size: 100% 100%;
       }
     }
   }

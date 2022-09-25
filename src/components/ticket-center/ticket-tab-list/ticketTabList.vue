@@ -40,7 +40,7 @@
                 ? 'tab-list-content-item active'
                 : 'tab-list-content-item '
             "
-          :key="index"
+            :key="index"
           >
             <div class="tab-list-content">
               <slot :name="'item' + index"></slot>
@@ -70,7 +70,6 @@ export default {
         {
           name: '商城优惠券',
         },
-
       ],
     };
   },
@@ -78,6 +77,9 @@ export default {
   mounted() {
     this.tabListSliderInit();
     this.getScreenWidth();
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.hightChange, true);
   },
   //方法区
   methods: {
@@ -95,16 +97,24 @@ export default {
       this.screenWidth = document.body.clientWidth;
       console.log(document.body.clientWidth);
       //   当页面发生改变
-      window.onresize = () => {
-        console.log('高度改变');
-        this.screenWidth = document.body.clientWidth;
-        this.tabListSliderInit();
-        console.log(this.screenWidth);
-      };
+      window.addEventListener('resize', this.hightChange, true);
+
+      //   window.onresize = () => {
+      //     console.log('高度改变');
+      //     this.screenWidth = document.body.clientWidth;
+      //     this.tabListSliderInit();
+      //     console.log(this.screenWidth);
+      //   };
     },
     //改变正在使用的变量activeTabItemIndex
     changeActiveTabItemIndex(index) {
       this.activeTabItemIndex = index;
+    },
+    hightChange() {
+      console.log('高度改变');
+      this.screenWidth = document.body.clientWidth;
+      this.tabListSliderInit();
+      console.log(this.screenWidth);
     },
   },
 };
@@ -138,8 +148,8 @@ export default {
       display: flex;
       flex-direction: row;
 
-      border-bottom: 1px solid #DDDDDD;
-      border-bottom-width: calc(1 /75)+rem;
+      border-bottom: 1px solid #dddddd;
+      border-bottom-width: calc(1 / 75) + rem;
       //   &:last-child {
       //     background-color: #00995a;
       //   }
@@ -149,7 +159,7 @@ export default {
       .tab-list-header-slider {
         content: '';
         position: absolute;
-        background-color: #EC7842;
+        background-color: #ec7842;
         width: calc(88 / 75) + rem;
         height: calc(5 / 75) + rem;
         z-index: 1;
@@ -173,7 +183,7 @@ export default {
           /* border-right: 1px solid #d1d2d1; */
         }
         .active {
-          color: #EC7842;
+          color: #ec7842;
         }
       }
     }
