@@ -17,7 +17,13 @@
       <JKNavigator title="设计案例"></JKNavigator>
     </div>
     <div class="content">
-      <div class="company-profile-bcg-container"></div>
+      <div class="company-profile-bcg-container">
+        <img
+          class="company-profile-bcg"
+          src="@/assets/img/design-example-zb1.png"
+          alt=""
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -139,7 +145,7 @@ export default {
     position: relative;
     display: flex;
     flex-direction: column;
-    height: calc(1206 / 75) + rem;
+    height: fit-content;
     width: 100vw;
     flex: 1;
     padding-bottom: calc(96.5 / 75) + rem;
@@ -155,11 +161,14 @@ export default {
       width: 100%;
       height: 100%;
 
-      background-image: url('@/assets/img/design-example.png');
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
+      //   background-image: url('@/assets/img/design-example-zb1.png');
+      //   background-repeat: no-repeat;
+      //   background-size: 100% 100%;
 
-      padding-bottom: calc(96.5 / 75) + rem;
+      //   padding-bottom: calc(96.5 / 75) + rem;
+      .company-profile-bcg {
+        width: 100%;
+      }
     }
   }
 }

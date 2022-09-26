@@ -8,7 +8,9 @@ Vue.use(Vuex)
 const state = {
     test: "123",
     activeTabBarIndex: 0,
-    isFreshTabBar: false
+    isFreshTabBar: false,
+    isFavor: false,
+    
 }
 // 响应组件中的事件
 const actions = {
@@ -26,6 +28,10 @@ const mutations = {
     changeIsFreshTabBarState (state, payload) {
         console.log(payload)
         state.isFreshTabBar = payload
+    },
+    changeIsFavorState (state, payload) {
+        console.log(payload)
+        state.isFavor = payload
     }
 }
 // 用来将state数据进行加工

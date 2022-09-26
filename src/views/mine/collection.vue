@@ -14,16 +14,6 @@
           radius="0rem"
           :isShowTopLine="false"
         ></TabListContentCard>
-        <TabListContentCard
-          totalwidth="100vw"
-          radius="0rem"
-          :isShowTopLine="false"
-        ></TabListContentCard>
-        <TabListContentCard
-          totalwidth="100vw"
-          radius="0rem"
-          :isShowTopLine="false"
-        ></TabListContentCard>
       </div>
     </div>
   </div>

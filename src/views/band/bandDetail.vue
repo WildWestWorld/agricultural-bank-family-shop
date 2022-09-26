@@ -17,14 +17,15 @@
       <JKNavigator title="中博装饰"></JKNavigator>
     </div>
     <div class="content">
-      <div class="band-list-container">
-        <div class="band-list-wrapper">
-          <bandListCard :isShowTopLine="false"></bandListCard>
-          <bandListCard :isShowTopLine="false"></bandListCard>
+      <!-- 背景色 -->
+      <div class="content-bgc"></div>
 
-          <bandListCard :isShowTopLine="false"></bandListCard>
-          <bandListCard :isShowTopLine="false"></bandListCard>
-        </div>
+      <div class="colletciton-centent-container">
+        <TabListContentCard
+          totalwidth="100vw"
+          radius="0rem"
+          :isShowTopLine="false"
+        ></TabListContentCard>
       </div>
     </div>
   </div>
@@ -33,12 +34,14 @@
 <script>
 import JKNavigator from '@/components/common/jk-navigator/JKNavigator.vue';
 import bandListCard from '@/components/band/band-list/bandListCard.vue';
+import TabListContentCard from '@/components/index/tab-list/tabListContentCard.vue';
 
 export default {
   name: 'companyProfile',
   components: {
     JKNavigator,
     bandListCard,
+    TabListContentCard,
   },
   //变量区
   data() {
@@ -145,11 +148,12 @@ export default {
     }
   }
   //内容
+  //内容
   .content {
     position: relative;
     display: flex;
     flex-direction: column;
-    height: fit-content;
+    height: calc(1206 / 75) + rem;
     width: 100vw;
 
     padding-bottom: calc(96.5 / 75) + rem;
@@ -157,25 +161,35 @@ export default {
     // background-image: url('@/assets/img/company-profile.png');
     // background-repeat: no-repeat;
     // background-size: 100% 100%;
-    .band-list-container {
+    .content-bgc {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+    }
+    .colletciton-centent-container {
       position: relative;
       display: flex;
       flex-direction: column;
-      align-items: center;
       height: 100%;
-      width: 100%;
-      background: #ffffff;
+      width: 100vw;
+      &::before {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        content: '';
+        position: absolute;
+        //   display: none;
+        display: block;
+        width: 100vw;
+        height: calc(3 / 75) + rem;
+        background-color: rgba($color: #eeeeee, $alpha: 1);
+        //top: -0.4547rem;
+        //   margin: 0 auto;
 
-      .band-list-wrapper {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        width: calc(699 / 75) + rem;
-        box-shadow: 0px 0px calc(21 / 75) + rem 0px rgba(0, 0, 0, 0.1);
-        border-radius: calc(20 / 75) + rem;
-
-        margin-top: calc(13 / 75) + rem;
+        z-index: 99999;
       }
     }
   }

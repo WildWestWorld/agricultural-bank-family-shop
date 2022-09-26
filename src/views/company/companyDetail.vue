@@ -14,7 +14,7 @@
           </div>
         </div>
       </div> -->
-      <JKNavigator title="大众点评"></JKNavigator>
+      <JKNavigator title="商家详情"></JKNavigator>
     </div>
     <div class="content">
       <!-- 公司详情 -->
@@ -63,14 +63,33 @@
                 </div>
               </div>
               <!-- 右半部分的收藏按钮 若需要可恢复 -->
-              <!-- <div class="top-info-right-container">
+              <div class="top-info-right-container">
                 <div class="favourite-img-text-container">
-                  <div class="favourite-img-container">
+                  <BlickStar></BlickStar>
+                  <!-- <div class="favourite-img-container">
                     <div class="favourite-img"></div>
-                  </div>
+                    <svg
+                      t="1664102717928"
+                      class="icon"
+                      viewBox="0 0 1024 1024"
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      p-id="3824"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                    >
+                      <path
+                        d="M946.44567 407.179676c-3.706415-11.056823-13.268188-19.154245-24.823362-20.929682l-263.117606-40.614L540.930913 93.91802c-5.108345-10.93198-16.071024-17.939581-28.155247-17.971303-0.030699 0-0.062422 0-0.062422 0-12.021801 0-22.985504 6.945179-28.155247 17.84646L365.79001 345.247138l-263.917832 39.507806c-11.399631 1.961678-20.774139 10.060123-24.355711 21.054525-3.613294 10.963703-0.778736 23.047926 7.257288 31.332612l191.202717 196.684568-45.6282 277.132808c-1.930979 11.741415 3.0208 23.608697 12.769838 30.491455 9.717316 6.882757 22.549575 7.630794 32.983205 1.868557l235.366565-129.47177 234.868215 130.282229c4.703115 2.616594 9.904581 3.924379 15.106046 3.924379 6.291287 0 12.551874-1.868557 17.877159-5.699816 9.748015-6.852058 14.763239-18.687618 12.862959-30.460756L747.488339 634.635061l191.669344-195.84341C947.286828 430.476265 950.121386 418.2365 946.44567 407.179676z"
+                        p-id="3825"
+                        fill="#bfbfbf"
+                        id="star"
+                      ></path>
+                    </svg>
+
+                    <span class="blick-star"></span>
+                  </div> -->
                   <div class="favourite-text-container">收藏</div>
                 </div>
-              </div> -->
+              </div>
             </div>
             <!-- card的下半部分 -->
             <div class="bottom-info-container">
@@ -94,13 +113,13 @@
                   </div>
                 </div>
                 <!-- 右边放电话按钮的盒子 -->
-                <div class="bottom-right-container">
+                <a class="bottom-right-container" href="tel:19157895028">
                   <div class="bottom-iphone-img-container">
                     <div class="bottom-iphone-img-wrapper">
                       <div class="bottom-iphone-img"></div>
                     </div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -118,7 +137,7 @@
           </div>
           <div
             class="designer-example-img-container"
-            @click="navToPage('designerExample')"
+            @click="navToPage('wantConsult')"
           >
             <div class="designer-example-img"></div>
           </div>
@@ -140,8 +159,8 @@
         </div>
       </div>
       <!-- 真实案例 -->
-      <div class="real-example-container">
-        <div class="real-example-wrapper">
+      <!-- <div class="real-example-container">
+        <div class="real-example-wrapper" @click="navToPage('wantConsult')">
           <div class="real-example-text-container">真实案例</div>
           <div class="example-info-container">
             <div class="example-info-num-container">200个案例</div>
@@ -150,9 +169,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- 工具栏 -->
-      <div class="tool-bar-container">
+      <!-- <div class="tool-bar-container">
         <div class="tool-bar-wrapper">
           <div class="left-favor-container">
             <div class="favor-img-text-container">
@@ -177,7 +196,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -185,6 +204,7 @@
 <script>
 import JKNavigator from '@/components/common/jk-navigator/JKNavigator.vue';
 import JKSwiperV2 from '@/components/common/jk-swiper/JKSwiperV2.vue';
+import BlickStar from '../../components/common/blick-star/blickStar.vue';
 export default {
   name: 'companyProfile',
   //变量区
@@ -192,8 +212,8 @@ export default {
     return {
       imgList: [
         require('@/assets/img/company-swpier-img1.png'),
-        require('@/assets/img/company-swpier-img1.png'),
-        require('@/assets/img/company-swpier-img1.png'),
+        require('@/assets/img/company-swpier-img2.png'),
+        require('@/assets/img/company-swpier-img3.png'),
       ],
     };
   },
@@ -211,7 +231,7 @@ export default {
       this.$router.push('/' + path);
     },
   },
-  components: { JKNavigator, JKSwiperV2 },
+  components: { JKNavigator, JKSwiperV2, BlickStar },
 };
 </script>
 
@@ -375,9 +395,10 @@ export default {
             position: relative;
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            // justify-content: space-between;
 
             width: calc(100vw - 0.5733333rem);
+            // width: 100%;
             height: calc(166 / 75) + rem;
             // 左半部分
             .top-info-left-container {
@@ -387,9 +408,9 @@ export default {
               flex-direction: column;
               //   justify-content: space-between;
 
-              width: 100%;
+              width: calc(630 / 75) + rem;
               height: 100%;
-
+              //   margin-left: calc(44 / 75) + rem;
               // max-width: calc(511 / 75) + rem;
 
               .name-text-container {
@@ -526,7 +547,7 @@ export default {
               flex-direction: column;
               justify-content: center;
               align-items: center;
-              width: 100%;
+              width: calc(80 / 75) + rem;
               height: 100%;
 
               .favourite-img-text-container {
@@ -536,19 +557,128 @@ export default {
                 justify-content: center;
                 align-items: center;
 
+                // 星星图标
                 .favourite-img-container {
                   position: relative;
                   display: flex;
-                  width: calc(30 / 37.5) + rem;
-                  height: calc(30 / 37.5) + rem;
-                  margin-bottom: calc(5 / 37.5) + rem;
-                  .favourite-img {
+                  justify-content: center;
+                  align-items: center;
+                  width: calc(60 / 75) + rem;
+                  height: calc(60 / 75) + rem;
+                  /* 自定义属性 用var函数进行调用 */
+                  --star-stroke-color: yellow;
+
+                  svg {
                     position: relative;
                     width: 100%;
-                    height: 100%;
-                    background-image: url('@/assets/img/favourite-star.png');
-                    background-repeat: no-repeat;
-                    background-size: 100%;
+                    z-index: 10;
+                  }
+                  #star {
+                    fill: #fefefe;
+                    /* svg形状的边框颜色 */
+                    stroke: black;
+                    /* stroke: var(--heart-stroke-color); */
+                    /* svg形状边框的宽度 */
+                    stroke-width: calc(110 / 75) + rem;
+                    /* 我们可以设置stroke-dashoffset与stroke-dasharray相同的值实现“画线”的效果： */
+                    /* svg形状边框线 / 虚线 等比例分割的距离 */
+                    /*  只有一个值是实线的长度，两个值是 实线的长度和虚线的长度*/
+                    stroke-dasharray: 4000;
+                    /*  svg形状边框线 / 虚线 开始的位置 正值就是左移*/
+                    /* 当stroke-dasharray = stroke-dashoffset时我们就看不见线了，当我们stroke-dashoffset 越来越小，线就开始右移我们就能逐渐看见线了*/
+                    stroke-dashoffset: 0;
+                    /* 设置边框线的首尾的形状 */
+                    stroke-linecap: round;
+                  }
+                  /* 里面的span的内容其实看不见的会被svg图片挡住，我们看到是里面的shadow */
+                  .blick-star {
+                    display: block;
+                    height: calc(6 / 75) + rem;
+                    width: calc(6 / 75) + rem;
+                    background-color: yellow;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) scale(0);
+                    z-index: 99;
+                    //盒子阴影  (x的位置,y的位置，blur模糊的大小，阴影的颜色)
+                    //利用盒子阴影 可以复制和原来的盒子盒子一样的宽高的元素
+                    box-shadow: 0 calc(48 / 75) + rem 0 var(--star-stroke-color),
+                      0 calc(48 / 75) + rem 0 var(--star-stroke-color),
+                      calc(-48 / 75) + rem 0 0 var(--star-stroke-color),
+                      calc(48 / 75) + rem 0 0 var(--star-stroke-color),
+                      calc(-36 / 75) + rem calc(-36 / 75) + rem 0
+                        var(--star-stroke-color),
+                      calc(-36 / 75) + rem calc(-36 / 75) + rem 0
+                        var(--star-stroke-color),
+                      calc(36 / 75) + rem calc(36 / 75) + rem 0
+                        var(--star-stroke-color),
+                      calc(-36 / 75) + rem calc(36 / 75) + rem 0
+                        var(--star-stroke-color);
+                  }
+                  #star {
+                    /* forwards 执行完毕后停在最后一帧 */
+                    animation: drawStar 1s linear forwards;
+                  }
+                  svg {
+                    animation: beat 1s linear forwards;
+                  }
+                  .blick-star {
+                    animation: blick 0.5s ease-in-out forwards;
+                    animation-delay: 1s;
+                  }
+                  /* 定义画心动画 */
+                  @keyframes drawStar {
+                    0% {
+                      /* fill: #eee; */
+                      stroke: black;
+                      stroke-dashoffset: 4000;
+                    }
+                    /* 划线 */
+                    80% {
+                      fill: #eee;
+                      stroke: yellow;
+                      stroke-dashoffset: 0;
+                    }
+                    /* 划线完毕后,然后让svg背景变红 */
+                    100% {
+                      fill: yellow;
+                      stroke: yellow;
+                      stroke-dashoffset: 0;
+                    }
+                  }
+                  /* 定义心跳动画 (图形点亮后轻微变大后变回原状)*/
+                  @keyframes beat {
+                    0% {
+                      transform: scale(1);
+                    }
+                    70% {
+                      transform: scale(1);
+                    }
+                    80% {
+                      transform: scale(1.2);
+                    }
+                    100% {
+                      transform: scale(1);
+                    }
+                  }
+                  /* 定义点亮动画 */
+                  /* 这里的translate(-50%, -50%)只是为了保持盒子原来的居中效果，无其他含义 */
+                  /* 主要效果是scale先变小后变大，让人感觉像是展开 */
+                  @keyframes blick {
+                    0% {
+                      transform: translate(-50%, -50%) scale(0.5);
+                      opacity: 0.8;
+                    }
+                    50% {
+                      transform: translate(-50%, -50%) scale(1);
+                      opacity: 1;
+                    }
+                    100% {
+                      transform: translate(-50%, -50%) scale(1);
+                      opacity: 0;
+                    }
                   }
                 }
                 .favourite-text-container {

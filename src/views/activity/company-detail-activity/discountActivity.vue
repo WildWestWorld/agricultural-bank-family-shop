@@ -6,6 +6,29 @@
       <JKNavigator title="优惠活动"></JKNavigator>
     </div>
     <div class="content">
+      <!-- 对话框 -->
+      <JKDialog
+        ref="dialog"
+        dialogWidth="560"
+        dialogHeight="600"
+        leftButtonText="拒绝"
+        rightButtonText="允许"
+      >
+        <div class="dialog-content-container" slot="content">
+          <div class="dialog-content">
+            <div class="top-title-container">
+              <div class="dialog-title-text-container">获取您的个人信息</div>
+            </div>
+            <div class="bottom-content-container">
+              为了便于您使用该商家的服务，农业银行会将您的一下信息传递给该商户。您通过该商户服务页面主动提供给该商户的个人信息，相关客户信息保护责任该商户承担。<br />
+              ·所属用户机构号<br />
+              ·用户标识<br />
+              ·电话号码：137*****047
+            </div>
+          </div>
+        </div>
+      </JKDialog>
+
       <!-- 背景颜色 -->
       <div class="content-bgc"></div>
 
@@ -15,23 +38,44 @@
             title="环保健康家60㎡（两室两厅一厨一卫）"
             nowPrice="69800"
             beforePrice="129800"
+            @activeDialogFromFather="activeDialog"
           ></DiscountListCard>
           <DiscountListCard
             title="环保定制家90㎡（三室两厅一厨一卫）"
             beforePrice="208800"
             nowPrice="108800"
+            @activeDialogFromFather="activeDialog"
           ></DiscountListCard>
           <DiscountListCard
-            title="环保健康家60㎡（两室两厅一厨一卫）"
-            nowPrice="0 "
-            beforePrice="129800"
+            title="预约报名礼:到店送周年庆精美礼品一份"
+            nowPrice="0"
+            beforePrice="9.9"
+            @activeDialogFromFather="activeDialog"
           ></DiscountListCard>
-          <DiscountListCard></DiscountListCard>
-          <DiscountListCard></DiscountListCard>
-          <DiscountListCard></DiscountListCard>
-          <DiscountListCard></DiscountListCard>
-          <DiscountListCard></DiscountListCard>
-          <DiscountListCard></DiscountListCard>
+          <DiscountListCard
+            title="量房礼包:上门量房，送1999元前置净水礼包"
+            nowPrice="9.9"
+            beforePrice="39.9"
+            @activeDialogFromFather="activeDialog"
+          ></DiscountListCard>
+          <DiscountListCard
+            title="下定满5000元送全屋窗帘和喜临门床垫一张"
+            nowPrice="0"
+            beforePrice="5000"
+            @activeDialogFromFather="activeDialog"
+          ></DiscountListCard>
+          <DiscountListCard
+            title="下定享周年庆工程款补贴封顶10000元 "
+            nowPrice="0"
+            beforePrice="10000"
+            @activeDialogFromFather="activeDialog"
+          ></DiscountListCard>
+          <DiscountListCard
+            title="签定合同享价值5800元松下全智能马桶免费升级"
+            nowPrice="0"
+            beforePrice="5800"
+            @activeDialogFromFather="activeDialog"
+          ></DiscountListCard>
         </div>
       </div>
     </div>
@@ -41,12 +85,14 @@
 <script>
 import JKNavigator from '@/components/common/jk-navigator/JKNavigator.vue';
 import DiscountListCard from '../../../components/activity/discount-activity/discount-list/discountListCard.vue';
+import JKDialog from '@/components/common/jk-dialog/JKDialog.vue';
 
 export default {
   name: 'companyProfile',
   components: {
     JKNavigator,
     DiscountListCard,
+    JKDialog,
   },
   //变量区
   data() {
@@ -61,6 +107,10 @@ export default {
   methods: {
     JKTest() {
       console.log('测试一下');
+    },
+    activeDialog() {
+      //   console.log(this.$refs.dialog);
+      this.$refs.dialog.changeIsDialogShowState(true);
     },
   },
 };
@@ -166,6 +216,42 @@ export default {
     // background-image: url('@/assets/img/company-profile.png');
     // background-repeat: no-repeat;
     // background-size: 100% 100%;
+
+    //  对话框的内容
+    .dialog-content-container {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .dialog-content {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        .top-title-container {
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          height: calc(47 * 2 / 75) + rem;
+          width: 100%;
+          .dialog-title-text-container {
+            color: black;
+          }
+        }
+        .bottom-content-container {
+          line-height: calc(50 / 75) + rem;
+          padding-left: calc(30 / 75) + rem;
+          padding-right: calc(30 / 75) + rem;
+
+          height: 100%;
+        }
+      }
+    }
 
     // 设置背景
     .content-bgc {

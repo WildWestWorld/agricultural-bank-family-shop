@@ -1,5 +1,12 @@
 <template>
   <div class="discount-list-card-container">
+    <!-- 对话框 -->
+    <!-- <JKDialog ref="dialog">
+        <div class="dialog-content-container" slot="content">
+          <div class="dialog-content">是否允许商家联系</div>
+        </div>
+      </JKDialog> -->
+
     <!-- 左边的图片 -->
     <div class="left-img-container">
       <div class="left-img-wrapper">
@@ -18,7 +25,9 @@
         </div>
       </div>
       <div class="buy-sale-container">
-        <div class="button-container">立即购买</div>
+        <div class="button-container" @click="activeDialogFromFather()">
+          立即购买
+        </div>
         <div class="sale-num-container">已售100</div>
       </div>
     </div>
@@ -26,12 +35,13 @@
 </template>
 
 <script>
+import JKDialog from '@/components/common/jk-dialog/JKDialog.vue';
 export default {
   name: 'discountListCard',
   props: {
     title: { type: String, default: '装修基材大礼包' },
-    nowPrice: { type: Number, default: 0 },
-    beforePrice: { type: Number, default: 0 },
+    nowPrice: { type: String, default: '0' },
+    beforePrice: { type: String, default: '0' },
     isShowBeforePrice: { type: Boolean, default: true },
     info: { type: Object, default: () => null },
   },
@@ -39,7 +49,13 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  mounted() {},
+  methods: {
+    activeDialogFromFather() {
+      this.$emit('activeDialogFromFather', 'none');
+    },
+  },
+  components: { JKDialog },
 };
 </script>
 

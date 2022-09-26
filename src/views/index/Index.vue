@@ -56,19 +56,19 @@
               <div class="recommend-gift-img-container">
                 <div class="recommend-gift-img"></div>
               </div>
-              <div class="recommend-gift-text-container">推荐有礼</div>
+              <div class="recommend-gift-text-container">推荐客户</div>
             </div>
             <div class="total-activity-container">
               <div class="total-activity-img-container">
                 <div class="total-activity-img"></div>
               </div>
-              <div class="total-activity-text-container">活动集锦</div>
+              <div class="total-activity-text-container">家装好礼</div>
             </div>
             <div class="store-in-container" @click="navToPage('ticketCenter')">
               <div class="store-in-img-container">
                 <div class="store-in-img"></div>
               </div>
-              <div class="store-in-text-container">商户入驻</div>
+              <div class="store-in-text-container">领券中心</div>
             </div>
           </div>
         </div>
@@ -180,17 +180,11 @@
         <tabList>
           <div slot="item0">
             <tabListContentCard></tabListContentCard>
-            <tabListContentCard></tabListContentCard>
-            <tabListContentCard></tabListContentCard>
           </div>
           <div slot="item1">
             <tabListContentCard></tabListContentCard>
-            <tabListContentCard></tabListContentCard>
           </div>
           <div slot="item2">
-            <tabListContentCard></tabListContentCard>
-            <tabListContentCard></tabListContentCard>
-            <tabListContentCard></tabListContentCard>
             <tabListContentCard></tabListContentCard>
           </div>
         </tabList>
@@ -518,7 +512,6 @@ export default {
         .activity-img-wrapper {
           height: 3.44rem;
           width: 9.32rem;
-
           .activity-img {
             height: 100%;
             width: 100%;

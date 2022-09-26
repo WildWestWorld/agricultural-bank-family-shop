@@ -54,9 +54,9 @@
                 <div class="distant">1.4km</div>
               </div>
               <div class="benefit-info-container">
-                <div class="benefit">200个精选案例</div>
-                <div class="benefit">200名设计师</div>
-                <div class="benefit">免息分期</div>
+                <div class="benefit">2个精选案例</div>
+                <div class="benefit">专注环保家装</div>
+                <div class="benefit">24年全案整装</div>
                 <div class="benefit">实景展厅</div>
               </div>
             </div>
@@ -81,14 +81,16 @@
                 <div class="gift-img-container">
                   <div class="gift-img">礼</div>
                 </div>
-                <div class="gift-text-container">精美礼品一份</div>
+                <div class="gift-text-container">到店送周年庆精美礼品一份</div>
               </div>
 
               <div class="right-group-gift-container">
                 <div class="group-gift-img-container">
                   <div class="group-gift-img">团</div>
                 </div>
-                <div class="group-gift-text-container">精美礼品一份</div>
+                <div class="group-gift-text-container">
+                  上门量房并加送价值1999元前置净水礼包
+                </div>
               </div>
             </div>
           </div>

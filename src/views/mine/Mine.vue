@@ -8,6 +8,12 @@
           <JKNavigator title="我的"></JKNavigator>
         </div>
         <div class="content">
+          <!-- 对话框 -->
+          <JKDialog ref="dialog" dialogWidth="560" dialogHeight="300">
+            <div class="dialog-content-container" slot="content">
+              <div class="dialog-content">是否允许商家联系</div>
+            </div>
+          </JKDialog>
           <!-- 背景色 -->
           <div class="page-bg"></div>
 
@@ -15,7 +21,7 @@
           <div class="top-card">
             <div class="user-info-container">
               <div class="user-info-wrapper">
-                <div class="user-img">
+                <div class="user-img" @click="activeDialog()">
                   <img src="@/assets/img/profile-picture.png" width="100%" />
                 </div>
                 <div class="user-info-text-container">
@@ -79,11 +85,13 @@
 <script>
 import NavBar from '@/components/navBar/NavBar';
 import JKNavigator from '@/components/common/jk-navigator/JKNavigator.vue';
+import JKDialog from '@/components/common/jk-dialog/JKDialog.vue';
 export default {
   name: 'Mine',
   components: {
     NavBar,
     JKNavigator,
+    JKDialog,
   },
   //变量区
   data() {
@@ -100,6 +108,10 @@ export default {
   methods: {
     linkpage(url) {
       this.$router.push(url);
+    },
+    activeDialog() {
+      console.log(this.$refs.dialog);
+      this.$refs.dialog.changeIsDialogShowState(true);
     },
   },
 };
@@ -215,6 +227,23 @@ export default {
       width: 100vw;
 
       padding-bottom: calc(96.5 / 75) + rem;
+      //  对话框的内容
+      .dialog-content-container {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .dialog-content {
+          position: relative;
+          height: fit-content;
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+      }
 
       // background-image: url('@/assets/img/company-profile.png');
       // background-repeat: no-repeat;
@@ -453,7 +482,7 @@ export default {
           }
         }
       }
-    }   
+    }
   }
 }
 </style>

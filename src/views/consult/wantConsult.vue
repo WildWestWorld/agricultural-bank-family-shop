@@ -14,23 +14,27 @@
                 </div>
               </div>
             </div> -->
-      <JKNavigator title="我要咨询"></JKNavigator>
+      <JKNavigator title="真实案例"></JKNavigator>
     </div>
     <div class="content">
       <div class="consult-container">
         <div class="consult-button-container">
           <div
             class="company-profile-button-container"
-            @click="navToPage('companyProfile')"
+            @click="navToPage('designerExample')"
           >
-            <div class="company-profile-text">公司简介</div>
+            <div class="company-profile-text">
+              【中博案例】118方现代风格设计，用极简的配色，勾勒美好时尚的新生活！
+            </div>
           </div>
 
           <div
             class="selct-designer-button-container"
-            @click="navToPage('designerExample')"
+            @click="navToPage('designerExample2')"
           >
-            <div class="selct-designer-text">钦点设计师</div>
+            <div class="selct-designer-text">
+              【中博设计】190方现代法式，把极简融入生活！
+            </div>
           </div>
         </div>
       </div>
@@ -193,9 +197,12 @@ export default {
           align-items: center;
 
           height: calc(77.3 / 75) + rem;
-          width: calc(477.7 / 75) + rem;
+          //   width: calc(477.7 / 75) + rem;
+          width: calc(720 / 75) + rem;
 
           margin-top: calc(217.6 / 75) + rem;
+          padding-left: calc(10 / 75) + rem;
+          padding-right: calc(10 / 75) + rem;
 
           background: linear-gradient(0deg, #ff6d00, #ed6700);
           border: 4px solid #ffffff;
@@ -204,11 +211,13 @@ export default {
 
           border-radius: calc(40 / 75) + rem;
           .company-profile-text {
-            font-size: calc(48 / 75) + rem;
+            // font-size: calc(48 / 75) + rem;
+            font-size: calc(20 / 75) + rem;
+            // white-space: nowrap;
             font-family: HappyZcool-2016;
             font-weight: 400;
             color: #ffffff;
-            text-shadow: 0px calc(5 / 75) + rem calc(5 / 75) + rem #000000;
+            // text-shadow: 0px calc(5 / 75) + rem calc(5 / 75) + rem #000000;
           }
         }
         .selct-designer-button-container {
@@ -219,10 +228,12 @@ export default {
           align-items: center;
 
           height: calc(77.3 / 75) + rem;
-          width: calc(477.7 / 75) + rem;
+          //   width: calc(477.7 / 75) + rem;
+          width: calc(720 / 75) + rem;
 
           margin-top: calc(90.7 / 75) + rem;
-
+          padding-left: calc(10 / 75) + rem;
+          padding-right: calc(10 / 75) + rem;
           background: linear-gradient(0deg, #ff6d00, #ed6700);
           border: 4px solid #ffffff;
           border-width: calc(4 / 75) + rem;
@@ -230,11 +241,13 @@ export default {
 
           border-radius: calc(40 / 75) + rem;
           .selct-designer-text {
-            font-size: calc(48 / 75) + rem;
+            // font-size: calc(48 / 75) + rem;
+            font-size: calc(20 / 75) + rem;
+
             font-family: HappyZcool-2016;
             font-weight: 400;
             color: #ffffff;
-            text-shadow: 0px calc(5 / 75) + rem calc(5 / 75) + rem #000000;
+            // text-shadow: 0px calc(5 / 75) + rem calc(5 / 75) + rem #000000;
           }
         }
       }

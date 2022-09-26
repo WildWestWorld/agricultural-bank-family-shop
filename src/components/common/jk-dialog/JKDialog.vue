@@ -13,19 +13,36 @@
 
     <div
       :class="!isDialogShow ? 'dialog-wrapper show' : 'dialog-wrapper hidden'"
+      :style="setDialogStyle"
     >
       <!-- 对话框的头部 -->
-      <div class="dialog-head-container">
+      <!-- <div class="JK-dialog-head-container">
         <div
           class="close-button-container"
           @click="changeIsDialogShowState(false)"
         >
           x
         </div>
-      </div>
+      </div> -->
       <!-- 对话框的内容 -->
-      <div class="dialog-content-container">
-        <slot></slot>
+      <div class="JK-dialog-content-container">
+        <slot name="content"></slot>
+      </div>
+      <!-- 对话框的尾部 -->
+
+      <div class="JK-dialog-footer-container">
+        <div
+          class="left-button-container"
+          @click="changeIsDialogShowState(false)"
+        >
+          {{ leftButtonText }}
+        </div>
+        <div
+          class="right-button-container"
+          @click="changeIsDialogShowState(false)"
+        >
+          {{ rightButtonText }}
+        </div>
       </div>
     </div>
   </div>
@@ -36,22 +53,47 @@ export default {
   name: 'JKDialog',
 
   //   props区
-  props: {},
+  props: {
+    dialogWidth: {
+      type: String,
+      default: '300',
+    },
+    dialogHeight: {
+      type: String,
+      default: '560',
+    },
+    leftButtonText: {
+      type: String,
+      default: '否',
+    },
+    rightButtonText: {
+      type: String,
+      default: '是',
+    },
+  },
   //变量区
   data() {
     return {
       isDialogShow: false,
     };
   },
+
+  computed: {
+    setDialogStyle() {
+      return {
+        width: this.$props.dialogWidth / 75 + 'rem',
+        height: this.$props.dialogHeight / 75 + 'rem',
+      };
+    },
+  },
   //生命周期区
   mounted() {
-    let timer = null;
-    timer = setTimeout(() => {
-      this.isDialogShow = true;
-      clearTimeout(timer);
-      timer = null;
-    }, 1);
-
+    // let timer = null;
+    // timer = setTimeout(() => {
+    //   this.isDialogShow = true;
+    //   clearTimeout(timer);
+    //   timer = null;
+    // }, 1);
     // this.JKTest();
   },
   //方法区
@@ -79,7 +121,7 @@ export default {
   justify-content: center;
 
   //设置动画的时长
-  transition: 1s;
+  transition: 0.8s;
   z-index: 999;
   &.containerShow {
     visibility: visible;
@@ -98,18 +140,19 @@ export default {
     height: 100vh;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
   }
   //   对话框主体的容器
   .dialog-wrapper {
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 50vw;
-    width: 50vw;
+    height: calc(300 / 75) + rem;
+    width: calc(560 / 75) + rem;
     background-color: white;
     border-radius: calc(20 / 75) + rem;
     // 头部
-    .dialog-head-container {
+    .JK-dialog-head-container {
       position: relative;
       display: flex;
       flex-direction: row;
@@ -134,11 +177,71 @@ export default {
       }
     }
     // 内容
-    .dialog-content-container {
+    .JK-dialog-content-container {
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: 100%;
-      font-size: calc(20 / 75) + rem;
+      font-size: calc(30 / 75) + rem;
+      color: #9e9e9e;
     }
+    // 尾部
+    .JK-dialog-footer-container {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: calc(90 / 75) + rem;
+      border-top: calc(1 / 75) + rem solid #f4f4f4;
+      .left-button-container {
+        position: relative;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        font-size: calc(30 / 75) + rem;
+        color: black;
+
+        border-right: calc(1 / 75) + rem solid #f4f4f4;
+      }
+
+      .right-button-container {
+        position: relative;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        font-size: calc(30 / 75) + rem;
+        color: #02bb4a;
+      }
+      .close-button-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        width: calc(60 / 75) + rem;
+        height: calc(60 / 75) + rem;
+        margin-right: calc(20 / 75) + rem;
+
+        background-color: black;
+        color: white;
+        border-radius: calc(15 / 75) + rem;
+
+        font-size: calc(30 / 75) + rem;
+      }
+    }
+
     // 当对话框 显现 的时候使用的样式
     &.show {
       // 当对话框显现 的时候 会回到原点

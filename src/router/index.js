@@ -39,6 +39,13 @@ const routes = [
                 title: '设计案例'
             }
         }, {
+            path: '/designerExample2',
+            name: 'designerExample2',
+            component: () => import('@/views/activity/company-detail-activity/designerExample2.vue'),
+            meta: {
+                title: '设计案例2'
+            }
+        },{
             path: '/discountActivity',
             name: 'discountActivity',
             component: () => import('@/views/activity/company-detail-activity/discountActivity.vue'),
@@ -114,7 +121,8 @@ const routes = [
             name: 'wantConsult',
             component: () => import('@/views/consult/wantConsult.vue'),
             meta: {
-                title: '我要咨询'
+                // title: '我要咨询'
+                title: '真实案例'
             }
         }, {
             path: '/collection',

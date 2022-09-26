@@ -34,6 +34,7 @@ export default {
     return {};
   },
 
+
   //生命周期区
   mounted() {
     // console.log(this.$store);
