@@ -1,5 +1,4 @@
 <template>
-
   <div class="page">
     <div class="page-wrapper">
       <div class="header">
@@ -32,7 +31,7 @@
 
                 <div class="bottom-band-img-container">
                   <div class="band-img-container">
-                    <div class="band-img"></div>
+                    <div class="chu-bang-band-img"></div>
                   </div>
                 </div>
               </div>
@@ -59,7 +58,7 @@
 
                 <div class="bottom-band-img-container">
                   <div class="band-img-container">
-                    <div class="band-img"></div>
+                    <div class="chu-bang-band-img"></div>
                   </div>
                 </div>
               </div>
@@ -86,7 +85,11 @@
 
                 <div class="bottom-band-img-container">
                   <div class="band-img-container">
-                    <div class="band-img"></div>
+                    <!-- <img
+                      :src="require('@/assets/img/chu-bang-logo.png')"
+                      alt=""
+                    /> -->
+                    <div class="chu-bang-band-img"></div>
                   </div>
                 </div>
               </div>
@@ -127,7 +130,6 @@ export default {
     navToPage(path) {
       this.$router.push('/' + path);
     },
-
   },
 };
 </script>
@@ -135,6 +137,15 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
 <style scoped lang="scss">
+.chu-bang-band-img {
+  height: 100%;
+  width: 100%;
+
+  background-image: url(@/assets/img/chu-bang-logo.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
 .page {
   box-sizing: border-box;
   position: relative;
@@ -674,4 +685,3 @@ export default {
   }
 }
 </style>
-

@@ -8,11 +8,6 @@
     <div class="content">
       <div class="content-wrapper">
         <RecommendCard></RecommendCard>
-        <RecommendCard></RecommendCard>
-        <RecommendCard></RecommendCard>
-        <RecommendCard></RecommendCard>
-        <RecommendCard></RecommendCard>
-        <RecommendCard></RecommendCard>
       </div>
     </div>
   </div>

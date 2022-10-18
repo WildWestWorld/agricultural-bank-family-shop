@@ -10,7 +10,8 @@
     <!-- 左边的图片 -->
     <div class="left-img-container">
       <div class="left-img-wrapper">
-        <div class="left-img"></div>
+        <!-- <div class="left-img"></div> -->
+        <img class="left-img" :src="activityImg" />
       </div>
     </div>
     <!-- 右边的信息和按钮 -->
@@ -26,9 +27,9 @@
       </div>
       <div class="buy-sale-container">
         <div class="button-container" @click="activeDialogFromFather()">
-          立即购买
+          立即预约
         </div>
-        <div class="sale-num-container">已售100</div>
+        <div class="sale-num-container" v-if="isShowSaleNum">已售100</div>
       </div>
     </div>
   </div>
@@ -43,7 +44,13 @@ export default {
     nowPrice: { type: String, default: '0' },
     beforePrice: { type: String, default: '0' },
     isShowBeforePrice: { type: Boolean, default: true },
+    isShowSaleNum: { type: Boolean, default: true },
+
     info: { type: Object, default: () => null },
+    activityImg: {
+      type: String,
+      default: require('@/assets/img/discount-card-img.png'),
+    },
   },
   computed: {},
   data() {
@@ -96,9 +103,9 @@ export default {
         width: 100%;
         height: 100%;
 
-        background-image: url(@/assets/img/discount-card-img.png);
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
+        // background-image: url(@/assets/img/discount-card-img.png);
+        // background-repeat: no-repeat;
+        // background-size: 100% 100%;
       }
     }
   }

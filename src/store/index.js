@@ -10,7 +10,7 @@ const state = {
     activeTabBarIndex: 0,
     isFreshTabBar: false,
     isFavor: false,
-    
+    isMerchartLogin: false
 }
 // 响应组件中的事件
 const actions = {
@@ -32,6 +32,10 @@ const mutations = {
     changeIsFavorState (state, payload) {
         console.log(payload)
         state.isFavor = payload
+    },
+    changeIsMerchartLogin (state, payload) {
+        console.log(payload)
+        state.isMerchartLogin = payload
     }
 }
 // 用来将state数据进行加工

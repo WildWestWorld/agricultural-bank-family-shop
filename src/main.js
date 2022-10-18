@@ -9,7 +9,7 @@ import router from "@/router";
 
 
 // Vant组件专区
-import { NavBar, Button, Tabbar, TabbarItem, Swipe, SwipeItem, Lazyload, Search, Tab, Tabs } from 'vant';
+import { NavBar, Button, Tabbar, TabbarItem, Swipe, SwipeItem, Lazyload, Search, Tab, Tabs, Area, Popup, Toast, Dialog } from 'vant';
 Vue.use(NavBar);
 Vue.use(Tabbar);
 Vue.use(TabbarItem);
@@ -20,6 +20,11 @@ Vue.use(Lazyload);
 Vue.use(Search);
 Vue.use(Tab);
 Vue.use(Tabs);
+Vue.use(Area);
+Vue.use(Popup);
+Vue.use(Toast);
+Vue.use(Dialog);
+
 
 Vue.config.productionTip = false
 

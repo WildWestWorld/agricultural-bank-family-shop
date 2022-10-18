@@ -3,21 +3,21 @@
     <div class="header">
       <!-- 导航栏 -->
       <!-- <div class="total-nav-container">
-        <div class="iphone-info-container"></div>
-
-        <div class="nav-container">
-          <div class="nav-wrapper">
-            <div class="nav-img-container">
-              <div class="nav-img"></div>
+          <div class="iphone-info-container"></div>
+  
+          <div class="nav-container">
+            <div class="nav-wrapper">
+              <div class="nav-img-container">
+                <div class="nav-img"></div>
+              </div>
+              <div class="nav-text-container">麦丰家装（城西店）</div>
             </div>
-            <div class="nav-text-container">麦丰家装（城西店）</div>
           </div>
-        </div>
-      </div> -->
+          
+        </div> -->
       <JKNavigator title="商家详情"></JKNavigator>
     </div>
     <div class="content">
-      <!-- 对话框 -->
       <JKDialog
         ref="dialog"
         dialogWidth="560"
@@ -47,15 +47,15 @@
           <div class="company-detail-card-swppier-container">
             <JKSwiperV2 :imgList="imgList"></JKSwiperV2>
             <!-- <div class="company-detail-card-img-container">
-              <div class="company-detail-card-img"></div>
-            </div> -->
+                <div class="company-detail-card-img"></div>
+              </div> -->
           </div>
           <!-- 公司的名字和详细的地址 -->
           <div class="company-detail-card-info-container">
             <!-- card的上半部分 -->
             <div class="top-info-container">
               <div class="top-info-left-container">
-                <div class="name-text-container">中博装饰</div>
+                <div class="name-text-container">楚邦上易装饰</div>
                 <div class="commend-info-container">
                   <div class="star-img-text-container">
                     <div class="star-img-container">
@@ -77,11 +77,11 @@
                     </div>
                     <div class="stat-text">5.0</div>
                   </div>
-                  <div class="commend-num-container">1241条</div>
-                  <div class="consumpution-num-container">￥14141/人</div>
+                  <div class="commend-num-container">782条</div>
+                  <div class="consumpution-num-container">¥15800/人</div>
                 </div>
                 <div class="address-info-container">
-                  <div class="address">天城路86号中博家居广场</div>
+                  <div class="address">余杭区好运街152号（楚邦上易总部）</div>
                   <!-- <div class="distant">13.4km</div> -->
                 </div>
               </div>
@@ -90,26 +90,26 @@
                 <div class="favourite-img-text-container">
                   <BlickStar></BlickStar>
                   <!-- <div class="favourite-img-container">
-                    <div class="favourite-img"></div>
-                    <svg
-                      t="1664102717928"
-                      class="icon"
-                      viewBox="0 0 1024 1024"
-                      version="1.1"
-                      xmlns="http://www.w3.org/2000/svg"
-                      p-id="3824"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
-                    >
-                      <path
-                        d="M946.44567 407.179676c-3.706415-11.056823-13.268188-19.154245-24.823362-20.929682l-263.117606-40.614L540.930913 93.91802c-5.108345-10.93198-16.071024-17.939581-28.155247-17.971303-0.030699 0-0.062422 0-0.062422 0-12.021801 0-22.985504 6.945179-28.155247 17.84646L365.79001 345.247138l-263.917832 39.507806c-11.399631 1.961678-20.774139 10.060123-24.355711 21.054525-3.613294 10.963703-0.778736 23.047926 7.257288 31.332612l191.202717 196.684568-45.6282 277.132808c-1.930979 11.741415 3.0208 23.608697 12.769838 30.491455 9.717316 6.882757 22.549575 7.630794 32.983205 1.868557l235.366565-129.47177 234.868215 130.282229c4.703115 2.616594 9.904581 3.924379 15.106046 3.924379 6.291287 0 12.551874-1.868557 17.877159-5.699816 9.748015-6.852058 14.763239-18.687618 12.862959-30.460756L747.488339 634.635061l191.669344-195.84341C947.286828 430.476265 950.121386 418.2365 946.44567 407.179676z"
-                        p-id="3825"
-                        fill="#bfbfbf"
-                        id="star"
-                      ></path>
-                    </svg>
-
-                    <span class="blick-star"></span>
-                  </div> -->
+                      <div class="favourite-img"></div>
+                      <svg
+                        t="1664102717928"
+                        class="icon"
+                        viewBox="0 0 1024 1024"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        p-id="3824"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      >
+                        <path
+                          d="M946.44567 407.179676c-3.706415-11.056823-13.268188-19.154245-24.823362-20.929682l-263.117606-40.614L540.930913 93.91802c-5.108345-10.93198-16.071024-17.939581-28.155247-17.971303-0.030699 0-0.062422 0-0.062422 0-12.021801 0-22.985504 6.945179-28.155247 17.84646L365.79001 345.247138l-263.917832 39.507806c-11.399631 1.961678-20.774139 10.060123-24.355711 21.054525-3.613294 10.963703-0.778736 23.047926 7.257288 31.332612l191.202717 196.684568-45.6282 277.132808c-1.930979 11.741415 3.0208 23.608697 12.769838 30.491455 9.717316 6.882757 22.549575 7.630794 32.983205 1.868557l235.366565-129.47177 234.868215 130.282229c4.703115 2.616594 9.904581 3.924379 15.106046 3.924379 6.291287 0 12.551874-1.868557 17.877159-5.699816 9.748015-6.852058 14.763239-18.687618 12.862959-30.460756L747.488339 634.635061l191.669344-195.84341C947.286828 430.476265 950.121386 418.2365 946.44567 407.179676z"
+                          p-id="3825"
+                          fill="#bfbfbf"
+                          id="star"
+                        ></path>
+                      </svg>
+  
+                      <span class="blick-star"></span>
+                    </div> -->
                   <div class="favourite-text-container">收藏</div>
                 </div>
               </div>
@@ -128,15 +128,15 @@
                 <div class="bottom-middle-container">
                   <div class="address-container">
                     <div class="address-text-container">
-                      浙江省杭州市上城区天城路86号
+                      浙江省杭州市余杭区好运街152号（楚邦上易总部）
                     </div>
                     <div class="address-distant-container">
-                      天城路86号中博家居广场
+                      余杭区好运街152号（楚邦上易总部）
                     </div>
                   </div>
                 </div>
                 <!-- 右边放电话按钮的盒子 -->
-                <a class="bottom-right-container" href="tel:19157895028">
+                <a class="bottom-right-container" href="tel:18868442224">
                   <div class="bottom-iphone-img-container">
                     <div class="bottom-iphone-img-wrapper">
                       <div class="bottom-iphone-img"></div>
@@ -154,7 +154,7 @@
         <div class="top-activity-img-container">
           <div
             class="company-introduce-img-container"
-            @click="navToPage('companyProfile')"
+            @click="navToPage('companyProfileCB')"
           >
             <div class="company-introduce-img"></div>
           </div>
@@ -183,16 +183,9 @@
       </div>
 
       <!-- 官方活动 -->
-      <!-- <div class="authority-activity-container">
-        <div class="authority-title-container">优惠活动</div>
-        <TicketCard></TicketCard>
-      </div> -->
-
-      <!-- 优惠活动 -->
       <div class="discount-activity-container">
         <div class="discount-title-container">优惠活动</div>
         <!-- <TicketCard></TicketCard> -->
-
         <DiscountListCard
           title="农行家装卡满千返百"
           nowPrice="0"
@@ -201,100 +194,46 @@
           :isShowSaleNum="false"
           :activity-img="require('@/assets/img/guess-favorite-img-new.png')"
         ></DiscountListCard>
-
-        <DiscountListCard
-          title="环保健康家60㎡（两室两厅一厨一卫）"
-          nowPrice="69800"
-          beforePrice="129800"
-          @activeDialogFromFather="activeDialog"
-        ></DiscountListCard>
-        <DiscountListCard
-          title="环保定制家90㎡（三室两厅一厨一卫）"
-          beforePrice="208800"
-          nowPrice="108800"
-          @activeDialogFromFather="activeDialog"
-        ></DiscountListCard>
-        <DiscountListCard
-          title="预约报名礼:到店送周年庆精美礼品一份"
-          nowPrice="0"
-          beforePrice="9.9"
-          @activeDialogFromFather="activeDialog"
-        ></DiscountListCard>
-        <DiscountListCard
-          title="量房礼包:上门量房，送1999元前置净水礼包"
-          nowPrice="9.9"
-          beforePrice="39.9"
-          @activeDialogFromFather="activeDialog"
-        ></DiscountListCard>
-        <DiscountListCard
-          title="下定满5000元送全屋窗帘和喜临门床垫一张"
-          nowPrice="0"
-          beforePrice="5000"
-          @activeDialogFromFather="activeDialog"
-        ></DiscountListCard>
-        <DiscountListCard
-          title="下定享周年庆工程款补贴封顶10000元 "
-          nowPrice="0"
-          beforePrice="10000"
-          @activeDialogFromFather="activeDialog"
-        ></DiscountListCard>
-        <DiscountListCard
-          title="签定合同享价值5800元松下全智能马桶免费升级"
-          nowPrice="0"
-          beforePrice="5800"
-          @activeDialogFromFather="activeDialog"
-        ></DiscountListCard>
       </div>
-
-      <!-- 案例介绍 -->
-      <div class="designer-example-extra-container">
-        <div class="designer-example-extra-text-container">案例介绍</div>
-        <img
-          class="company-profile-bcg"
-          src="@/assets/img/design-example-zb1-edit.png"
-          alt=""
-        />
-      </div>
-
       <!-- 真实案例 -->
       <!-- <div class="real-example-container">
-        <div class="real-example-wrapper" @click="navToPage('wantConsult')">
-          <div class="real-example-text-container">真实案例</div>
-          <div class="example-info-container">
-            <div class="example-info-num-container">200个案例</div>
-            <div class="example-info-arrow-img-container">
-              <div class="example-info-arrow-img"></div>
+          <div class="real-example-wrapper" @click="navToPage('wantConsult')">
+            <div class="real-example-text-container">真实案例</div>
+            <div class="example-info-container">
+              <div class="example-info-num-container">200个案例</div>
+              <div class="example-info-arrow-img-container">
+                <div class="example-info-arrow-img"></div>
+              </div>
             </div>
           </div>
-        </div>
-      </div> -->
+        </div> -->
       <!-- 工具栏 -->
       <!-- <div class="tool-bar-container">
-        <div class="tool-bar-wrapper">
-          <div class="left-favor-container">
-            <div class="favor-img-text-container">
-              <div class="favor-img-container">
-                <div class="favor-img"></div>
+          <div class="tool-bar-wrapper">
+            <div class="left-favor-container">
+              <div class="favor-img-text-container">
+                <div class="favor-img-container">
+                  <div class="favor-img"></div>
+                </div>
+                <div class="favor-text-container">收藏</div>
               </div>
-              <div class="favor-text-container">收藏</div>
+              <div
+                class="consult-img-text-container"
+                @click="navToPage('wantConsult')"
+              >
+                <div class="consult-img-container">
+                  <div class="consult-img"></div>
+                </div>
+                <div class="consult-text-container">咨询</div>
+              </div>
             </div>
-            <div
-              class="consult-img-text-container"
-              @click="navToPage('wantConsult')"
-            >
-              <div class="consult-img-container">
-                <div class="consult-img"></div>
+            <div class="right-order-container">
+              <div class="order-button-container">
+                <div class="order-button-text">立即预约</div>
               </div>
-              <div class="consult-text-container">咨询</div>
             </div>
           </div>
-          <div class="right-order-container">
-            <div class="order-button-container">
-              <div class="order-button-text">立即预约</div>
-            </div>
-          </div>
-        </div>
-      </div> -->
+        </div> -->
     </div>
   </div>
 </template>
@@ -303,18 +242,19 @@
 import JKNavigator from '@/components/common/jk-navigator/JKNavigator.vue';
 import JKSwiperV2 from '@/components/common/jk-swiper/JKSwiperV2.vue';
 import BlickStar from '../../components/common/blick-star/blickStar.vue';
-import DiscountListCard from '@/components/activity/discount-activity/discount-list/discountListCard.vue';
+import TicketCard from '@/components/ticket-center/ticket-tab-list/ticketCard.vue';
+import DiscountActivity from '../activity/company-detail-activity/discountActivity.vue';
 import JKDialog from '@/components/common/jk-dialog/JKDialog.vue';
-import TicketCard from '../../components/ticket-center/ticket-tab-list/ticketCard.vue';
+import DiscountListCard from '@/components/activity/discount-activity/discount-list/discountListCard.vue';
 export default {
   name: 'companyProfile',
   //变量区
   data() {
     return {
       imgList: [
-        require('@/assets/img/company-swpier-img1.png'),
-        require('@/assets/img/company-swpier-img2.png'),
-        require('@/assets/img/company-swpier-img3.png'),
+        require('@/assets/img/cb-company-swpier-img1.jpg'),
+        require('@/assets/img/cb-company-swpier-img1.jpg'),
+        require('@/assets/img/cb-company-swpier-img1.jpg'),
       ],
     };
   },
@@ -341,9 +281,10 @@ export default {
     JKNavigator,
     JKSwiperV2,
     BlickStar,
-    DiscountListCard,
-    JKDialog,
     TicketCard,
+    DiscountActivity,
+    JKDialog,
+    DiscountListCard,
   },
 };
 </script>
@@ -547,7 +488,6 @@ export default {
             // justify-content: space-between;
 
             width: calc(100vw - 0.5733333rem);
-
             // width: 100%;
             height: calc(166 / 75) + rem;
             // 左半部分
@@ -1092,6 +1032,38 @@ export default {
         }
       }
     }
+
+    .discount-activity-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+
+      height: fit-content;
+      width: 100vw;
+      background-color: white;
+      padding-bottom: calc(20 / 75) + rem;
+      margin-bottom: calc(20 / 75) + rem;
+
+      .discount-title-container {
+        position: relative;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: bold;
+        color: #000000;
+        font-size: calc(18 / 37.5) + rem;
+        font-family: Microsoft Yahei;
+        margin-left: 0.2866665rem; //该数值是从拿来的top-info-left-container
+        margin-top: 0.56rem;
+      }
+      .company-profile-bcg {
+        position: relative;
+        box-sizing: border-box;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
     //真实案例
     .real-example-container {
       position: relative;
@@ -1157,39 +1129,6 @@ export default {
       }
     }
 
-    //优惠活动
-    .discount-activity-container {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-
-      height: fit-content;
-      width: 100vw;
-      background-color: white;
-      padding-bottom: calc(20 / 75) + rem;
-      margin-bottom: calc(20 / 75) + rem;
-
-      .discount-title-container {
-        position: relative;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        font-weight: bold;
-        color: #000000;
-        font-size: calc(18 / 37.5) + rem;
-        font-family: Microsoft Yahei;
-        margin-left: 0.2866665rem; //该数值是从拿来的top-info-left-container
-        margin-top: 0.56rem;
-      }
-      .company-profile-bcg {
-        position: relative;
-        box-sizing: border-box;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-      }
-    }
-    // 官方活动
     .authority-activity-container {
       position: relative;
       display: flex;
@@ -1202,38 +1141,6 @@ export default {
       margin-bottom: calc(20 / 75) + rem;
 
       .authority-title-container {
-        position: relative;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        font-weight: bold;
-        color: #000000;
-        font-size: calc(18 / 37.5) + rem;
-        font-family: Microsoft Yahei;
-        margin-left: 0.2866665rem; //该数值是从拿来的top-info-left-container
-        margin-top: 0.56rem;
-      }
-      .company-profile-bcg {
-        position: relative;
-        box-sizing: border-box;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-      }
-    }
-    // 案例设置
-    .designer-example-extra-container {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-
-      height: fit-content;
-      width: 100vw;
-      background-color: white;
-      padding-bottom: calc(20 / 75) + rem;
-      margin-bottom: calc(20 / 75) + rem;
-
-      .designer-example-extra-text-container {
         position: relative;
         text-overflow: ellipsis;
         white-space: nowrap;

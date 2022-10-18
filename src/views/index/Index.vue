@@ -1,6 +1,24 @@
 <template>
   <div class="page">
     <div class="page-wrapper">
+      <!--选择省市区-->
+      <!-- 弹出框 -->
+      <van-popup
+        v-model="showAreaModel"
+        position="bottom"
+        :style="{ height: '50%' }"
+      >
+        <!-- 地区选择组件 -->
+        <van-area
+          :area-list="areaList"
+          @confirm="onAreaConfirm"
+          @cancel="bindCancel"
+          columns-num="2"
+          item-height="1.173333rem"
+        />
+        <!-- item-height="1.173333rem" -->
+      </van-popup>
+
       <div class="header">
         <van-search
           v-model="searchWord"
@@ -9,13 +27,15 @@
           placeholder="请输入搜索关键词"
         >
           <template #left>
-            <div class="search-left-container">
+            <div class="search-left-container" @click="activeSelectArea">
               <div class="search-left-img-container">
                 <div class="search-left-img"></div>
               </div>
 
               <div class="search-left-text-container">
-                <div class="search-left-text">杭州</div>
+                <div class="search-left-text">
+                  {{ chooseAreaCity.length !== 0 ? chooseAreaCity : '杭州' }}
+                </div>
                 <div class="search-left-arrow"></div>
               </div>
             </div>
@@ -50,7 +70,7 @@
               <div class="installment-application-img-container">
                 <div class="installment-application-img"></div>
               </div>
-              <div class="installment-application-text-container">分期申请</div>
+              <div class="installment-application-text-container">我要分期</div>
             </div>
             <div class="recommend-gift-container">
               <div class="recommend-gift-img-container">
@@ -58,7 +78,10 @@
               </div>
               <div class="recommend-gift-text-container">推荐客户</div>
             </div>
-            <div class="total-activity-container">
+            <div
+              class="total-activity-container"
+              @click="navToPage('guessFavorite')"
+            >
               <div class="total-activity-img-container">
                 <div class="total-activity-img"></div>
               </div>
@@ -75,7 +98,10 @@
         <!--活动图片-->
         <div class="activity-img-container">
           <div class="activity-img-wrapper">
-            <img class="activity-img" src="@/assets/img/activity-img.png" />
+            <img
+              class="activity-img"
+              src="@/assets/img/activity-img-wait.png"
+            />
           </div>
         </div>
         <!-- 选择装修的类型select -->
@@ -180,12 +206,75 @@
         <tabList>
           <div slot="item0">
             <tabListContentCard></tabListContentCard>
+            <TabListContentCardCB
+              :shopImg="require('@/assets/img/chu-bang-logo.png')"
+              :isShowGiftContainer="false"
+              :isShowGroupGiftContainer="false"
+              :item="{
+                name: '楚邦上易装饰',
+                star: '5.0',
+                commentNum: '782条',
+                consumputionNum: '￥15800/人',
+                address: '余杭区好运街152号（楚邦上易总部）',
+                benefit: [
+                  '1个精选案例',
+                  '整体家居平台',
+                  '服务近20万业主',
+                  '快速响应',
+                ],
+                recommendWords: ' “服务套服非常好，给出的方案很不错” ',
+              }"
+            >
+              ></TabListContentCardCB
+            >
           </div>
           <div slot="item1">
             <tabListContentCard></tabListContentCard>
+            <TabListContentCardCB
+              :shopImg="require('@/assets/img/chu-bang-logo.png')"
+              :isShowGiftContainer="false"
+              :isShowGroupGiftContainer="false"
+              :item="{
+                name: '楚邦上易装饰',
+                star: '5.0',
+                commentNum: '782条',
+                consumputionNum: '￥15800/人',
+                address: '余杭区好运街152号（楚邦上易总部）',
+                benefit: [
+                  '1个精选案例',
+                  '整体家居平台',
+                  '服务近20万业主',
+                  '快速响应',
+                ],
+                recommendWords: ' “服务套服非常好，给出的方案很不错” ',
+              }"
+            >
+              ></TabListContentCardCB
+            >
           </div>
           <div slot="item2">
             <tabListContentCard></tabListContentCard>
+            <TabListContentCardCB
+              :shopImg="require('@/assets/img/chu-bang-logo.png')"
+              :isShowGiftContainer="false"
+              :isShowGroupGiftContainer="false"
+              :item="{
+                name: '楚邦上易装饰',
+                star: '5.0',
+                commentNum: '782条',
+                consumputionNum: '￥15800/人',
+                address: '余杭区好运街152号（楚邦上易总部）',
+                benefit: [
+                  '1个精选案例',
+                  '整体家居平台',
+                  '服务近20万业主',
+                  '快速响应',
+                ],
+                recommendWords: ' “服务套服非常好，给出的方案很不错” ',
+              }"
+            >
+              ></TabListContentCardCB
+            >
           </div>
         </tabList>
       </div>
@@ -196,11 +285,16 @@
 <script>
 import tabList from '@/components/index/tab-list/tabList.vue';
 import tabListContentCard from '@/components/index/tab-list/tabListContentCard.vue';
+import TabListContentCardCB from '@/components/index/tab-list/tabListContentCardCB.vue';
+import { areaList } from '@/utils/area-list';
+import { getVeriryCodeImgAPI } from '@/api/login/login.js';
+
 export default {
   name: 'Index',
   components: {
     tabList,
     tabListContentCard,
+    TabListContentCardCB,
   },
   props: {
     msg: String,
@@ -211,18 +305,62 @@ export default {
       test: '123',
       searchWord: '',
       tabActiveNum: 0,
+      areaList: areaList, //引用地区信息
+      showAreaModel: false, //用于开关地区组件
+      valueArea: '', //完整的地区值
+      chooseAreaCity: '', //选择的市的值
+      arrArea: [], //存放地区数组
     };
   },
   //生命周期区
   mounted() {
     console.log(this.$store);
+    // this.showArea = true;
+    let areaCity = localStorage.getItem('areaCity') || '';
+    if (areaCity.length > 0 && areaCity !== undefined && areaCity !== null) {
+      this.chooseAreaCity = localStorage.getItem('areaCity');
+    }
+    // getVeriryCodeImgAPI().then((res) => {
+    //   console.log(res);
+    // });
   },
+  //   方法区
   methods: {
     JKTest() {
       console.log('测试');
     },
     navToPage(path) {
       this.$router.push('/' + path);
+    },
+
+    // //地区选择相关
+    // 打开地区选择框
+    activeSelectArea() {
+      this.showAreaModel = true;
+    },
+    //关闭地区选择框
+    bindCancel() {
+      this.showAreaModel = false;
+    },
+    //地区选择
+    onAreaConfirm(val) {
+      this.showAreaModel = false;
+      //   val是一个数组对象，返回省 市 区
+      this.arrArea = val;
+      //   区级地区选择
+      //   let  addrInfo = val[0].name + '-' + val[1].name + '-' + val[2].name;
+      //   市级地区选择
+      let chooseAreaInfo = val[0].name + '-' + val[1].name;
+      let chooseAreaCity = val[1].name;
+      //   只有市的值
+      //   格式化 选择的市级地区 将市的字去掉
+      let chooseAreaCityFormat = chooseAreaCity.split('市')[0];
+      console.log(chooseAreaCityFormat);
+
+      this.chooseAreaCity = chooseAreaCityFormat;
+      localStorage.setItem('areaCity', chooseAreaCityFormat);
+      //   完整的地区选择的值
+      this.valueArea = chooseAreaInfo;
     },
   },
 };
@@ -275,10 +413,12 @@ export default {
         justify-content: center;
         align-items: center;
         width: calc(176 / 75) + rem;
+        flex-shrink: 0;
         .search-left-img-container {
           position: relative;
           width: calc(53 / 75) + rem;
           height: calc(53 / 75) + rem;
+
           .search-left-img {
             height: 100%;
             background-image: url('@/assets/img/positon-img.png');
@@ -294,12 +434,15 @@ export default {
           justify-content: center;
           align-items: center;
           font-size: calc(26 / 75) + rem;
-
+          max-width: 70%;
           color: white;
           //   font-weight: bold;
           .search-left-text {
             height: fit-content;
             margin-right: calc(10.5 / 75) + rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
           }
           .search-left-arrow {
             height: 0;
@@ -395,12 +538,12 @@ export default {
               width: 1.213rem;
               height: 1.213rem;
 
-              background-color: orange;
+              //   background-color: orange;
               border-radius: 50%;
               .installment-application-img {
                 width: 100%;
                 height: 100%;
-                background-image: url('@/assets/img/installmentApplication.png');
+                background-image: url('@/assets/img/installmentApplicationNew.png');
                 background-repeat: no-repeat;
                 background-size: 100%;
               }
@@ -427,7 +570,7 @@ export default {
               .recommend-gift-img {
                 width: 100%;
                 height: 100%;
-                background-image: url('@/assets/img/recommendGift.png');
+                background-image: url('@/assets/img/recommendGiftNew.png');
                 background-repeat: no-repeat;
                 background-size: 100%;
               }
@@ -451,12 +594,12 @@ export default {
             .total-activity-img-container {
               width: 1.213rem;
               height: 1.213rem;
-              background-color: #65c3c7;
+              //   background-color: #65c3c7;
               border-radius: 50%;
               .total-activity-img {
                 width: 100%;
                 height: 100%;
-                background-image: url('@/assets/img/totalActivity.png');
+                background-image: url('@/assets/img/totalActivityNew.png');
                 background-repeat: no-repeat;
                 background-size: 100%;
               }
@@ -484,7 +627,7 @@ export default {
               .store-in-img {
                 width: 100%;
                 height: 100%;
-                background-image: url('@/assets/img/storeIn.png');
+                background-image: url('@/assets/img/storeInNew.png');
                 background-repeat: no-repeat;
                 background-size: 100%;
               }

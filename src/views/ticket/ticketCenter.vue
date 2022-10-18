@@ -26,7 +26,8 @@
           <!-- 奖券TabList内容 -->
           <ticket-type-tab-list>
             <div slot="ticket-info-item0">
-              <empty-ticket-tips></empty-ticket-tips>
+                <TicketCard></TicketCard>
+              <!-- <empty-ticket-tips></empty-ticket-tips> -->
             </div>
             <div slot="ticket-info-item1">
               <empty-ticket-tips></empty-ticket-tips>
@@ -67,6 +68,7 @@ import JKNavigator from '@/components/common/jk-navigator/JKNavigator.vue';
 import TicketTabList from '@/components/ticket-center/ticket-tab-list/ticketTabList.vue';
 import TicketTypeTabList from '@/components/ticket-center/ticket-tab-list/ticketTypeTabList.vue';
 import EmptyTicketTips from '@/components/ticket-center/ticket-tab-list/emptyTicketTips.vue';
+import TicketCard from '@/components/ticket-center/ticket-tab-list/ticketCard.vue';
 
 export default {
   name: 'companyProfile',
@@ -75,7 +77,8 @@ export default {
     TicketTabList,
     TicketTypeTabList,
     EmptyTicketTips,
-  },
+    TicketCard
+},
   //变量区
   data() {
     return {

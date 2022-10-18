@@ -68,7 +68,7 @@ export default {
           name: '家装公司',
         },
         {
-          name: '建筑商户',
+          name: '建材商户',
         },
         {
           name: '家居软装',

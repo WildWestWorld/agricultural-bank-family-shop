@@ -45,7 +45,7 @@ const routes = [
             meta: {
                 title: '设计案例2'
             }
-        },{
+        }, {
             path: '/discountActivity',
             name: 'discountActivity',
             component: () => import('@/views/activity/company-detail-activity/discountActivity.vue'),
@@ -144,6 +144,35 @@ const routes = [
             component: () => import('@/views/band/bandDetail.vue'),
             meta: {
                 title: '品牌详情'
+            }
+        }, {
+            path: '/login',
+            name: 'login',
+            component: () => import('@/views/mine/login.vue'),
+            meta: {
+                title: '商家登录'
+            }
+        },
+        {
+            path: '/bandDetailCB', //待删除
+            name: 'bandDetailCB',
+            component: () => import('@/views/band/bandDetailCB.vue'),
+            meta: {
+                title: '品牌详情'
+            }
+        }, {
+            path: '/companyDetailCB', //待删除
+            name: 'companyDetailCB',
+            component: () => import('@/views/company/companyDetailCB.vue'),
+            meta: {
+                title: '公司详情'
+            }
+        }, {
+            path: '/companyProfileCB', //待删除
+            name: 'companyProfileCB',
+            component: () => import('@/views/activity/company-detail-activity/companyProfileCB.vue'),
+            meta: {
+                title: '公司简介'
             }
         },
 

@@ -44,7 +44,8 @@
               </div>
               <!-- 下半部分的按钮 -->
               <div class="bottom-button-container">
-                <div class="bottom-button-wrapper">
+                <!-- 当商户没登录 -->
+                <div class="bottom-button-wrapper" v-if="!isMerchartLogin">
                   <div
                     class="tikcet-center-container"
                     @click="linkpage('ticketCenter')"
@@ -54,15 +55,20 @@
                     </div>
                     <div class="button-text-container">优惠券</div>
                   </div>
-                  <div
+                  <!-- <div
                     class="merchant-login-container"
                     @click="linkpage('usertelList')"
+                  > -->
+                  <div
+                    class="merchant-login-container"
+                    @click="linkpage('login')"
                   >
                     <div class="button-img-container">
                       <div class="button-img"></div>
                     </div>
-                    <div class="button-text-container">用户列表</div>
+                    <div class="button-text-container">商户登录</div>
                   </div>
+
                   <div
                     class="my-favorite-container"
                     @click="linkpage('collection')"
@@ -71,6 +77,18 @@
                       <div class="button-img"></div>
                     </div>
                     <div class="button-text-container">我的收藏</div>
+                  </div>
+                </div>
+                <!-- 当商户登录了 -->
+                <div class="bottom-button-wrapper" v-if="isMerchartLogin">
+                  <div
+                    class="user-list-container"
+                    @click="linkpage('usertelList')"
+                  >
+                    <div class="button-img-container">
+                      <div class="button-img"></div>
+                    </div>
+                    <div class="button-text-container">用户列表</div>
                   </div>
                 </div>
               </div>
@@ -86,6 +104,7 @@
 import NavBar from '@/components/navBar/NavBar';
 import JKNavigator from '@/components/common/jk-navigator/JKNavigator.vue';
 import JKDialog from '@/components/common/jk-dialog/JKDialog.vue';
+import { mapState } from 'vuex';
 export default {
   name: 'Mine',
   components: {
@@ -93,6 +112,10 @@ export default {
     JKNavigator,
     JKDialog,
   },
+  computed: mapState({
+    isMerchartLogin: (state) => state.isMerchartLogin,
+  }),
+
   //变量区
   data() {
     return {
@@ -402,7 +425,7 @@ export default {
                     width: 100%;
                     height: 100%;
 
-                    background-image: url(@/assets/img/ticket-center-img.png);
+                    background-image: url(@/assets/img/ticket-center-img-new.png);
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
                   }
@@ -432,7 +455,7 @@ export default {
                     width: 100%;
                     height: 100%;
 
-                    background-image: url(@/assets/img/merchant-login-img.png);
+                    background-image: url(@/assets/img/merchant-login-img-new.png);
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
                   }
@@ -463,7 +486,37 @@ export default {
                     width: 100%;
                     height: 100%;
 
-                    background-image: url(@/assets/img/my-favorite-img.png);
+                    background-image: url(@/assets/img/my-favorite-img-new.png);
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                  }
+                }
+                .button-text-container {
+                  margin-top: calc(9 / 75) + rem;
+                  text-align: center;
+                  font-size: calc(28 / 75) + rem;
+                  font-family: SourceHanSansCN;
+                  font-weight: 400;
+                  color: #000000;
+                  white-space: nowrap;
+                }
+              }
+
+              .user-list-container {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: fit-content;
+                .button-img-container {
+                  position: relative;
+                  width: calc(103 / 75) + rem;
+                  height: calc(103 / 75) + rem;
+                  .button-img {
+                    width: 100%;
+                    height: 100%;
+
+                    background-image: url(@/assets/img/merchant-login-img-new.png);
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
                   }

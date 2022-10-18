@@ -1,6 +1,7 @@
 <template>
   <div class="recommend-card-container">
     <div class="recommend-card-wrapper" @click="navToPage('collectTicket')">
+      <!-- <div class="recommend-card-wrapper"> -->
       <div class="left-img-container">
         <div class="left-img-wrapper">
           <div class="left-img">
@@ -28,7 +29,7 @@
 
 <script>
 export default {
-  name: 'recommendCard',
+  name: 'ticketCard',
 
   //变量区
   data() {

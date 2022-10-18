@@ -59,14 +59,14 @@
                   {{ itema }}
                 </div>
                 <!-- <div class="benefit">专注环保家装</div>
-                <div class="benefit">24年全案整装</div>
-                <div class="benefit">实景展厅</div> -->
+                  <div class="benefit">24年全案整装</div>
+                  <div class="benefit">实景展厅</div> -->
               </div>
             </div>
           </div>
           <div class="bottom-container">
             <div class="left-discount-container">
-              <div class="left-discount-text-container">
+              <div class="left-discount-text-container" v-if="true">
                 <div class="left-discount-text">已优惠1</div>
                 <div class="left-quest-icon"></div>
                 <div class="left-quest-decoration"></div>
@@ -95,19 +95,17 @@
                 </div>
               </div>
 
-              <!-- <div class="right-gift-container" v-if="isShowGiftContainer"> -->
-              <div class="right-gift-container" v-if="false">
+              <div class="right-gift-container" v-if="isShowGiftContainer">
                 <div class="gift-img-container">
                   <div class="gift-img">礼</div>
                 </div>
                 <div class="gift-text-container">到店送周年庆精美礼品一份</div>
               </div>
 
-              <!-- <div
+              <div
                 class="right-group-gift-container"
                 v-if="isShowGroupGiftContainer"
-              > -->
-              <div class="right-gift-container" v-if="false">
+              >
                 <div class="group-gift-img-container">
                   <div class="group-gift-img">团</div>
                 </div>
@@ -166,7 +164,7 @@ export default {
   },
   methods: {
     navToCompanyDetail() {
-      this.$router.push('/companyDetail');
+      this.$router.push('/companyDetailCB');
       console.log('test');
     },
   },
@@ -574,7 +572,7 @@ export default {
             flex-direction: column;
             justify-content: space-between;
             margin-left: 0.2547rem;
-            font-size: 10px;
+            font-size: calc(10 / 75) + rem;
             width: calc(530 / 75) + rem;
             max-width: calc(530 / 75) + rem;
 

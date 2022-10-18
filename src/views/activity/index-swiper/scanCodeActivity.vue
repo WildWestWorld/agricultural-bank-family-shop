@@ -335,7 +335,7 @@ export default {
         width: 100%;
         height: 100%;
 
-        background-image: url('@/assets/img/scan-code-activity-bcg.png');
+        background-image: url('@/assets/img/scan-code-activity-bcg-new.png');
         background-repeat: no-repeat;
         background-size: 100% 100%;
       }
